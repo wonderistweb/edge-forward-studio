@@ -655,6 +655,7 @@ If your institution isn't maximizing its E-Rate funding, you're leaving federal 
     category: "Disaster Recovery",
     date: "2026-02-05",
     readTime: "9 min",
+    coverImage: blogBusinessContinuity,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `Within six months of a major data loss event, 60% of affected companies close their doors permanently. Another 29% close within two years. These aren't hypothetical scenarios — they're documented outcomes from the National Archives and Records Administration, corroborated by studies from the University of Texas and the Federal Emergency Management Agency. They represent real businesses, real employees, and real livelihoods destroyed by events that were entirely preventable.
 
