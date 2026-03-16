@@ -51,6 +51,14 @@ const App = () => (
           <Route path="/marketing/emails" element={<EmailsPage />} />
           <Route path="/marketing/ebook" element={<EbookPage />} />
           <Route path="/case-study/school-wifi-redesign" element={<CaseStudyPage />} />
+          <Route path="/industries/healthcare" element={<HealthcarePage />} />
+          <Route path="/industries/manufacturing" element={<ManufacturingPage />} />
+          <Route path="/industries/retail" element={<RetailPage />} />
+          <Route path="/industries/government" element={<GovernmentPage />} />
+          <Route path="/industries/non-profit" element={<NonProfitPage />} />
+          <Route path="/industries/legal" element={<LegalPage />} />
+          <Route path="/industries/financial-services" element={<FinancialServicesPage />} />
+          <Route path="/industries/real-estate" element={<RealEstatePage />} />
           <Route path="/about" element={<AboutPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
