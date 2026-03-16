@@ -287,8 +287,10 @@ const AdsPage = () => {
             </div>
             <MetricsBar metrics={{ impressions: "45K/mo", ctr: "4.8%", cpc: "$12.50" }} />
           </motion.div>
+          )}
 
           {/* ── Google Search: E-Rate ── */}
+          {show("erate") && (
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-2">
               <Search size={18} className="text-primary" />
