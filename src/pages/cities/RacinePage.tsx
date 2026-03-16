@@ -8,7 +8,7 @@ const data: CityPageData = {
   region: "Racine County & Southeast Wisconsin",
   metaDescription: "Modern Edge Technology delivers managed IT services, cybersecurity, and cloud solutions to businesses in Racine, WI and Racine County.",
   heroHeadline: "IT services & cybersecurity in Racine, Wisconsin",
-  heroSubtext: "Racine businesses depend on Modern Edge Technology for managed IT support, network infrastructure, and cybersecurity. Located just 30 miles from our Milwaukee headquarters, Racine County gets fast on-site response and 24/7 remote monitoring.",
+  heroSubtext: "Racine businesses depend on Modern Edge Technology for managed IT support, network infrastructure, and cybersecurity. Located just 30 miles from our Milwaukee headquarters, Racine County gets fast response times and 24/7 remote monitoring.",
   introTitle: "Racine County IT support",
   introText: "Racine's diverse economy — from legacy manufacturing to healthcare to education — requires IT infrastructure that's both modern and reliable. Modern Edge Technology serves Racine County with enterprise-grade managed services, helping local businesses compete with the technology advantages typically reserved for larger organizations.",
   challenges: [

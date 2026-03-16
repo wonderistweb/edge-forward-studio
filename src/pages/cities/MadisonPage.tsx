@@ -10,7 +10,7 @@ const data: CityPageData = {
   heroHeadline: "IT services & managed support in Madison, Wisconsin",
   heroSubtext: "From the Capitol Square to the research park, Madison businesses and institutions rely on Modern Edge Technology for proactive IT management, cybersecurity, and infrastructure that scales with Wisconsin's fastest-growing metro.",
   introTitle: "Technology for Madison's growth",
-  introText: "Madison's thriving tech, biotech, education, and government sectors demand IT infrastructure that's secure, compliant, and built for innovation. Modern Edge Technology brings Milwaukee-based enterprise expertise to the Madison market with on-site support, strategic consulting, and 24/7 managed services tailored to Dane County's unique business landscape.",
+  introText: "Madison's thriving tech, biotech, education, and government sectors demand IT infrastructure that's secure, compliant, and built for innovation. Modern Edge Technology brings enterprise expertise to the Madison market with strategic consulting, 24/7 managed services, and responsive support tailored to Dane County's unique business landscape.",
   challenges: [
     { title: "State & Federal Compliance", desc: "Madison businesses serving government agencies need CMMC, FedRAMP, and StateRAMP-aligned infrastructure. We build compliant environments with documented security controls and audit-ready reporting." },
     { title: "Research & University IT", desc: "Madison's research institutions require high-bandwidth networks, secure data enclaves, and specialized infrastructure for grant-funded projects with strict data handling requirements." },
