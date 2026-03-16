@@ -4,7 +4,7 @@ import infrastructureAudit from "@/assets/infrastructure-audit.jpg";
 
 const ProcessSection = () => {
   return (
-    <section className="py-32 border-t border-border">
+    <section className="py-32 border-t border-border section-primary-tint">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,11 +28,13 @@ const ProcessSection = () => {
             transition={{ duration: 0.6 }}
             className="relative bg-card overflow-hidden group"
           >
-            <img
-              src={markConsultation}
-              alt="Mark consulting with a client about their technology needs"
-              className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500 snap-curve"
-            />
+            <div className="duotone-wrapper">
+              <img
+                src={markConsultation}
+                alt="Mark consulting with a client about their technology needs"
+                className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500 snap-curve duotone group-hover:filter-none"
+              />
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8">
               <div className="flex items-center gap-3 mb-2">
@@ -56,11 +58,13 @@ const ProcessSection = () => {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="relative bg-card overflow-hidden group"
           >
-            <img
-              src={infrastructureAudit}
-              alt="Mark discussing infrastructure with a client"
-              className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500 snap-curve"
-            />
+            <div className="duotone-wrapper">
+              <img
+                src={infrastructureAudit}
+                alt="Mark discussing infrastructure with a client"
+                className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500 snap-curve duotone group-hover:filter-none"
+              />
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8">
               <div className="flex items-center gap-3 mb-2">

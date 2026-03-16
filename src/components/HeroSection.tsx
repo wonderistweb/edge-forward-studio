@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   const [uptime, setUptime] = useState(99.997);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -17,8 +19,30 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Parallax background image */}
+      <div
+        className="absolute inset-0 -top-20 -bottom-20"
+        style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+      >
+        <img
+          src={heroBg}
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay for dark mode, lighter for light mode */}
+        <div className="absolute inset-0 bg-background/80 light:bg-background/70" />
+        {/* Purple duotone tint */}
+        <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
+      </div>
+
       {/* Grid background */}
       <div className="absolute inset-0 opacity-[0.04]"
         style={{
@@ -27,7 +51,7 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Cyan accent line */}
+      {/* Accent line */}
       <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-primary/0 via-primary/30 to-primary/0 animate-pulse-line" />
 
       <div className="relative max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2 gap-16 items-center">

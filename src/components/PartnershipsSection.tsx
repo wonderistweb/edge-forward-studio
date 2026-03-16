@@ -20,7 +20,7 @@ const partners = [
 
 const PartnershipsSection = () => {
   return (
-    <section id="partnerships" className="py-32 border-t border-border">
+    <section id="partnerships" className="py-32 border-t border-border section-tinted">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,12 +46,12 @@ const PartnershipsSection = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.04, duration: 0.4 }}
-              className="bg-card hover:bg-secondary flex items-center justify-center p-6 transition-colors duration-250 snap-curve group"
+              className="bg-card hover:bg-card-hover flex items-center justify-center p-6 transition-colors duration-250 snap-curve group"
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-16 max-w-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-250 brightness-0 invert"
+                className="max-h-16 max-w-full object-contain opacity-70 group-hover:opacity-100 transition-all duration-250 partner-logo-invert"
               />
             </motion.div>
           ))}

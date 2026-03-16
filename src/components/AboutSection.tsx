@@ -65,11 +65,11 @@ const AboutSection = () => {
           </h3>
 
           <div className="grid md:grid-cols-2 gap-px bg-border max-w-3xl">
-            <div className="bg-card p-0">
+            <div className="bg-card p-0 duotone-wrapper">
               <img
                 src={markPhoto}
                 alt="Mark Duerwachter, Vice President of Business Operations"
-                className="w-full aspect-square object-cover object-top"
+                className="w-full aspect-square object-cover object-top duotone group-hover:filter-none"
               />
             </div>
             <div className="bg-card p-8 flex flex-col justify-center">

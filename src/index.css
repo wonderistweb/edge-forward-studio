@@ -129,4 +129,47 @@
   .snap-curve {
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
+
+  /* Duotone image filter - purple tint */
+  .duotone {
+    filter: grayscale(100%) contrast(1.1);
+    position: relative;
+  }
+
+  .duotone-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .duotone-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.3), hsl(var(--primary-glow) / 0.2));
+    mix-blend-mode: color;
+    pointer-events: none;
+  }
+
+  /* Colored section backgrounds for light mode */
+  .section-tinted {
+    background-color: hsl(var(--secondary));
+  }
+
+  .section-primary-tint {
+    background-color: hsl(var(--primary) / 0.04);
+  }
+
+  /* Invert partner logos in dark mode (default), normal in light */
+  .partner-logo-invert {
+    filter: brightness(0) invert(1);
+  }
+
+  .light .partner-logo-invert {
+    filter: none;
+  }
+
+  /* Remove duotone on hover */
+  .group:hover .duotone {
+    filter: none;
+  }
 }
