@@ -35,6 +35,14 @@ import CloudMigrationsPage from "./pages/CloudMigrationsPage";
 import WirelessNetworksPage from "./pages/WirelessNetworksPage";
 import BusinessContinuityPage from "./pages/BusinessContinuityPage";
 import ERateServicesPage from "./pages/ERateServicesPage";
+import MilwaukeePage from "./pages/cities/MilwaukeePage";
+import MadisonPage from "./pages/cities/MadisonPage";
+import WaukeshaPage from "./pages/cities/WaukeshaPage";
+import KenoshaPage from "./pages/cities/KenoshaPage";
+import AppletonPage from "./pages/cities/AppletonPage";
+import RacinePage from "./pages/cities/RacinePage";
+import GreenBayPage from "./pages/cities/GreenBayPage";
+import OshkoshPage from "./pages/cities/OshkoshPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound.tsx";
 
