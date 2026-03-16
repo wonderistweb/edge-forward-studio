@@ -194,9 +194,12 @@ const Navbar = () => {
               </a>
             )
           )}
-          <Button variant="hero" size="sm" className="mt-4 w-full" asChild>
-            <Link to="/quote">Get a Quote</Link>
-          </Button>
+          <div className="flex items-center gap-3 mt-4">
+            <ThemeToggle />
+            <Button variant="hero" size="sm" className="flex-1" asChild>
+              <Link to="/quote">Get a Quote</Link>
+            </Button>
+          </div>
         </motion.div>
       )}
     </motion.nav>
