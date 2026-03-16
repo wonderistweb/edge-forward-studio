@@ -954,6 +954,7 @@ If you scored below 70%, I strongly recommend engaging a qualified managed servi
     category: "Networking",
     date: "2026-01-20",
     readTime: "8 min",
+    coverImage: blogWirelessNetwork,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `"We put up some access points but the WiFi still doesn't work." I hear this from new clients at least once a week. The frustration is palpable — they've spent money on equipment, paid someone to install it, and the result is a wireless network that drops connections, delivers inconsistent speeds, and can't support the device density their business requires.
 
