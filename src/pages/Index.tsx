@@ -51,7 +51,7 @@ const Index = () => {
               <div className="bg-secondary px-3 py-1.5 flex items-center gap-2 border-b border-border text-xs font-mono-display text-muted-foreground uppercase tracking-wider">
                 6GHz Heat Map Preview
               </div>
-              <img src="/src/assets/case-study-heatmap.jpg" alt="WiFi heat map" className="w-full" />
+              <img src={heatmapImage} alt="WiFi heat map" className="w-full" />
             </div>
           </div>
         </div>
