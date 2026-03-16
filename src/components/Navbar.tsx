@@ -24,9 +24,20 @@ const industryItems = [
   { label: "E-Rate Program", href: "/e-rate" },
 ];
 
+const solutionItems = [
+  { label: "Access Control & Cameras", href: "/services/access-control" },
+  { label: "Hardware & Software", href: "/services/hardware-software" },
+  { label: "Voice Services", href: "/services/voice-services" },
+  { label: "IT Audits", href: "/services/it-audits" },
+  { label: "Cloud Computing & Migrations", href: "/services/cloud-migrations" },
+  { label: "Wiring & Wireless Networks", href: "/services/wireless-networks" },
+  { label: "Business Continuity & DR", href: "/services/business-continuity" },
+  { label: "E-Rate Vendor Services", href: "/services/e-rate" },
+];
+
 const navItems = [
-  { label: "Solutions", href: "#services" },
-  { label: "Industries", href: "#", isDropdown: true },
+  { label: "Solutions", href: "#", isDropdown: true, dropdownKey: "solutions" as const },
+  { label: "Industries", href: "#", isDropdown: true, dropdownKey: "industries" as const },
   { label: "Partnerships", href: "#partnerships" },
   { label: "About", href: "/about", isRoute: true },
   { label: "Blog", href: "/blog", isRoute: true },
