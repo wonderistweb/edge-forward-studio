@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, DollarSign, Calendar, FileText, HelpCircle, BookOpen } from "lucide-react";
+import { ArrowRight, CheckCircle, DollarSign, Calendar, FileText, HelpCircle, BookOpen, Server } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
