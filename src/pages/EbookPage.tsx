@@ -130,6 +130,89 @@ Business continuity isn't about technology. It's about survival.`,
   },
   {
     number: "06",
+    title: "E-Rate & MIBs: Maximizing Federal Funding for Schools",
+    content: `The E-Rate program — formally the Schools and Libraries Universal Service Support Mechanism — provides discounts of 20% to 90% on eligible telecommunications, internet access, and internal connections for K-12 schools and libraries. It is the single largest source of federal technology funding for education, distributing approximately $4 billion annually.
+
+Yet billions of dollars go unclaimed every year because districts don't apply, make filing errors, or don't understand what's eligible. The program is powerful but complex — and the rules change regularly.
+
+## Understanding MIBs (Manufacturer Internet Broadband)
+
+**MIBs — Manufacturer Internet Broadband devices — are a critical and often misunderstood component of E-Rate Category 2 funding.** MIBs refer to the broadband equipment manufactured and supplied for internal connections, including managed internal broadband services (MIBS) that bundle equipment, installation, and management into a single eligible service.
+
+Under E-Rate rules, **Managed Internal Broadband Services (MIBS)** allow schools to procure networking equipment — switches, wireless access points, cabling, UPS systems, racks, and related infrastructure — as a managed service rather than a capital purchase. This distinction is significant for several reasons:
+
+**1. Budget Flexibility.** Instead of a large capital expenditure, districts can spread costs across the service period. MIBS contracts convert CapEx to OpEx, which is often easier to budget and approve at the school board level.
+
+**2. Inclusive Management.** MIBS contracts can include ongoing management, monitoring, maintenance, and basic tech support for the equipment — services that would otherwise need to be separately budgeted. This means your wireless access points aren't just installed and forgotten; they're actively monitored and maintained throughout the contract term.
+
+**3. Category 2 Budget Maximization.** Each school has a Category 2 budget cap (currently $167 per student, with a minimum floor of $25,000 per school). MIBS contracts allow districts to maximize this allocation by bundling eligible equipment and services into a single, discounted package.
+
+**4. Simplified Procurement.** Rather than separately bidding equipment, installation labor, and management services, MIBS consolidates everything into a single Form 470 posting and competitive bid process.
+
+## What's Eligible Under MIBS
+
+- **Wireless Access Points** (WiFi 6/6E/7) — including mounting hardware and licensing
+- **Network Switches** — managed switches for distribution and access layers
+- **Structured Cabling** — Cat6/Cat6A runs, fiber backbone, patch panels, cable management
+- **UPS/Power Protection** — battery backup for network closets and IDF rooms
+- **Racks and Enclosures** — wall-mount and floor-standing network cabinets
+- **Firewall/Content Filtering** — CIPA-compliant filtering (required for E-Rate eligibility)
+- **Installation Labor** — professional installation and configuration
+- **Basic Maintenance & Management** — monitoring, firmware updates, troubleshooting
+- **Caching Servers** — for content delivery optimization
+
+## What's NOT Eligible
+
+- End-user devices (Chromebooks, tablets, laptops)
+- Software that isn't directly tied to eligible equipment
+- Servers used for administrative purposes
+- Security cameras and physical security systems
+- Telephone systems (these fall under separate Category 1 rules)
+- Training and professional development
+
+## The MIBS Application Process
+
+**Step 1: Technology Plan Review.** Assess your current network infrastructure against educational requirements. Conduct wireless site surveys, document device density per classroom, and identify coverage gaps. This is where a qualified E-Rate consultant adds enormous value — we regularly find that districts are either over-provisioning (wasting budget) or under-provisioning (leaving students without reliable connectivity).
+
+**Step 2: Form 470 Filing.** Post your requirements to the USAC portal for competitive bidding. The 470 must be posted for a minimum of 28 days. **Critical detail:** The description of services must be detailed enough to attract qualified bidders but not so specific that it limits competition. Getting this balance right is an art form.
+
+**Step 3: Competitive Bidding.** Evaluate responses using price as the primary factor (per FCC rules), with consideration for prior experience, quality of service, and implementation timeline. All bid evaluation must be documented.
+
+**Step 4: Form 471 Filing.** Submit your funding request with selected vendor, detailed cost breakdown, and discount calculation. This form is where most errors occur — incorrect service start dates, mismatched FRNs, or ineligible line items can delay or deny funding.
+
+**Step 5: PIA Review.** USAC's Program Integrity Assurance team reviews your application. They may request additional documentation, clarification, or modifications. Response times directly impact funding timeline.
+
+**Step 6: FCDL & Implementation.** Upon approval, you receive a Funding Commitment Decision Letter. Implementation can begin (or continue, if approved for early installation). Document everything — invoices, installation photos, serial numbers, and asset tags.
+
+**Step 7: Form 486 & Invoicing.** Confirm services are being received and submit invoices for reimbursement through BEAR (Billed Entity Applicant Reimbursement) or SPI (Service Provider Invoice) methods.
+
+## Common MIBS Mistakes That Cost Districts Money
+
+**1. Not conducting a proper site survey.** Installing APs based on classroom count rather than RF analysis leads to either coverage gaps or co-channel interference. We've seen districts waste $50,000+ on APs that actively degraded network performance.
+
+**2. Ignoring the 6GHz band.** WiFi 6E access points operating on the 6GHz band provide cleaner spectrum with less interference — critical for high-density educational environments. Districts still deploying WiFi 5 are buying equipment that will be obsolete before the E-Rate funding cycle ends.
+
+**3. Failing to document cost allocation.** If a MIBS contract includes any ineligible components, the entire contract can be denied. Proper cost allocation separating eligible and ineligible items is essential.
+
+**4. Missing the filing window.** E-Rate operates on a strict annual cycle. Missing the Form 470 posting window by even one day means waiting an entire year for funding.
+
+**5. Not leveraging the Category 2 budget reset.** Category 2 budgets reset every five years. Districts that don't track their budget utilization leave money on the table.
+
+## How Modern Edge Handles E-Rate MIBS
+
+We've secured over **$12 million in E-Rate funding** for K-12 districts. Our process:
+
+- **Free eligibility assessment** — we determine your discount rate and Category 2 budget before you commit to anything
+- **Predictive wireless design** — Ekahau-based heat mapping ensures every AP is placed for optimal coverage, not just convenience
+- **Full application management** — we handle Forms 470, 471, 486, and all PIA responses
+- **MIBS contract structuring** — we structure proposals to maximize eligible services while maintaining compliance
+- **Post-funding support** — ongoing network monitoring and management included in MIBS contracts
+- **Audit preparation** — complete documentation packages ready for USAC compliance audits
+
+The bottom line: if your district has students, you almost certainly qualify for E-Rate funding. The only question is whether you're capturing the full value available to you.`,
+  },
+  {
+    number: "07",
     title: "Building Your Technology Roadmap",
     content: `Technology should be a strategic asset — not an afterthought. Yet most organizations make technology decisions reactively: buying whatever is cheapest when something breaks, adopting software because a vendor gave a compelling demo, or investing in infrastructure that solves today's problem but creates tomorrow's bottleneck.
 
