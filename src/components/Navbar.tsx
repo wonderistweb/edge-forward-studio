@@ -84,20 +84,21 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) =>
-            item.isDropdown ? (
+          {navItems.map((item) => {
+            const dropdownItems = item.dropdownKey === "solutions" ? solutionItems : item.dropdownKey === "industries" ? industryItems : [];
+            return item.isDropdown ? (
               <div
                 key={item.label}
                 className="relative"
-                onMouseEnter={() => setIndustriesOpen(true)}
-                onMouseLeave={() => setIndustriesOpen(false)}
+                onMouseEnter={() => setOpenDropdown(item.dropdownKey!)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider transition-colors duration-250 snap-curve">
                   {item.label}
-                  <ChevronDown size={14} className={`transition-transform duration-200 ${industriesOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown size={14} className={`transition-transform duration-200 ${openDropdown === item.dropdownKey ? "rotate-180" : ""}`} />
                 </button>
                 <AnimatePresence>
-                  {industriesOpen && (
+                  {openDropdown === item.dropdownKey && (
                     <motion.div
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -105,11 +106,11 @@ const Navbar = () => {
                       transition={{ duration: 0.15 }}
                       className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-card border border-border shadow-xl grid grid-cols-2"
                     >
-                      {industryItems.map((sub) => (
+                      {dropdownItems.map((sub) => (
                         <Link
                           key={sub.label}
                           to={sub.href}
-                          onClick={() => setIndustriesOpen(false)}
+                          onClick={() => setOpenDropdown(null)}
                           className="block px-5 py-3 text-sm font-mono-display uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-150 border-b border-border"
                         >
                           {sub.label}
