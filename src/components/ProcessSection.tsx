@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import needsAnalysis1 from "@/assets/needs-analysis-1.jpg";
+import markConsultation from "@/assets/mark-consultation.png";
 import needsAnalysis2 from "@/assets/needs-analysis-2.jpg";
 
 const ProcessSection = () => {
@@ -29,8 +29,8 @@ const ProcessSection = () => {
             className="relative bg-card overflow-hidden group"
           >
             <img
-              src={needsAnalysis1}
-              alt="Technology needs analysis consultation in a modern conference room"
+              src={markConsultation}
+              alt="Mark consulting with a client about their technology needs"
               className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500 snap-curve"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
