@@ -15,6 +15,7 @@ import EratePage from "./pages/EratePage.tsx";
 import AdsPage from "./pages/AdsPage.tsx";
 import EmailsPage from "./pages/EmailsPage.tsx";
 import EbookPage from "./pages/EbookPage.tsx";
+import CaseStudyPage from "./pages/CaseStudyPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/marketing/ads" element={<AdsPage />} />
           <Route path="/marketing/emails" element={<EmailsPage />} />
           <Route path="/marketing/ebook" element={<EbookPage />} />
+          <Route path="/case-study/school-wifi-redesign" element={<CaseStudyPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
