@@ -48,6 +48,9 @@ const ProcessSection = () => {
               <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
                 We sit down with your team to understand your infrastructure, pain points, and growth objectives — building a comprehensive technology roadmap.
               </p>
+              <Button asChild variant="hero" size="sm" className="mt-4 w-fit">
+                <Link to="/quote">Get Started <ArrowRight className="ml-1" /></Link>
+              </Button>
             </div>
           </motion.div>
 
