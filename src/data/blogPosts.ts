@@ -792,6 +792,7 @@ The investment in business continuity isn't about technology. It's about surviva
     category: "IT Audits",
     date: "2026-01-28",
     readTime: "9 min",
+    coverImage: blogInfrastructureAudit,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `An IT infrastructure audit isn't about finding blame — it's about finding clarity. In over twenty years of consulting, I've walked into hundreds of server rooms, wiring closets, and network environments. The pattern is remarkably consistent: most business owners have no idea what's actually running on their network, how old their equipment is, where their biggest vulnerabilities lie, or whether their infrastructure can support their growth plans for the next three years.
 
