@@ -432,6 +432,7 @@ I strongly recommend the proactive path.`
     category: "Cybersecurity",
     date: "2026-02-15",
     readTime: "10 min",
+    coverImage: blogRansomware,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `Ransomware is no longer just a threat to large enterprises. In 2025, 67% of ransomware attacks targeted businesses with fewer than 100 employees. The average ransom demand exceeded $1.5 million — and paying doesn't guarantee recovery. In fact, organizations that pay the ransom recover only 65% of their data on average, and 80% of organizations that pay are attacked again within 12 months.
 
