@@ -10,7 +10,15 @@ const industryItems = [
   { label: "Libraries", href: "/industries/libraries" },
   { label: "Hospitality", href: "/industries/hospitality" },
   { label: "Corporate", href: "/industries/corporate" },
-  { label: "Custom", href: "/industries/custom" },
+  { label: "Healthcare", href: "/industries/healthcare" },
+  { label: "Manufacturing", href: "/industries/manufacturing" },
+  { label: "Retail", href: "/industries/retail" },
+  { label: "Government", href: "/industries/government" },
+  { label: "Non-Profit", href: "/industries/non-profit" },
+  { label: "Legal", href: "/industries/legal" },
+  { label: "Financial Services", href: "/industries/financial-services" },
+  { label: "Real Estate", href: "/industries/real-estate" },
+  { label: "Custom Solutions", href: "/industries/custom" },
   { label: "E-Rate Program", href: "/e-rate" },
 ];
 
