@@ -47,8 +47,8 @@ const navItems = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [industriesOpen, setIndustriesOpen] = useState(false);
-  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const location = useLocation();
   const { theme } = useTheme();
 
