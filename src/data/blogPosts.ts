@@ -114,6 +114,7 @@ I've watched it happen dozens of times. Don't let it happen to you.`
     category: "Cybersecurity",
     date: "2026-03-05",
     readTime: "9 min",
+    coverImage: blogZeroTrust,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `"Never trust, always verify." This simple principle is revolutionizing how organizations protect their digital assets — and it's no longer just for Fortune 500 companies. In my twenty-plus years in enterprise IT, I have never seen a security paradigm shift this fast or this necessary. The traditional castle-and-moat approach to network security isn't just outdated — it's actively dangerous.
 
