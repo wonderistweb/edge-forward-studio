@@ -1,7 +1,9 @@
 import CityPage from "@/components/CityPage";
 import type { CityPageData } from "@/components/CityPage";
+import heroImage from "@/assets/cities/greenbay.jpg";
 
 const data: CityPageData = {
+  heroImage,
   city: "Green Bay",
   region: "Brown County & Northeast Wisconsin",
   metaDescription: "Modern Edge Technology provides managed IT services, cybersecurity, and cloud solutions to businesses in Green Bay, WI and Brown County.",

@@ -1,7 +1,9 @@
 import CityPage from "@/components/CityPage";
 import type { CityPageData } from "@/components/CityPage";
+import heroImage from "@/assets/cities/waukesha.jpg";
 
 const data: CityPageData = {
+  heroImage,
   city: "Waukesha",
   region: "Waukesha County",
   metaDescription: "Modern Edge Technology provides managed IT services, cybersecurity, and cloud solutions to businesses in Waukesha, WI and Waukesha County.",

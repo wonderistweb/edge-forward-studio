@@ -1,7 +1,9 @@
 import CityPage from "@/components/CityPage";
 import type { CityPageData } from "@/components/CityPage";
+import heroImage from "@/assets/cities/milwaukee.jpg";
 
 const data: CityPageData = {
+  heroImage,
   city: "Milwaukee",
   region: "Milwaukee Metro Area",
   metaDescription: "Modern Edge Technology provides managed IT services, cybersecurity, cloud solutions, and network infrastructure to businesses in Milwaukee, WI.",

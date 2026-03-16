@@ -1,7 +1,9 @@
 import CityPage from "@/components/CityPage";
 import type { CityPageData } from "@/components/CityPage";
+import heroImage from "@/assets/cities/racine.jpg";
 
 const data: CityPageData = {
+  heroImage,
   city: "Racine",
   region: "Racine County & Southeast Wisconsin",
   metaDescription: "Modern Edge Technology delivers managed IT services, cybersecurity, and cloud solutions to businesses in Racine, WI and Racine County.",
