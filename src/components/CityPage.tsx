@@ -45,7 +45,17 @@ const CityPage = ({ data }: { data: CityPageData }) => {
       <FloatingMarketingMenu />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-24 border-b border-border">
+      <section className="relative pt-32 pb-24 border-b border-border overflow-hidden">
+        {/* Parallax city image */}
+        <div className="absolute inset-0 -top-20 -bottom-20">
+          <img
+            src={data.heroImage}
+            alt={`${data.city} Wisconsin cityscape`}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-background/80" />
+          <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
+        </div>
         <div className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `linear-gradient(hsl(var(--border)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px)`,
