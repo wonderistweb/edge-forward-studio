@@ -297,7 +297,7 @@ const EbookPage = () => {
               <div>
                 <div className="text-sm font-medium text-foreground">Mark Duerwachter</div>
                 <div className="text-xs text-muted-foreground">VP of Business Operations, Modern Edge Technology</div>
-                <div className="text-xs text-muted-foreground mt-1">6 Chapters · 25 minute read</div>
+                <div className="text-xs text-muted-foreground mt-1">7 Chapters · 35 minute read</div>
               </div>
             </div>
           </motion.div>
