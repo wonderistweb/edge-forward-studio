@@ -57,6 +57,57 @@ const Index = () => {
         </div>
       </section>
 
+      {/* E-Rate CTA */}
+      <section className="py-20 border-t border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-mono-display uppercase tracking-wider px-3 py-1 mb-6">
+                <DollarSign size={14} /> Federal Funding Program
+              </div>
+              <h2 className="text-3xl font-medium uppercase">E-Rate: Up to 90% Off School & Library Technology</h2>
+              <p className="text-muted-foreground mt-4 leading-relaxed">
+                Billions in federal funding go unclaimed every year. We help K-12 schools and public libraries secure 20-90% discounts on WiFi, networking, cabling, and internet services through the E-Rate program.
+              </p>
+              <ul className="space-y-3 mt-6">
+                {[
+                  "$12M+ in E-Rate funding secured",
+                  "98% application approval rate",
+                  "Full lifecycle management — Forms 470, 471, 486",
+                  "MIBS contract structuring for maximum coverage",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <CheckCircle className="text-primary shrink-0 mt-0.5" size={16} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-4 mt-8">
+                <Button variant="hero" size="lg" asChild>
+                  <Link to="/e-rate">
+                    Check Your Eligibility
+                    <ArrowRight className="ml-2" size={16} />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-px bg-border">
+              {[
+                { value: "$167", unit: "/student", label: "Category 2 Budget (Schools)" },
+                { value: "$2.39", unit: "/sq ft", label: "Category 2 Budget (Libraries)" },
+                { value: "90%", unit: "max", label: "Discount Rate" },
+                { value: "150+", unit: "served", label: "Schools & Libraries" },
+              ].map((stat) => (
+                <div key={stat.label} className="bg-card p-6 text-center">
+                  <div className="text-2xl font-mono-display font-semibold text-primary">{stat.value}<span className="text-sm text-muted-foreground font-normal">{stat.unit}</span></div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mt-2">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Blog CTA */}
       <section className="py-20 border-t border-border">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
