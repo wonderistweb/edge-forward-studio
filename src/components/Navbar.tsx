@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const industryItems = [
@@ -27,12 +27,24 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleHashClick = (href: string) => {
+    setMobileOpen(false);
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+    } else {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <motion.nav
@@ -75,6 +87,7 @@ const Navbar = () => {
                         <Link
                           key={sub.label}
                           to={sub.href}
+                          onClick={() => setIndustriesOpen(false)}
                           className="block px-5 py-3 text-sm font-mono-display uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-150 border-b border-border last:border-b-0"
                         >
                           {sub.label}
@@ -93,13 +106,13 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ) : (
-              <a
+              <button
                 key={item.label}
-                href={item.href}
+                onClick={() => handleHashClick(item.href)}
                 className="text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider transition-colors duration-250 snap-curve"
               >
                 {item.label}
-              </a>
+              </button>
             )
           )}
           <Button variant="hero" size="sm" asChild>
@@ -158,14 +171,13 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ) : (
-              <a
+              <button
                 key={item.label}
-                href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="block py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
+                onClick={() => handleHashClick(item.href)}
+                className="block w-full text-left py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
               >
                 {item.label}
-              </a>
+              </button>
             )
           )}
           <Button variant="hero" size="sm" className="mt-4 w-full" asChild>
