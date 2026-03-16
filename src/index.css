@@ -168,6 +168,15 @@
     filter: none;
   }
 
+  /* Nav logo: white in dark mode, purple in light mode */
+  .nav-logo {
+    filter: brightness(0) invert(1);
+  }
+
+  .light .nav-logo {
+    filter: brightness(0) sepia(1) saturate(10) hue-rotate(240deg);
+  }
+
   /* Remove duotone on hover */
   .group:hover .duotone {
     filter: none;
