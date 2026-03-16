@@ -57,8 +57,8 @@ const ProcessSection = () => {
             className="relative bg-card overflow-hidden group"
           >
             <img
-              src={needsAnalysis2}
-              alt="Infrastructure audit in a server room"
+              src={markConsultation2}
+              alt="Mark discussing infrastructure with a client"
               className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500 snap-curve"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
