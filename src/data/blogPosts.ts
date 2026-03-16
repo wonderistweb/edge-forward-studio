@@ -1,3 +1,14 @@
+import blogManagedIt from "@/assets/blog/managed-it.jpg";
+import blogZeroTrust from "@/assets/blog/zero-trust.jpg";
+import blogCloudMigration from "@/assets/blog/cloud-migration.jpg";
+import blogVoip from "@/assets/blog/voip.jpg";
+import blogRansomware from "@/assets/blog/ransomware.jpg";
+import blogErate from "@/assets/blog/erate.jpg";
+import blogBusinessContinuity from "@/assets/blog/business-continuity.jpg";
+import blogInfrastructureAudit from "@/assets/blog/infrastructure-audit.jpg";
+import blogWirelessNetwork from "@/assets/blog/wireless-network.jpg";
+import blogAccessControl from "@/assets/blog/access-control.jpg";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -5,6 +16,7 @@ export interface BlogPost {
   category: string;
   date: string;
   readTime: string;
+  coverImage: string;
   author: {
     name: string;
     role: string;
