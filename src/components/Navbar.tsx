@@ -24,9 +24,20 @@ const industryItems = [
   { label: "E-Rate Program", href: "/e-rate" },
 ];
 
+const solutionItems = [
+  { label: "Access Control & Cameras", href: "/services/access-control" },
+  { label: "Hardware & Software", href: "/services/hardware-software" },
+  { label: "Voice Services", href: "/services/voice-services" },
+  { label: "IT Audits", href: "/services/it-audits" },
+  { label: "Cloud Computing & Migrations", href: "/services/cloud-migrations" },
+  { label: "Wiring & Wireless Networks", href: "/services/wireless-networks" },
+  { label: "Business Continuity & DR", href: "/services/business-continuity" },
+  { label: "E-Rate Vendor Services", href: "/services/e-rate" },
+];
+
 const navItems = [
-  { label: "Solutions", href: "#services" },
-  { label: "Industries", href: "#", isDropdown: true },
+  { label: "Solutions", href: "#", isDropdown: true, dropdownKey: "solutions" as const },
+  { label: "Industries", href: "#", isDropdown: true, dropdownKey: "industries" as const },
   { label: "Partnerships", href: "#partnerships" },
   { label: "About", href: "/about", isRoute: true },
   { label: "Blog", href: "/blog", isRoute: true },
@@ -36,8 +47,8 @@ const navItems = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [industriesOpen, setIndustriesOpen] = useState(false);
-  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const location = useLocation();
   const { theme } = useTheme();
 
@@ -73,20 +84,21 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) =>
-            item.isDropdown ? (
+          {navItems.map((item) => {
+            const dropdownItems = item.dropdownKey === "solutions" ? solutionItems : item.dropdownKey === "industries" ? industryItems : [];
+            return item.isDropdown ? (
               <div
                 key={item.label}
                 className="relative"
-                onMouseEnter={() => setIndustriesOpen(true)}
-                onMouseLeave={() => setIndustriesOpen(false)}
+                onMouseEnter={() => setOpenDropdown(item.dropdownKey!)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider transition-colors duration-250 snap-curve">
                   {item.label}
-                  <ChevronDown size={14} className={`transition-transform duration-200 ${industriesOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown size={14} className={`transition-transform duration-200 ${openDropdown === item.dropdownKey ? "rotate-180" : ""}`} />
                 </button>
                 <AnimatePresence>
-                  {industriesOpen && (
+                  {openDropdown === item.dropdownKey && (
                     <motion.div
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -94,11 +106,11 @@ const Navbar = () => {
                       transition={{ duration: 0.15 }}
                       className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-card border border-border shadow-xl grid grid-cols-2"
                     >
-                      {industryItems.map((sub) => (
+                      {dropdownItems.map((sub) => (
                         <Link
                           key={sub.label}
                           to={sub.href}
-                          onClick={() => setIndustriesOpen(false)}
+                          onClick={() => setOpenDropdown(null)}
                           className="block px-5 py-3 text-sm font-mono-display uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-150 border-b border-border"
                         >
                           {sub.label}
@@ -125,8 +137,8 @@ const Navbar = () => {
               >
                 {item.label}
               </a>
-            )
-          )}
+            );
+          })}
           <ThemeToggle />
           <Button variant="hero" size="sm" asChild>
             <Link to="/quote">Get a Quote</Link>
@@ -149,19 +161,20 @@ const Navbar = () => {
           animate={{ opacity: 1, height: "auto" }}
           className="md:hidden bg-background border-b border-border px-6 pb-6"
         >
-          {navItems.map((item) =>
-            item.isDropdown ? (
+          {navItems.map((item) => {
+            const dropdownItems = item.dropdownKey === "solutions" ? solutionItems : item.dropdownKey === "industries" ? industryItems : [];
+            return item.isDropdown ? (
               <div key={item.label}>
                 <button
-                  onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+                  onClick={() => setMobileDropdown(mobileDropdown === item.dropdownKey ? null : item.dropdownKey!)}
                   className="flex items-center justify-between w-full py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
                 >
                   {item.label}
-                  <ChevronDown size={14} className={`transition-transform duration-200 ${mobileIndustriesOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown size={14} className={`transition-transform duration-200 ${mobileDropdown === item.dropdownKey ? "rotate-180" : ""}`} />
                 </button>
-                {mobileIndustriesOpen && (
+                {mobileDropdown === item.dropdownKey && (
                   <div className="pl-4 border-b border-border">
-                    {industryItems.map((sub) => (
+                    {dropdownItems.map((sub) => (
                       <Link
                         key={sub.label}
                         to={sub.href}
@@ -192,8 +205,8 @@ const Navbar = () => {
               >
                 {item.label}
               </a>
-            )
-          )}
+            );
+          })}
           <div className="flex items-center gap-3 mt-4">
             <ThemeToggle />
             <Button variant="hero" size="sm" className="flex-1" asChild>

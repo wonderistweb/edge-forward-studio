@@ -27,6 +27,14 @@ import LegalPage from "./pages/LegalPage.tsx";
 import FinancialServicesPage from "./pages/FinancialServicesPage.tsx";
 import RealEstatePage from "./pages/RealEstatePage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
+import AccessControlPage from "./pages/AccessControlPage";
+import HardwareSoftwarePage from "./pages/HardwareSoftwarePage";
+import VoiceServicesPage from "./pages/VoiceServicesPage";
+import ITAuditsPage from "./pages/ITAuditsPage";
+import CloudMigrationsPage from "./pages/CloudMigrationsPage";
+import WirelessNetworksPage from "./pages/WirelessNetworksPage";
+import BusinessContinuityPage from "./pages/BusinessContinuityPage";
+import ERateServicesPage from "./pages/ERateServicesPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -64,6 +72,14 @@ const App = () => (
           <Route path="/industries/real-estate" element={<RealEstatePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/services/access-control" element={<AccessControlPage />} />
+          <Route path="/services/hardware-software" element={<HardwareSoftwarePage />} />
+          <Route path="/services/voice-services" element={<VoiceServicesPage />} />
+          <Route path="/services/it-audits" element={<ITAuditsPage />} />
+          <Route path="/services/cloud-migrations" element={<CloudMigrationsPage />} />
+          <Route path="/services/wireless-networks" element={<WirelessNetworksPage />} />
+          <Route path="/services/business-continuity" element={<BusinessContinuityPage />} />
+          <Route path="/services/e-rate" element={<ERateServicesPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
