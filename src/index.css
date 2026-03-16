@@ -158,4 +158,18 @@
   .section-primary-tint {
     background-color: hsl(var(--primary) / 0.04);
   }
+
+  /* Invert partner logos in dark mode (default), normal in light */
+  .partner-logo-invert {
+    filter: brightness(0) invert(1);
+  }
+
+  .light .partner-logo-invert {
+    filter: none;
+  }
+
+  /* Remove duotone on hover */
+  .group:hover .duotone {
+    filter: none;
+  }
 }
