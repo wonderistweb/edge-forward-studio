@@ -135,9 +135,20 @@ const CustomPage = () => {
             <h2 className="text-3xl font-medium uppercase mt-3">Industries we've served</h2>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
-            {["Healthcare", "Manufacturing", "Retail", "Government", "Non-Profit", "Legal", "Financial Services", "Real Estate"].map((industry) => (
-              <motion.div key={industry} className="bg-card p-6 text-center" {...fade}>
-                <span className="font-mono-display text-sm uppercase tracking-wider text-muted-foreground">{industry}</span>
+            {[
+              { name: "Healthcare", path: "/industries/healthcare" },
+              { name: "Manufacturing", path: "/industries/manufacturing" },
+              { name: "Retail", path: "/industries/retail" },
+              { name: "Government", path: "/industries/government" },
+              { name: "Non-Profit", path: "/industries/non-profit" },
+              { name: "Legal", path: "/industries/legal" },
+              { name: "Financial Services", path: "/industries/financial-services" },
+              { name: "Real Estate", path: "/industries/real-estate" },
+            ].map((industry) => (
+              <motion.div key={industry.name} className="bg-card p-6 text-center" {...fade}>
+                <Link to={industry.path} className="font-mono-display text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors">
+                  {industry.name}
+                </Link>
               </motion.div>
             ))}
           </div>

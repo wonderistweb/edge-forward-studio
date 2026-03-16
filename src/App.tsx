@@ -18,6 +18,14 @@ import EbookPage from "./pages/EbookPage.tsx";
 import CaseStudyPage from "./pages/CaseStudyPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import LibrariesPage from "./pages/LibrariesPage.tsx";
+import HealthcarePage from "./pages/HealthcarePage.tsx";
+import ManufacturingPage from "./pages/ManufacturingPage.tsx";
+import RetailPage from "./pages/RetailPage.tsx";
+import GovernmentPage from "./pages/GovernmentPage.tsx";
+import NonProfitPage from "./pages/NonProfitPage.tsx";
+import LegalPage from "./pages/LegalPage.tsx";
+import FinancialServicesPage from "./pages/FinancialServicesPage.tsx";
+import RealEstatePage from "./pages/RealEstatePage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -43,6 +51,14 @@ const App = () => (
           <Route path="/marketing/emails" element={<EmailsPage />} />
           <Route path="/marketing/ebook" element={<EbookPage />} />
           <Route path="/case-study/school-wifi-redesign" element={<CaseStudyPage />} />
+          <Route path="/industries/healthcare" element={<HealthcarePage />} />
+          <Route path="/industries/manufacturing" element={<ManufacturingPage />} />
+          <Route path="/industries/retail" element={<RetailPage />} />
+          <Route path="/industries/government" element={<GovernmentPage />} />
+          <Route path="/industries/non-profit" element={<NonProfitPage />} />
+          <Route path="/industries/legal" element={<LegalPage />} />
+          <Route path="/industries/financial-services" element={<FinancialServicesPage />} />
+          <Route path="/industries/real-estate" element={<RealEstatePage />} />
           <Route path="/about" element={<AboutPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
