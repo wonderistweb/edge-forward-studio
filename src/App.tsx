@@ -16,6 +16,7 @@ import AdsPage from "./pages/AdsPage.tsx";
 import EmailsPage from "./pages/EmailsPage.tsx";
 import EbookPage from "./pages/EbookPage.tsx";
 import CaseStudyPage from "./pages/CaseStudyPage.tsx";
+import AboutPage from "./pages/AboutPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
