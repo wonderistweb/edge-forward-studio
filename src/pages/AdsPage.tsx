@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Search, ThumbsUp, MessageSquare, Share2, MoreHorizontal, Globe, Heart, Send, Bookmark, MapPin } from "lucide-react";
+import { ArrowLeft, Search, ThumbsUp, MessageSquare, Share2, MoreHorizontal, Globe, Heart, Send, Bookmark, MapPin, Filter } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
