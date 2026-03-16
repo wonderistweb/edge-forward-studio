@@ -17,7 +17,7 @@ const navItems = [
   { label: "Solutions", href: "#services" },
   { label: "Industries", href: "#", isDropdown: true },
   { label: "Partnerships", href: "#partnerships" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about", isRoute: true },
   { label: "Blog", href: "/blog", isRoute: true },
   { label: "Contact", href: "#contact" },
 ];
