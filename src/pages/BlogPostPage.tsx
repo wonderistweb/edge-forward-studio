@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import markPhoto from "@/assets/mark-duerwachter.jpg";
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
