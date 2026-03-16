@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import markConsultation from "@/assets/mark-consultation.png";
 import infrastructureAudit from "@/assets/infrastructure-audit.jpg";
 
