@@ -4,6 +4,8 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
+import ThemeToggle from "@/components/ThemeToggle";
+import { useTheme } from "@/hooks/use-theme";
 
 const industryItems = [
   { label: "Education (K-12)", href: "/industries/education" },
@@ -37,6 +39,7 @@ const Navbar = () => {
   const [industriesOpen, setIndustriesOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const location = useLocation();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -65,7 +68,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Modern Edge Technology" className="h-10 w-auto brightness-0 invert" />
+          <img src={logo} alt="Modern Edge Technology" className={`h-10 w-auto ${theme === "dark" ? "brightness-0 invert" : ""}`} />
         </Link>
 
         {/* Desktop Nav */}
@@ -124,6 +127,7 @@ const Navbar = () => {
               </a>
             )
           )}
+          <ThemeToggle />
           <Button variant="hero" size="sm" asChild>
             <Link to="/quote">Get a Quote</Link>
           </Button>
@@ -190,9 +194,12 @@ const Navbar = () => {
               </a>
             )
           )}
-          <Button variant="hero" size="sm" className="mt-4 w-full" asChild>
-            <Link to="/quote">Get a Quote</Link>
-          </Button>
+          <div className="flex items-center gap-3 mt-4">
+            <ThemeToggle />
+            <Button variant="hero" size="sm" className="flex-1" asChild>
+              <Link to="/quote">Get a Quote</Link>
+            </Button>
+          </div>
         </motion.div>
       )}
     </motion.nav>
