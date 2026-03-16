@@ -137,8 +137,8 @@ const Navbar = () => {
               >
                 {item.label}
               </a>
-            )
-          )}
+            );
+          })}
           <ThemeToggle />
           <Button variant="hero" size="sm" asChild>
             <Link to="/quote">Get a Quote</Link>
