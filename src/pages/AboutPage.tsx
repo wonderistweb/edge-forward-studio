@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
 import markPhoto from "@/assets/mark-duerwachter.jpg";
 import markConsultation from "@/assets/mark-consultation.png";
+import markConsultation3 from "@/assets/mark-consultation-3.png";
 
 const fade = {
   initial: { opacity: 0, y: 24 },
