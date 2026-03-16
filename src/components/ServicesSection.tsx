@@ -84,24 +84,26 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
   const Icon = service.icon;
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.05, duration: 0.5 }}
-      className="group bg-card p-8 border-t-2 border-t-transparent hover:border-t-primary transition-all duration-250 snap-curve relative hover:bg-card-hover"
-    >
-      <div className="flex items-start justify-between mb-6">
-        <Icon size={24} strokeWidth={1.5} className="text-muted-foreground group-hover:text-primary transition-colors duration-250" />
-        <ArrowUpRight size={16} strokeWidth={1.5} className="text-muted-foreground/0 group-hover:text-primary group-hover:rotate-45 transition-all duration-250" />
-      </div>
-      <h3 className="text-base font-mono-display font-medium uppercase tracking-tight mb-3">
-        {service.title}
-      </h3>
-      <p className="text-sm text-muted-foreground leading-relaxed">
-        {service.description}
-      </p>
-    </motion.div>
+    <Link to={service.href}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.05, duration: 0.5 }}
+        className="group bg-card p-8 border-t-2 border-t-transparent hover:border-t-primary transition-all duration-250 snap-curve relative hover:bg-card-hover h-full"
+      >
+        <div className="flex items-start justify-between mb-6">
+          <Icon size={24} strokeWidth={1.5} className="text-muted-foreground group-hover:text-primary transition-colors duration-250" />
+          <ArrowUpRight size={16} strokeWidth={1.5} className="text-muted-foreground/0 group-hover:text-primary group-hover:rotate-45 transition-all duration-250" />
+        </div>
+        <h3 className="text-base font-mono-display font-medium uppercase tracking-tight mb-3">
+          {service.title}
+        </h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          {service.description}
+        </p>
+      </motion.div>
+    </Link>
   );
 };
 
