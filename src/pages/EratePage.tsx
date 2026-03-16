@@ -29,28 +29,13 @@ const EratePage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero */}
-      <section className="pt-16 border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Federal Funding Program</span>
-            <h1 className="text-4xl md:text-6xl font-medium uppercase mt-3 max-w-4xl">
-              E-Rate: Up to 90% Funding for School & Library Technology
-            </h1>
-            <p className="text-muted-foreground mt-6 max-w-2xl text-lg leading-relaxed">
-              The E-Rate program (Schools and Libraries Universal Service Support Mechanism) has distributed over $50 billion since 1997. We help institutions maximize their funding and navigate the complex application process.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-8">
-              <Button variant="hero" size="lg" asChild>
-                <Link to="/quote">Check Your Eligibility<ArrowRight className="ml-2" size={16} /></Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="#how-it-works">Learn How It Works<ArrowRight className="ml-2" size={16} /></a>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <IndustryHero
+        image={heroImg}
+        title="E-Rate: Up to 90% Funding for School & Library Technology"
+        description="The E-Rate program (Schools and Libraries Universal Service Support Mechanism) has distributed over $50 billion since 1997. We help institutions maximize their funding and navigate the complex application process."
+        primaryCta={{ label: "Check Your Eligibility", to: "/quote" }}
+        secondaryCta={{ label: "Learn How It Works", to: "#how-it-works" }}
+      />
 
       {/* What E-Rate Covers */}
       <section className="border-b border-border py-24">
