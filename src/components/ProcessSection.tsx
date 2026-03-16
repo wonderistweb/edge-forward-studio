@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import markConsultation from "@/assets/mark-consultation.png";
-import needsAnalysis2 from "@/assets/needs-analysis-2.jpg";
+import markConsultation2 from "@/assets/mark-consultation-2.png";
 
 const ProcessSection = () => {
   return (
