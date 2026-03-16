@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import markConsultation from "@/assets/mark-consultation.png";
 import infrastructureAudit from "@/assets/infrastructure-audit.jpg";
 
@@ -45,6 +48,9 @@ const ProcessSection = () => {
               <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
                 We sit down with your team to understand your infrastructure, pain points, and growth objectives — building a comprehensive technology roadmap.
               </p>
+              <Button asChild variant="hero" size="sm" className="mt-4 w-fit">
+                <Link to="/quote">Get Started <ArrowRight className="ml-1" /></Link>
+              </Button>
             </div>
           </motion.div>
 
@@ -73,6 +79,9 @@ const ProcessSection = () => {
               <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
                 Our engineers perform a hands-on evaluation of your existing systems, identifying vulnerabilities and optimization opportunities.
               </p>
+              <Button asChild variant="hero" size="sm" className="mt-4 w-fit">
+                <Link to="/quote">Get Started <ArrowRight className="ml-1" /></Link>
+              </Button>
             </div>
           </motion.div>
         </div>
