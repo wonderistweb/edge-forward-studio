@@ -75,7 +75,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-muted-foreground text-lg leading-relaxed max-w-lg mb-10">
-            Managed IT, Cybersecurity, and Cloud Operations for businesses across Milwaukee and Southern Wisconsin — built for firms that cannot afford a millisecond of downtime.
+            Managed IT, Cybersecurity, and Cloud Operations for businesses across Milwaukee and Southern Wisconsin — built for companies that cannot afford a millisecond of downtime.
           </p>
 
           <div className="flex flex-wrap gap-4">
