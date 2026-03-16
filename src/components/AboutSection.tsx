@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import markPhoto from "@/assets/mark-duerwachter.jpg";
+import markPhoto from "@/assets/mark-hero.png";
 
 const AboutSection = () => {
   return (
@@ -64,15 +64,15 @@ const AboutSection = () => {
             The people behind the infrastructure
           </h3>
 
-          <div className="grid md:grid-cols-2 gap-px bg-border max-w-3xl">
+          <div className="grid md:grid-cols-2 gap-px bg-border">
             <div className="bg-card p-0">
               <img
                 src={markPhoto}
                 alt="Mark Duerwachter, Vice President of Business Operations"
-                className="w-full aspect-square object-cover object-top"
+                className="w-full aspect-[3/4] object-cover object-top"
               />
             </div>
-            <div className="bg-card p-8 flex flex-col justify-center">
+            <div className="bg-card p-8 md:p-12 flex flex-col justify-center">
               <h4 className="text-xl font-mono-display font-medium uppercase tracking-tight">
                 Mark Duerwachter
               </h4>

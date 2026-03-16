@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import heroBg from "@/assets/mark-hero.png";
+import heroBg from "@/assets/mark-consultation-3.png";
 
 const HeroSection = () => {
   const [uptime, setUptime] = useState(99.997);
@@ -54,7 +54,7 @@ const HeroSection = () => {
       {/* Accent line */}
       <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-primary/0 via-primary/30 to-primary/0 animate-pulse-line" />
 
-      <div className="relative w-full max-w-[1920px] mx-auto px-6 py-32 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2 gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
