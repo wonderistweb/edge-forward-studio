@@ -161,19 +161,20 @@ const Navbar = () => {
           animate={{ opacity: 1, height: "auto" }}
           className="md:hidden bg-background border-b border-border px-6 pb-6"
         >
-          {navItems.map((item) =>
-            item.isDropdown ? (
+          {navItems.map((item) => {
+            const dropdownItems = item.dropdownKey === "solutions" ? solutionItems : item.dropdownKey === "industries" ? industryItems : [];
+            return item.isDropdown ? (
               <div key={item.label}>
                 <button
-                  onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+                  onClick={() => setMobileDropdown(mobileDropdown === item.dropdownKey ? null : item.dropdownKey!)}
                   className="flex items-center justify-between w-full py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
                 >
                   {item.label}
-                  <ChevronDown size={14} className={`transition-transform duration-200 ${mobileIndustriesOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown size={14} className={`transition-transform duration-200 ${mobileDropdown === item.dropdownKey ? "rotate-180" : ""}`} />
                 </button>
-                {mobileIndustriesOpen && (
+                {mobileDropdown === item.dropdownKey && (
                   <div className="pl-4 border-b border-border">
-                    {industryItems.map((sub) => (
+                    {dropdownItems.map((sub) => (
                       <Link
                         key={sub.label}
                         to={sub.href}
