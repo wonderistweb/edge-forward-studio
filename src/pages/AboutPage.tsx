@@ -178,21 +178,34 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Philosophy Quote */}
+      {/* Behind the Scenes */}
       <section className="py-20 border-b border-border">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div {...fade}>
-            <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed text-foreground">
-              "Technology should be the easiest part of running your business. If it's not, you have the wrong partner."
-            </blockquote>
-            <div className="flex items-center justify-center gap-4 mt-8">
-              <img src={markPhoto} alt="Mark Duerwachter" className="w-12 h-12 rounded-full object-cover border border-border" />
-              <div className="text-left">
-                <div className="text-sm font-medium">Mark Duerwachter</div>
-                <div className="text-xs text-muted-foreground">VP of Business Operations</div>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-px bg-border">
+            <motion.div className="bg-card overflow-hidden" {...fade}>
+              <img
+                src={markConsultation}
+                alt="Mark consulting with a client about their IT infrastructure"
+                className="w-full h-full object-cover min-h-[350px]"
+              />
+            </motion.div>
+            <motion.div className="bg-card p-8 lg:p-12 flex flex-col justify-center" {...fade}>
+              <span className="text-xs font-mono-display text-primary uppercase tracking-wider">Behind the Scenes</span>
+              <blockquote className="text-xl md:text-2xl font-medium leading-relaxed text-foreground mt-4">
+                "Technology should be the easiest part of running your business. If it's not, you have the wrong partner."
+              </blockquote>
+              <div className="flex items-center gap-4 mt-6">
+                <img src={markPhoto} alt="Mark Duerwachter" className="w-12 h-12 rounded-full object-cover border border-border" />
+                <div className="text-left">
+                  <div className="text-sm font-medium">Mark Duerwachter</div>
+                  <div className="text-xs text-muted-foreground">VP of Business Operations</div>
+                </div>
               </div>
-            </div>
-          </motion.div>
+              <p className="text-sm text-muted-foreground leading-relaxed mt-6">
+                This is what working with Modern Edge actually looks like — Mark sitting down with clients, tablet in hand, walking through their infrastructure challenges one-on-one. No sales pitch, no PowerPoint. Just an honest conversation about what your technology needs and how to get there.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
