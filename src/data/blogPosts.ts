@@ -1076,6 +1076,7 @@ Invest in the survey. Invest in the design. Invest in enterprise-grade equipment
     category: "Security",
     date: "2026-01-15",
     readTime: "9 min",
+    coverImage: blogAccessControl,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `The access control industry has undergone a revolution. Legacy systems that required on-premises servers, proprietary hardware, and vendor-dependent programming are giving way to cloud-managed platforms that integrate with your broader security ecosystem, provide real-time visibility from anywhere, and scale without infrastructure investment. Having designed and deployed access control systems across corporate offices, manufacturing facilities, school campuses, and multi-tenant buildings for over fifteen years, I've witnessed this transformation firsthand — and the gap between legacy and modern systems has never been wider.
 
