@@ -27,6 +27,7 @@ import LegalPage from "./pages/LegalPage.tsx";
 import FinancialServicesPage from "./pages/FinancialServicesPage.tsx";
 import RealEstatePage from "./pages/RealEstatePage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
+import { ScrollToTop } from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
