@@ -4,6 +4,8 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
+import ThemeToggle from "@/components/ThemeToggle";
+import { useTheme } from "@/hooks/use-theme";
 
 const industryItems = [
   { label: "Education (K-12)", href: "/industries/education" },
