@@ -11,6 +11,7 @@ import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heatmapImage from "@/assets/case-study-heatmap.jpg";
 
 const Index = () => {
   return (
