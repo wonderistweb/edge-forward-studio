@@ -1,83 +1,180 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Wifi, Shield, Monitor, Phone, Wrench, Settings } from "lucide-react";
+import { ArrowRight, Wifi, Shield, Monitor, Phone, Wrench, Settings, Factory, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import heroImg from "@/assets/industry-custom.jpg";
+import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
+
+const fade = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true } as const,
+  transition: { duration: 0.6, ease: [0.2, 1, 0.3, 1] as const },
+};
 
 const services = [
-  { icon: Wrench, title: "Needs Analysis & Discovery", desc: "We start by understanding your unique operational challenges, compliance requirements, and growth objectives before recommending any technology." },
-  { icon: Settings, title: "Custom Architecture Design", desc: "Bespoke network and infrastructure designs built from the ground up around your specific workflows and requirements." },
-  { icon: Wifi, title: "Specialized Connectivity", desc: "Solutions for unique environments: warehouses, outdoor venues, multi-building campuses, manufacturing floors, and retrofit installations." },
-  { icon: Shield, title: "Industry-Specific Compliance", desc: "HIPAA, CMMC, SOX, ITAR, and other regulatory frameworks addressed through tailored security architectures." },
-  { icon: Phone, title: "Integrated Communications", desc: "Unified voice, video, and messaging platforms designed around your team's collaboration patterns." },
-  { icon: Monitor, title: "Ongoing Managed Support", desc: "Custom SLAs, dedicated account teams, and flexible support models that match your operational needs." },
+  { icon: Wrench, title: "Needs Analysis & Discovery", desc: "We start by understanding your unique operational challenges, compliance requirements, growth objectives, and budget constraints before recommending any technology." },
+  { icon: Settings, title: "Custom Architecture Design", desc: "Bespoke network and infrastructure designs built from the ground up around your specific workflows, physical environments, and integration requirements." },
+  { icon: Wifi, title: "Specialized Connectivity", desc: "Solutions for unique environments: warehouses with steel racking, outdoor venues, multi-building campuses, manufacturing floors, cold storage, and retrofit installations." },
+  { icon: Shield, title: "Industry-Specific Compliance", desc: "HIPAA for healthcare, CMMC for defense contractors, SOX for finance, ITAR for aerospace, PCI for retail — tailored security architectures for every regulatory framework." },
+  { icon: Phone, title: "Integrated Communications", desc: "Unified voice, video, and messaging platforms designed around your team's collaboration patterns — from traditional PBX to full Microsoft Teams deployments." },
+  { icon: Monitor, title: "Ongoing Managed Support", desc: "Custom SLAs, dedicated account teams, quarterly business reviews, and flexible support models that match your operational rhythm and budget." },
+  { icon: Factory, title: "OT/IT Convergence", desc: "Bridging operational technology (SCADA, PLCs, building automation) with IT networks — with proper segmentation, monitoring, and security between the two worlds." },
+  { icon: Stethoscope, title: "Technology Health Checks", desc: "Comprehensive assessments of your current infrastructure — network performance, security posture, lifecycle status, and recommendations prioritized by risk and ROI." },
 ];
 
 const CustomPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <FloatingMarketingMenu />
 
-      <section className="relative pt-16">
-        <div className="relative h-[60vh] min-h-[400px] overflow-hidden">
-          <img src={heroImg} alt="Custom IT Solutions" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 max-w-7xl mx-auto">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Industries</span>
-              <h1 className="text-4xl md:text-6xl font-medium uppercase mt-2">Custom Solutions</h1>
-              <p className="text-muted-foreground mt-4 max-w-2xl text-lg leading-relaxed">
-                No two businesses are identical. We design and implement technology solutions tailored to your specific industry, environment, and operational requirements.
-              </p>
-            </motion.div>
-          </div>
+      {/* Hero */}
+      <section className="pt-32 pb-20 border-b border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div {...fade}>
+            <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Industries</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase mt-3 max-w-4xl">
+              Custom IT Solutions
+            </h1>
+            <p className="text-lg text-muted-foreground mt-6 max-w-2xl leading-relaxed">
+              No two businesses are identical. We design and implement technology solutions tailored to your specific industry, environment, and operational requirements — not off-the-shelf packages.
+            </p>
+            <div className="flex flex-wrap gap-4 mt-8">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/quote">Start a Conversation <ArrowRight className="ml-2" size={16} /></Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link to="/case-study/school-wifi-redesign">View Case Study <ArrowRight className="ml-2" size={16} /></Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="border-t border-border py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-            <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Our Approach</span>
-            <h2 className="text-3xl md:text-4xl font-medium uppercase mt-3">Tailored to your business</h2>
+      {/* Approach Banner */}
+      <section className="border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <motion.div {...fade} className="bg-primary/5 border border-primary/10 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <h3 className="font-mono-display text-sm uppercase tracking-wider text-primary mb-2">Our Process</h3>
+              <h2 className="text-2xl font-medium uppercase">We don't sell boxes. We solve problems.</h2>
+              <p className="text-sm text-muted-foreground mt-2 max-w-lg">
+                Every engagement starts with a deep-dive discovery — understanding your workflows, pain points, compliance obligations, and growth plans. Only then do we design a solution. If we're not the right fit, we'll tell you.
+              </p>
+            </div>
+            <Button variant="outline" size="lg" asChild className="shrink-0">
+              <Link to="/quote">Book a Discovery Call <ArrowRight className="ml-2" size={16} /></Link>
+            </Button>
           </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
-            {services.map((service, i) => (
-              <motion.div key={service.title} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="bg-card p-8 group hover:bg-secondary transition-colors duration-250">
-                <service.icon className="text-primary mb-4" size={24} />
-                <h3 className="font-mono-display text-sm uppercase tracking-wider mb-3">{service.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{service.desc}</p>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="border-b border-border py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div {...fade} className="mb-16">
+            <span className="text-xs font-mono-display text-primary uppercase tracking-wider">Our Approach</span>
+            <h2 className="text-3xl font-medium uppercase mt-3">Tailored to your business</h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+            {services.map((svc) => (
+              <motion.div key={svc.title} className="bg-card p-6" {...fade}>
+                <svc.icon size={22} className="text-primary mb-4" />
+                <h3 className="text-sm font-medium uppercase mb-2">{svc.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{svc.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Industries served */}
-      <section className="border-t border-border py-24">
+      {/* Challenges */}
+      <section className="border-b border-border py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
-            <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Experience</span>
-            <h2 className="text-3xl md:text-4xl font-medium uppercase mt-3">Industries we've served</h2>
+          <motion.div {...fade} className="mb-16">
+            <span className="text-xs font-mono-display text-primary uppercase tracking-wider">Real-World</span>
+            <h2 className="text-3xl font-medium uppercase mt-3">Challenges we solve</h2>
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
-            {["Healthcare", "Manufacturing", "Retail", "Government", "Non-Profit", "Legal", "Financial Services", "Real Estate"].map((industry) => (
-              <div key={industry} className="bg-card p-6 text-center">
-                <span className="font-mono-display text-sm uppercase tracking-wider text-muted-foreground">{industry}</span>
-              </div>
+
+          <div className="grid md:grid-cols-2 gap-px bg-border">
+            {[
+              {
+                title: "Harsh & Unusual Environments",
+                desc: "Warehouses with 40-foot steel racks, outdoor amphitheaters, refrigerated facilities, manufacturing floors with electromagnetic interference — standard IT deployments fail in these environments. We conduct RF site surveys and design solutions that actually work where you work.",
+              },
+              {
+                title: "Vendor Lock-In & Legacy Debt",
+                desc: "Many organizations are trapped with legacy vendors, proprietary systems, and contracts that don't serve them. We audit your current stack, identify lock-in risks, and build migration plans that move you to open, flexible architectures — at your pace.",
+              },
+              {
+                title: "Regulatory Complexity",
+                desc: "When you operate across multiple regulatory frameworks — HIPAA and SOX, or CMMC and ITAR — compliance becomes exponentially complex. We map overlapping controls, eliminate redundant spending, and build unified security architectures that satisfy multiple auditors.",
+              },
+              {
+                title: "Scaling Without a Playbook",
+                desc: "Rapid growth breaks IT infrastructure that wasn't designed to scale. New locations, acquisitions, remote workers — each adds complexity. We build scalable architectures with documented standards, so your 50th site deploys as smoothly as your 5th.",
+              },
+            ].map((challenge) => (
+              <motion.div key={challenge.title} className="bg-card p-8" {...fade}>
+                <h3 className="font-mono-display text-sm uppercase tracking-wider mb-3">{challenge.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{challenge.desc}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-t border-border py-24">
+      {/* Industries Served */}
+      <section className="border-b border-border py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div {...fade} className="mb-12">
+            <span className="text-xs font-mono-display text-primary uppercase tracking-wider">Experience</span>
+            <h2 className="text-3xl font-medium uppercase mt-3">Industries we've served</h2>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
+            {["Healthcare", "Manufacturing", "Retail", "Government", "Non-Profit", "Legal", "Financial Services", "Real Estate"].map((industry) => (
+              <motion.div key={industry} className="bg-card p-6 text-center" {...fade}>
+                <span className="font-mono-display text-sm uppercase tracking-wider text-muted-foreground">{industry}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="border-b border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
+            {[
+              { value: "15+", label: "Industries Served" },
+              { value: "98%", label: "Client Retention" },
+              { value: "72hr", label: "Avg. Proposal Time" },
+              { value: "100%", label: "Custom Designs" },
+            ].map((stat) => (
+              <motion.div key={stat.label} className="py-10 px-6 text-center" {...fade}>
+                <div className="text-3xl font-mono-display font-semibold text-primary">{stat.value}</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider mt-2">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-medium uppercase">Let's build your solution</h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">Tell us about your challenges and we'll design a technology solution that fits your business like a glove.</p>
-          <Button variant="hero" size="lg" className="mt-8" asChild>
-            <Link to="/quote">Start a Conversation<ArrowRight className="ml-2" size={16} /></Link>
-          </Button>
+          <motion.div {...fade}>
+            <h2 className="text-3xl font-medium uppercase">Let's build your solution</h2>
+            <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
+              Tell us about your challenges and we'll design a technology solution that fits your business like a glove — no cookie-cutter packages.
+            </p>
+            <Button variant="hero" size="lg" className="mt-8" asChild>
+              <Link to="/quote">Start a Conversation <ArrowRight className="ml-2" size={16} /></Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
