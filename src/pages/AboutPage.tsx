@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
 import markPhoto from "@/assets/mark-duerwachter.jpg";
 import markConsultation from "@/assets/mark-consultation.png";
+import markConsultation3 from "@/assets/mark-consultation-3.png";
 
 const fade = {
   initial: { opacity: 0, y: 24 },
@@ -224,6 +225,33 @@ const AboutPage = () => {
                 <div className="text-xs text-muted-foreground uppercase tracking-wider mt-2">{stat.label}</div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Working With Clients */}
+      <section className="py-20 border-b border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-px bg-border">
+            <motion.div className="bg-card p-8 lg:p-12 flex flex-col justify-center" {...fade}>
+              <span className="text-xs font-mono-display text-primary uppercase tracking-wider">How We Work</span>
+              <h2 className="text-2xl md:text-3xl font-medium uppercase mt-4 mb-6">
+                Hands-on, not hands-off
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Every engagement starts with a real conversation. Mark meets with your team on-site, walks your facility, and learns your workflows before recommending a single piece of technology.
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                It's this personal, engineering-first approach that sets Modern Edge apart from the help-desk-in-a-box providers. We're not reading from a script — we're solving your specific problems with solutions tailored to your environment.
+              </p>
+            </motion.div>
+            <motion.div className="bg-card overflow-hidden" {...fade}>
+              <img
+                src={markConsultation3}
+                alt="Mark consulting with a client in the office"
+                className="w-full h-full object-cover min-h-[350px]"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
