@@ -1,12 +1,21 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
+const industryItems = [
+  { label: "Education (K-12)", href: "/industries/education" },
+  { label: "Hospitality", href: "/industries/hospitality" },
+  { label: "Corporate", href: "/industries/corporate" },
+  { label: "Custom", href: "/industries/custom" },
+  { label: "E-Rate Program", href: "/e-rate" },
+];
+
 const navItems = [
   { label: "Solutions", href: "#services" },
+  { label: "Industries", href: "#", isDropdown: true },
   { label: "Partnerships", href: "#partnerships" },
   { label: "About", href: "#about" },
   { label: "Blog", href: "/blog", isRoute: true },
@@ -16,6 +25,8 @@ const navItems = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -40,7 +51,40 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) =>
-            item.isRoute ? (
+            item.isDropdown ? (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => setIndustriesOpen(true)}
+                onMouseLeave={() => setIndustriesOpen(false)}
+              >
+                <button className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider transition-colors duration-250 snap-curve">
+                  {item.label}
+                  <ChevronDown size={14} className={`transition-transform duration-200 ${industriesOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {industriesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute top-full left-0 mt-2 w-56 bg-card border border-border shadow-xl"
+                    >
+                      {industryItems.map((sub) => (
+                        <Link
+                          key={sub.label}
+                          to={sub.href}
+                          className="block px-5 py-3 text-sm font-mono-display uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-150 border-b border-border last:border-b-0"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : item.isRoute ? (
               <Link
                 key={item.label}
                 to={item.href}
@@ -80,7 +124,31 @@ const Navbar = () => {
           className="md:hidden bg-background border-b border-border px-6 pb-6"
         >
           {navItems.map((item) =>
-            item.isRoute ? (
+            item.isDropdown ? (
+              <div key={item.label}>
+                <button
+                  onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+                  className="flex items-center justify-between w-full py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
+                >
+                  {item.label}
+                  <ChevronDown size={14} className={`transition-transform duration-200 ${mobileIndustriesOpen ? "rotate-180" : ""}`} />
+                </button>
+                {mobileIndustriesOpen && (
+                  <div className="pl-4 border-b border-border">
+                    {industryItems.map((sub) => (
+                      <Link
+                        key={sub.label}
+                        to={sub.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="block py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border last:border-b-0"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : item.isRoute ? (
               <Link
                 key={item.label}
                 to={item.href}
