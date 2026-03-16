@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import markPhoto from "@/assets/mark-duerwachter.jpg";
+import markPhoto from "@/assets/mark-hero.png";
 
 const AboutSection = () => {
   return (
