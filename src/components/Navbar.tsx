@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Solutions", href: "#services" },
@@ -32,9 +33,9 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="font-mono-display text-lg font-semibold tracking-tighter text-foreground uppercase">
-          Modern Edge<span className="text-primary">_</span>
-        </a>
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="Modern Edge Technology" className="h-10 w-auto" />
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -58,7 +59,7 @@ const Navbar = () => {
             )
           )}
           <Button variant="hero" size="sm" asChild>
-            <a href="#contact">Request Audit</a>
+            <Link to="/quote">Get a Quote</Link>
           </Button>
         </div>
 
@@ -78,18 +79,29 @@ const Navbar = () => {
           animate={{ opacity: 1, height: "auto" }}
           className="md:hidden bg-background border-b border-border px-6 pb-6"
         >
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={() => setMobileOpen(false)}
-              className="block py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item.isRoute ? (
+              <Link
+                key={item.label}
+                to={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
+              >
+                {item.label}
+              </a>
+            )
+          )}
           <Button variant="hero" size="sm" className="mt-4 w-full" asChild>
-            <a href="#contact">Request Audit</a>
+            <Link to="/quote">Get a Quote</Link>
           </Button>
         </motion.div>
       )}
