@@ -525,6 +525,7 @@ The math is not complicated. Prevention is not optional. It is the single most i
     category: "E-Rate",
     date: "2026-02-10",
     readTime: "9 min",
+    coverImage: blogErate,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `The E-Rate program — formally known as the Schools and Libraries Universal Service Support Mechanism — has distributed over $50 billion since its inception in 1997, helping schools and libraries connect to the internet and build internal networks. It is, without question, the most impactful federal technology funding program for educational institutions. And yet, billions of dollars in available funding go unclaimed every year because institutions either don't apply, apply incorrectly, or significantly under-utilize the services they're eligible for.
 
