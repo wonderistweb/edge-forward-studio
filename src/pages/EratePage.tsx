@@ -4,6 +4,8 @@ import { ArrowRight, CheckCircle, DollarSign, Calendar, FileText, HelpCircle, Bo
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import IndustryHero from "@/components/IndustryHero";
+import heroImg from "@/assets/industry-hero-erate.jpg";
 
 const timeline = [
   { month: "Jul–Sep", title: "Planning Phase", desc: "Conduct technology needs assessment, develop technology plan, identify eligible services and equipment, research vendor options." },
