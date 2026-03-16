@@ -7,41 +7,49 @@ const services = [
     icon: Shield,
     title: "Access Control & Cameras",
     description: "Advanced access control systems and comprehensive surveillance solutions with real-time monitoring and detailed reporting.",
+    href: "/services/access-control",
   },
   {
     icon: Server,
     title: "Hardware & Software",
     description: "Industry-leading hardware solutions and enterprise software delivering optimal performance, reliability, and value.",
+    href: "/services/hardware-software",
   },
   {
     icon: Phone,
     title: "Voice Services",
     description: "Modern voice solutions from traditional PBX to cloud-based VoIP platforms that integrate with your business operations.",
+    href: "/services/voice-services",
   },
   {
     icon: Search,
     title: "IT Audits",
     description: "Comprehensive audits identifying security vulnerabilities, compliance gaps, and optimization opportunities.",
+    href: "/services/it-audits",
   },
   {
     icon: Cloud,
     title: "Cloud Computing & Migrations",
     description: "Expert migration services across AWS, Azure, and Google Cloud with comprehensive strategy and ongoing management.",
+    href: "/services/cloud-migrations",
   },
   {
     icon: Wifi,
     title: "Wiring & Wireless Networks",
     description: "Robust network infrastructure from structured cabling to enterprise-grade wireless solutions.",
+    href: "/services/wireless-networks",
   },
   {
     icon: HardDrive,
     title: "Business Continuity & DR",
     description: "Comprehensive disaster recovery solutions with customized strategies and rapid recovery systems.",
+    href: "/services/business-continuity",
   },
   {
     icon: GraduationCap,
     title: "E-Rate Vendor Services",
     description: "Navigate the E-rate program for schools and libraries, managing the entire process from application to implementation.",
+    href: "/services/e-rate",
   },
 ];
 
