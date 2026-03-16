@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const industryItems = [
@@ -37,7 +37,6 @@ const Navbar = () => {
   const [industriesOpen, setIndustriesOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -45,15 +44,15 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleHashClick = (href: string) => {
-    setMobileOpen(false);
-    if (location.pathname !== "/") {
-      navigate("/" + href);
-    } else {
-      const el = document.querySelector(href);
-      el?.scrollIntoView({ behavior: "smooth" });
+  // Handle hash scrolling after navigation
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.querySelector(location.hash);
+        el?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
     }
-  };
+  }, [location]);
 
   return (
     <motion.nav
@@ -115,13 +114,14 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ) : (
-              <button
+              <a
                 key={item.label}
-                onClick={() => handleHashClick(item.href)}
+                href={`/${item.href}`}
+                onClick={() => setMobileOpen(false)}
                 className="text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider transition-colors duration-250 snap-curve"
               >
                 {item.label}
-              </button>
+              </a>
             )
           )}
           <Button variant="hero" size="sm" asChild>
@@ -180,13 +180,14 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ) : (
-              <button
+              <a
                 key={item.label}
-                onClick={() => handleHashClick(item.href)}
+                href={`/${item.href}`}
+                onClick={() => setMobileOpen(false)}
                 className="block w-full text-left py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
               >
                 {item.label}
-              </button>
+              </a>
             )
           )}
           <Button variant="hero" size="sm" className="mt-4 w-full" asChild>
