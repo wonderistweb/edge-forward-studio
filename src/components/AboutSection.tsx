@@ -83,7 +83,7 @@ const AboutSection = () => {
                 With over two decades of experience in enterprise IT infrastructure, Mark leads Modern Edge Technology's business operations and client strategy. His background spans managed services, cybersecurity, cloud architecture, and telecommunications across industries including manufacturing, finance, healthcare, and education.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Mark's hands-on approach to technology consulting has helped hundreds of organizations transform their IT from a cost center into a strategic competitive advantage. He is a published thought leader on topics including Zero Trust architecture, business continuity planning, and the evolving MSP landscape.
+                Mark's strategic approach to technology consulting has helped hundreds of organizations transform their IT from a cost center into a competitive advantage. He is a published thought leader on topics including Zero Trust architecture, business continuity planning, and the evolving MSP landscape.
               </p>
             </div>
           </div>

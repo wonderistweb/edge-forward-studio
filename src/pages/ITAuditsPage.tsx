@@ -64,10 +64,10 @@ const ITAuditsPage = () => {
           </motion.div>
           <div className="grid md:grid-cols-2 gap-px bg-border">
             {[
-              { title: "Discovery & Scanning", desc: "We deploy non-invasive scanning tools across your network to map every device, service, user, and data flow. No guesswork — just a complete, accurate picture of your environment." },
-              { title: "Analysis & Risk Scoring", desc: "Every finding is categorized by severity, likelihood, and business impact. We don't dump a 200-page report — we deliver a prioritized action plan your team can execute." },
+              { title: "Discovery & Scanning", desc: "Non-invasive scanning tools map every device, service, user, and data flow across your network. No guesswork — just a complete, accurate picture of your environment." },
+              { title: "Analysis & Risk Scoring", desc: "Every finding is categorized by severity, likelihood, and business impact. Not a 200-page report — a prioritized action plan your team can execute." },
               { title: "Executive Reporting", desc: "Board-ready summaries with risk heat maps, compliance scorecards, and ROI projections for recommended remediations. Technical detail for your IT team, business context for leadership." },
-              { title: "Remediation Support", desc: "We don't just find problems — we fix them. Our team can implement every recommendation in your audit report, from firewall reconfigurations to policy development." },
+              { title: "Remediation Support", desc: "Beyond identifying problems, we provide clear remediation guidance and can support implementation — from firewall reconfigurations to policy development." },
             ].map((c) => (
               <motion.div key={c.title} className="bg-card p-8" {...fade}>
                 <h3 className="font-mono-display text-sm uppercase tracking-wider mb-3">{c.title}</h3>

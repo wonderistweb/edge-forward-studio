@@ -64,10 +64,10 @@ const WirelessNetworksPage = () => {
           </motion.div>
           <div className="grid md:grid-cols-2 gap-px bg-border">
             {[
-              { title: "Design-First Approach", desc: "Every project starts with a detailed site survey and network design. We model RF propagation, calculate switch port density, and plan cable pathways before a single wire is pulled." },
-              { title: "Certified Installers", desc: "Our cabling teams hold BICSI and manufacturer certifications. Every install is tested, labeled, documented, and backed by a 25-year structured cabling warranty." },
-              { title: "Future-Proof Standards", desc: "We deploy Cat6A and WiFi 6E as our baseline — ensuring your infrastructure supports 10GbE, IoT devices, and growing bandwidth demands for years to come." },
-              { title: "Ongoing Optimization", desc: "Networks degrade over time as devices, walls, and interference change. We provide quarterly wireless assessments and proactive tuning to maintain peak performance." },
+              { title: "Design-First Approach", desc: "Every project starts with a detailed network design. RF propagation modeling, switch port density calculations, and cable pathway planning ensure the right solution before any work begins." },
+              { title: "Certified Teams", desc: "BICSI and manufacturer-certified professionals ensure every project is tested, labeled, documented, and backed by a 25-year structured cabling warranty." },
+              { title: "Future-Proof Standards", desc: "Cat6A and WiFi 6E as baseline — ensuring your infrastructure supports 10GbE, IoT devices, and growing bandwidth demands for years to come." },
+              { title: "Ongoing Optimization", desc: "Networks degrade over time as devices, walls, and interference change. Quarterly wireless assessments and proactive tuning maintain peak performance." },
             ].map((c) => (
               <motion.div key={c.title} className="bg-card p-8" {...fade}>
                 <h3 className="font-mono-display text-sm uppercase tracking-wider mb-3">{c.title}</h3>

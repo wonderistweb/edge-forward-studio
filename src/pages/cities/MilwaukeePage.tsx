@@ -10,7 +10,7 @@ const data: CityPageData = {
   heroHeadline: "Managed IT services in Milwaukee, Wisconsin",
   heroSubtext: "Milwaukee businesses trust Modern Edge Technology for enterprise-grade IT support, cybersecurity, cloud infrastructure, and network solutions. Based in the Milwaukee metro area, we deliver responsive, local IT expertise to organizations of every size.",
   introTitle: "Milwaukee's technology partner",
-  introText: "As Milwaukee's economy grows across manufacturing, healthcare, finance, and professional services, businesses need IT infrastructure that keeps pace. Modern Edge Technology serves the greater Milwaukee area with on-site support, proactive monitoring, and strategic IT consulting — combining enterprise capability with the responsiveness of a local partner.",
+  introText: "As Milwaukee's economy grows across manufacturing, healthcare, finance, and professional services, businesses need IT infrastructure that keeps pace. Modern Edge Technology serves the greater Milwaukee area with proactive monitoring, strategic IT consulting, and responsive local support — combining enterprise capability with a partner who understands your market.",
   challenges: [
     { title: "Manufacturing & IoT Security", desc: "Milwaukee's manufacturing sector faces unique cybersecurity challenges with connected OT environments, legacy SCADA systems, and expanding IoT device networks that need segmentation, monitoring, and hardened access controls." },
     { title: "Healthcare Compliance", desc: "With major health systems headquartered in Milwaukee, HIPAA compliance, medical device networking, and clinical-grade WiFi are critical infrastructure requirements we specialize in." },
