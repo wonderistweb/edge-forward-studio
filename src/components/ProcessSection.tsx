@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import markConsultation from "@/assets/mark-consultation.png";
-import markConsultation2 from "@/assets/mark-consultation-2.png";
+import infrastructureAudit from "@/assets/infrastructure-audit.jpg";
 
 const ProcessSection = () => {
   return (
@@ -57,7 +57,7 @@ const ProcessSection = () => {
             className="relative bg-card overflow-hidden group"
           >
             <img
-              src={markConsultation2}
+              src={infrastructureAudit}
               alt="Mark discussing infrastructure with a client"
               className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500 snap-curve"
             />
