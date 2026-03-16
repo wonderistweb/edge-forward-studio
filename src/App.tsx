@@ -7,6 +7,11 @@ import Index from "./pages/Index.tsx";
 import BlogPage from "./pages/BlogPage.tsx";
 import BlogPostPage from "./pages/BlogPostPage.tsx";
 import QuotePage from "./pages/QuotePage.tsx";
+import EducationPage from "./pages/EducationPage.tsx";
+import HospitalityPage from "./pages/HospitalityPage.tsx";
+import CorporatePage from "./pages/CorporatePage.tsx";
+import CustomPage from "./pages/CustomPage.tsx";
+import EratePage from "./pages/EratePage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -22,6 +27,11 @@ const App = () => (
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/quote" element={<QuotePage />} />
+          <Route path="/industries/education" element={<EducationPage />} />
+          <Route path="/industries/hospitality" element={<HospitalityPage />} />
+          <Route path="/industries/corporate" element={<CorporatePage />} />
+          <Route path="/industries/custom" element={<CustomPage />} />
+          <Route path="/e-rate" element={<EratePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
