@@ -64,7 +64,14 @@ const BlogPostPage = () => {
               </div>
             </div>
 
-            <div className="h-px bg-border mb-12" />
+            {/* Cover image */}
+            <div className="aspect-[16/9] overflow-hidden rounded-sm mb-12">
+              <img
+                src={post.coverImage}
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             {/* Render markdown-like content */}
             <div className="prose-custom space-y-6">

@@ -1,3 +1,14 @@
+import blogManagedIt from "@/assets/blog/managed-it.jpg";
+import blogZeroTrust from "@/assets/blog/zero-trust.jpg";
+import blogCloudMigration from "@/assets/blog/cloud-migration.jpg";
+import blogVoip from "@/assets/blog/voip.jpg";
+import blogRansomware from "@/assets/blog/ransomware.jpg";
+import blogErate from "@/assets/blog/erate.jpg";
+import blogBusinessContinuity from "@/assets/blog/business-continuity.jpg";
+import blogInfrastructureAudit from "@/assets/blog/infrastructure-audit.jpg";
+import blogWirelessNetwork from "@/assets/blog/wireless-network.jpg";
+import blogAccessControl from "@/assets/blog/access-control.jpg";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -5,6 +16,7 @@ export interface BlogPost {
   category: string;
   date: string;
   readTime: string;
+  coverImage: string;
   author: {
     name: string;
     role: string;
@@ -20,6 +32,7 @@ export const blogPosts: BlogPost[] = [
     category: "Managed IT",
     date: "2026-03-10",
     readTime: "8 min",
+    coverImage: blogManagedIt,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `The era of "break-fix" IT is over. Small and medium businesses that still rely on calling a technician only when something goes wrong are hemorrhaging money in ways they may not even realize. Having spent over two decades consulting with organizations ranging from ten-person shops to multi-site enterprises, I can state with absolute certainty: the reactive IT model is the single biggest operational liability most SMBs carry on their books today.
 
@@ -101,6 +114,7 @@ I've watched it happen dozens of times. Don't let it happen to you.`
     category: "Cybersecurity",
     date: "2026-03-05",
     readTime: "9 min",
+    coverImage: blogZeroTrust,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `"Never trust, always verify." This simple principle is revolutionizing how organizations protect their digital assets — and it's no longer just for Fortune 500 companies. In my twenty-plus years in enterprise IT, I have never seen a security paradigm shift this fast or this necessary. The traditional castle-and-moat approach to network security isn't just outdated — it's actively dangerous.
 
@@ -212,6 +226,7 @@ I've helped organizations through both scenarios. Trust me: the proactive path i
     category: "Cloud",
     date: "2026-02-28",
     readTime: "9 min",
+    coverImage: blogCloudMigration,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `Cloud migration is inevitable for most businesses. The benefits are real: elastic scalability, reduced capital expenditure, geographic redundancy, and access to services that would be impossible to build on-premises. But the path from on-premises to cloud is littered with cautionary tales of projects that went over budget, over time, and under-delivered. I've led or consulted on over 200 cloud migrations across my career, and the same five mistakes account for the vast majority of failures.
 
@@ -310,6 +325,7 @@ The key is approaching migration as a strategic initiative, not a tactical proje
     category: "Voice Services",
     date: "2026-02-20",
     readTime: "8 min",
+    coverImage: blogVoip,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `The question isn't whether VoIP is better than traditional phone systems — it's whether your business is ready to make the switch. For most organizations, the answer is a resounding yes. But "most" isn't "all," and the decision deserves more nuance than the typical vendor pitch provides. I've deployed hundreds of phone systems across every major platform — 3CX, RingCentral, Microsoft Teams, Cisco, and legacy Avaya — and the right answer depends entirely on your specific environment, requirements, and constraints.
 
@@ -416,6 +432,7 @@ I strongly recommend the proactive path.`
     category: "Cybersecurity",
     date: "2026-02-15",
     readTime: "10 min",
+    coverImage: blogRansomware,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `Ransomware is no longer just a threat to large enterprises. In 2025, 67% of ransomware attacks targeted businesses with fewer than 100 employees. The average ransom demand exceeded $1.5 million — and paying doesn't guarantee recovery. In fact, organizations that pay the ransom recover only 65% of their data on average, and 80% of organizations that pay are attacked again within 12 months.
 
@@ -508,6 +525,7 @@ The math is not complicated. Prevention is not optional. It is the single most i
     category: "E-Rate",
     date: "2026-02-10",
     readTime: "9 min",
+    coverImage: blogErate,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `The E-Rate program — formally known as the Schools and Libraries Universal Service Support Mechanism — has distributed over $50 billion since its inception in 1997, helping schools and libraries connect to the internet and build internal networks. It is, without question, the most impactful federal technology funding program for educational institutions. And yet, billions of dollars in available funding go unclaimed every year because institutions either don't apply, apply incorrectly, or significantly under-utilize the services they're eligible for.
 
@@ -637,6 +655,7 @@ If your institution isn't maximizing its E-Rate funding, you're leaving federal 
     category: "Disaster Recovery",
     date: "2026-02-05",
     readTime: "9 min",
+    coverImage: blogBusinessContinuity,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `Within six months of a major data loss event, 60% of affected companies close their doors permanently. Another 29% close within two years. These aren't hypothetical scenarios — they're documented outcomes from the National Archives and Records Administration, corroborated by studies from the University of Texas and the Federal Emergency Management Agency. They represent real businesses, real employees, and real livelihoods destroyed by events that were entirely preventable.
 
@@ -773,6 +792,7 @@ The investment in business continuity isn't about technology. It's about surviva
     category: "IT Audits",
     date: "2026-01-28",
     readTime: "9 min",
+    coverImage: blogInfrastructureAudit,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `An IT infrastructure audit isn't about finding blame — it's about finding clarity. In over twenty years of consulting, I've walked into hundreds of server rooms, wiring closets, and network environments. The pattern is remarkably consistent: most business owners have no idea what's actually running on their network, how old their equipment is, where their biggest vulnerabilities lie, or whether their infrastructure can support their growth plans for the next three years.
 
@@ -934,6 +954,7 @@ If you scored below 70%, I strongly recommend engaging a qualified managed servi
     category: "Networking",
     date: "2026-01-20",
     readTime: "8 min",
+    coverImage: blogWirelessNetwork,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `"We put up some access points but the WiFi still doesn't work." I hear this from new clients at least once a week. The frustration is palpable — they've spent money on equipment, paid someone to install it, and the result is a wireless network that drops connections, delivers inconsistent speeds, and can't support the device density their business requires.
 
@@ -1055,6 +1076,7 @@ Invest in the survey. Invest in the design. Invest in enterprise-grade equipment
     category: "Security",
     date: "2026-01-15",
     readTime: "9 min",
+    coverImage: blogAccessControl,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `The access control industry has undergone a revolution. Legacy systems that required on-premises servers, proprietary hardware, and vendor-dependent programming are giving way to cloud-managed platforms that integrate with your broader security ecosystem, provide real-time visibility from anywhere, and scale without infrastructure investment. Having designed and deployed access control systems across corporate offices, manufacturing facilities, school campuses, and multi-tenant buildings for over fifteen years, I've witnessed this transformation firsthand — and the gap between legacy and modern systems has never been wider.
 
