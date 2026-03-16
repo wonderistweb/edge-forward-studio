@@ -27,6 +27,14 @@ import LegalPage from "./pages/LegalPage.tsx";
 import FinancialServicesPage from "./pages/FinancialServicesPage.tsx";
 import RealEstatePage from "./pages/RealEstatePage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
+import AccessControlPage from "./pages/AccessControlPage";
+import HardwareSoftwarePage from "./pages/HardwareSoftwarePage";
+import VoiceServicesPage from "./pages/VoiceServicesPage";
+import ITAuditsPage from "./pages/ITAuditsPage";
+import CloudMigrationsPage from "./pages/CloudMigrationsPage";
+import WirelessNetworksPage from "./pages/WirelessNetworksPage";
+import BusinessContinuityPage from "./pages/BusinessContinuityPage";
+import ERateServicesPage from "./pages/ERateServicesPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound.tsx";
 
