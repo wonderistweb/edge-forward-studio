@@ -115,13 +115,14 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ) : (
-              <button
+              <a
                 key={item.label}
-                onClick={() => handleHashClick(item.href)}
+                href={`/${item.href}`}
+                onClick={() => setMobileOpen(false)}
                 className="text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider transition-colors duration-250 snap-curve"
               >
                 {item.label}
-              </button>
+              </a>
             )
           )}
           <Button variant="hero" size="sm" asChild>
