@@ -46,7 +46,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-32 relative">
+    <section id="services" className="py-32 relative section-tinted">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,8 +80,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05, duration: 0.5 }}
-      whileHover={{ backgroundColor: "hsl(240 8% 13%)" }}
-      className="group bg-card p-8 border-t-2 border-t-transparent hover:border-t-primary transition-all duration-250 snap-curve relative"
+      className="group bg-card p-8 border-t-2 border-t-transparent hover:border-t-primary transition-all duration-250 snap-curve relative hover:bg-card-hover"
     >
       <div className="flex items-start justify-between mb-6">
         <Icon size={24} strokeWidth={1.5} className="text-muted-foreground group-hover:text-primary transition-colors duration-250" />
