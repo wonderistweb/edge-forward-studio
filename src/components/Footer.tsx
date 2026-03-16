@@ -5,9 +5,17 @@ const Footer = () => {
   return (
     <footer className="border-t border-border py-12">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="Modern Edge Technology" className="h-10 w-auto" />
+        <div className="flex flex-col md:flex-row items-start justify-between gap-8">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={logo} alt="Modern Edge Technology" className="h-10 w-auto" />
+            </div>
+            <p className="text-xs text-muted-foreground max-w-xs leading-relaxed">
+              Enterprise-grade IT solutions serving Milwaukee, Southern Wisconsin, and businesses statewide.
+            </p>
+            <address className="text-xs text-muted-foreground not-italic mt-3 leading-relaxed">
+              Milwaukee, WI · Serving all of Wisconsin
+            </address>
           </div>
 
           <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
@@ -22,7 +30,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Modern Edge Technology. All rights reserved.
+            © {new Date().getFullYear()} Modern Edge Technology. All rights reserved. · Milwaukee, Wisconsin
           </p>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
