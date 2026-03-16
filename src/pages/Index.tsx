@@ -9,7 +9,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, DollarSign, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heatmapImage from "@/assets/case-study-heatmap.jpg";
 
