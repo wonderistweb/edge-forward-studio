@@ -402,6 +402,111 @@ What's your property's WiFi complaint rate? DM me for a free wireless assessment
             <MetricsBar metrics={{ impressions: "200K/mo", ctr: "0.8%", cpc: "$1.50" }} />
           </motion.div>
 
+          {/* ── E-Rate LinkedIn: Schools ── */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <div className="flex items-center gap-3 mb-2">
+              <svg className="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+              <span className="text-xs font-mono-display text-primary uppercase tracking-wider">LinkedIn Sponsored</span>
+            </div>
+            <h2 className="text-xl font-medium uppercase mb-1">E-Rate Outreach — Superintendents & IT Directors</h2>
+            <p className="text-sm text-muted-foreground mb-6">Targeting: Job titles — Superintendent, CTO, Technology Director, IT Director at K-12 schools & public libraries</p>
+
+            <div className="flex justify-center">
+              <LinkedInPost
+                name="Mark Duerwachter"
+                role="VP of Business Operations at Modern Edge Technology"
+                body={`Your district is leaving money on the table. 💰
+
+Every year, billions in E-Rate funding goes unclaimed. Schools and libraries that qualify for 60-90% discounts on WiFi, switches, cabling, and internet service simply... don't apply.
+
+Here's what $167/student in Category 2 funding looks like:
+
+📊 500 students = $83,500 in eligible equipment
+📊 2,000 students = $334,000
+📊 5,000 students = $835,000
+
+That's 60-90% OFF enterprise-grade WiFi 6E, managed switches, structured cabling, and firewall systems.
+
+We've secured $12M+ in E-Rate funding for districts just like yours. We handle:
+
+✅ Free eligibility assessment
+✅ Form 470, 471, and 486 filing
+✅ Competitive bid management
+✅ MIBS contract structuring
+✅ Full compliance documentation
+
+The Form 470 window is open NOW. Don't wait another year.
+
+DM me or comment "ERATE" for a free eligibility check 👇
+
+#ERate #EdTech #K12 #SchoolTechnology #WiFi #Libraries`}
+                likes={892}
+                comments={134}
+              />
+            </div>
+            <MetricsBar metrics={{ impressions: "65K/mo", ctr: "3.4%", cpc: "$5.10" }} />
+          </motion.div>
+
+          {/* ── E-Rate Facebook: Libraries ── */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <div className="flex items-center gap-3 mb-2">
+              <svg className="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+              <span className="text-xs font-mono-display text-primary uppercase tracking-wider">Facebook / Instagram Ad</span>
+            </div>
+            <h2 className="text-xl font-medium uppercase mb-1">E-Rate for Libraries — Library Directors & Board Members</h2>
+            <p className="text-sm text-muted-foreground mb-6">Targeting: Library directors, board members, public library staff, interests in library technology & ALA</p>
+
+            <div className="flex justify-center">
+              <FacebookAd
+                pageName="Modern Edge Technology"
+                body={"Your library qualifies for up to 90% off WiFi, internet, and networking equipment through the federal E-Rate program.\n\nLibraries receive $2.39/sq ft in Category 2 funding — that's new access points, managed switches, cabling, and firewall systems at a fraction of the cost.\n\nMost libraries don't apply because the process seems complicated. We handle everything:\n\n📋 Free eligibility check\n📋 All USAC form filings\n📋 Vendor bidding management\n📋 Equipment deployment\n📋 Compliance documentation\n\nWe've helped 50+ libraries modernize their networks. Your patrons deserve reliable WiFi. 📚"}
+                headline="Your Library Is Eligible for E-Rate Funding"
+                cta="Check Eligibility"
+                linkDesc="Free E-Rate assessment for public libraries — no obligation"
+              />
+            </div>
+            <MetricsBar metrics={{ impressions: "40K/mo", ctr: "2.8%", cpc: "$3.40" }} />
+          </motion.div>
+
+          {/* ── E-Rate Google Search: Direct ── */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <div className="flex items-center gap-3 mb-2">
+              <Search size={18} className="text-primary" />
+              <span className="text-xs font-mono-display text-primary uppercase tracking-wider">Google Search Ad</span>
+            </div>
+            <h2 className="text-xl font-medium uppercase mb-1">E-Rate Direct Response — Active Searchers</h2>
+            <p className="text-sm text-muted-foreground mb-6">Targeting: "E-Rate application help", "E-Rate consultant", "MIBS E-Rate", "school WiFi funding"</p>
+
+            <div className="bg-gray-100 rounded-xl overflow-hidden shadow-2xl border border-gray-300">
+              <div className="bg-gray-200 px-4 py-2 flex items-center gap-3">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-400" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                  <div className="w-3 h-3 rounded-full bg-green-400" />
+                </div>
+                <div className="flex-1 bg-white rounded-full px-4 py-1 text-xs text-gray-500 flex items-center gap-2">
+                  <Search size={12} />
+                  E-Rate MIBS application help
+                </div>
+              </div>
+              <div className="p-6">
+                <GoogleSearchAd
+                  headline="E-Rate MIBS Experts — $12M+ Secured | Free Eligibility Check"
+                  desc1="Stop leaving federal dollars on the table. We manage the entire E-Rate lifecycle — Forms 470, 471, 486, PIA responses, and MIBS contract structuring."
+                  desc2="98% approval rate. 150+ schools & libraries served. Category 1 & 2 specialists."
+                  url="https://modernedgetech.net/e-rate"
+                  sitelinks={[
+                    { title: "Free Eligibility Check", desc: "Find out your discount rate in 24 hours" },
+                    { title: "MIBS Contracts", desc: "Managed services bundled with E-Rate" },
+                    { title: "Library E-Rate", desc: "$2.39/sq ft in Category 2 funding" },
+                    { title: "WiFi 6E Deployments", desc: "Enterprise wireless for education" },
+                  ]}
+                />
+              </div>
+            </div>
+            <MetricsBar metrics={{ impressions: "12K/mo", ctr: "6.1%", cpc: "$9.25" }} />
+          </motion.div>
+
         </div>
       </section>
 
