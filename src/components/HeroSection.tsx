@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import heroBg from "@/assets/mark-hero.png";
+import heroBg from "@/assets/mark-consultation-3.png";
 
 const HeroSection = () => {
   const [uptime, setUptime] = useState(99.997);
