@@ -226,6 +226,7 @@ I've helped organizations through both scenarios. Trust me: the proactive path i
     category: "Cloud",
     date: "2026-02-28",
     readTime: "9 min",
+    coverImage: blogCloudMigration,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `Cloud migration is inevitable for most businesses. The benefits are real: elastic scalability, reduced capital expenditure, geographic redundancy, and access to services that would be impossible to build on-premises. But the path from on-premises to cloud is littered with cautionary tales of projects that went over budget, over time, and under-delivered. I've led or consulted on over 200 cloud migrations across my career, and the same five mistakes account for the vast majority of failures.
 
