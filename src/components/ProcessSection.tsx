@@ -56,13 +56,11 @@ const ProcessSection = () => {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="relative bg-card overflow-hidden group"
           >
-            <div className="duotone-wrapper">
-              <img
-                src={infrastructureAudit}
-                alt="Mark discussing infrastructure with a client"
-                className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500 snap-curve duotone group-hover:filter-none"
-              />
-            </div>
+            <img
+              src={infrastructureAudit}
+              alt="Mark discussing infrastructure with a client"
+              className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500 snap-curve"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8">
               <div className="flex items-center gap-3 mb-2">
