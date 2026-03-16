@@ -188,8 +188,20 @@ const MetricsBar = ({ metrics }: { metrics: { impressions: string; ctr: string; 
   </div>
 );
 
+const adCampaigns = [
+  { id: "all", label: "All Campaigns" },
+  { id: "general", label: "General / MSP" },
+  { id: "erate", label: "E-Rate" },
+  { id: "cybersecurity", label: "Cybersecurity" },
+  { id: "hospitality", label: "Hospitality" },
+];
+
 /* ── Page ── */
 const AdsPage = () => {
+  const [activeCampaign, setActiveCampaign] = useState("all");
+
+  const show = (campaign: string) => activeCampaign === "all" || activeCampaign === campaign;
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -210,10 +222,33 @@ const AdsPage = () => {
         </div>
       </section>
 
+      {/* Campaign Toggles */}
+      <section className="border-b border-border">
+        <div className="max-w-5xl mx-auto px-6 py-4">
+          <div className="flex items-center gap-3 flex-wrap">
+            <Filter size={14} className="text-muted-foreground" />
+            {adCampaigns.map((c) => (
+              <button
+                key={c.id}
+                onClick={() => setActiveCampaign(c.id)}
+                className={`text-xs font-mono-display uppercase tracking-wider px-4 py-2 border transition-colors ${
+                  activeCampaign === c.id
+                    ? "border-primary bg-primary/10 text-primary"
+                    : "border-border text-muted-foreground hover:text-foreground hover:border-foreground/30"
+                }`}
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-6 space-y-20">
 
           {/* ── Google Search: Managed IT ── */}
+          {show("general") && (
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-2">
               <Search size={18} className="text-primary" />
