@@ -35,6 +35,14 @@ import CloudMigrationsPage from "./pages/CloudMigrationsPage";
 import WirelessNetworksPage from "./pages/WirelessNetworksPage";
 import BusinessContinuityPage from "./pages/BusinessContinuityPage";
 import ERateServicesPage from "./pages/ERateServicesPage";
+import MilwaukeePage from "./pages/cities/MilwaukeePage";
+import MadisonPage from "./pages/cities/MadisonPage";
+import WaukeshaPage from "./pages/cities/WaukeshaPage";
+import KenoshaPage from "./pages/cities/KenoshaPage";
+import AppletonPage from "./pages/cities/AppletonPage";
+import RacinePage from "./pages/cities/RacinePage";
+import GreenBayPage from "./pages/cities/GreenBayPage";
+import OshkoshPage from "./pages/cities/OshkoshPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -80,6 +88,14 @@ const App = () => (
           <Route path="/services/wireless-networks" element={<WirelessNetworksPage />} />
           <Route path="/services/business-continuity" element={<BusinessContinuityPage />} />
           <Route path="/services/e-rate" element={<ERateServicesPage />} />
+          <Route path="/areas/milwaukee" element={<MilwaukeePage />} />
+          <Route path="/areas/madison" element={<MadisonPage />} />
+          <Route path="/areas/waukesha" element={<WaukeshaPage />} />
+          <Route path="/areas/kenosha" element={<KenoshaPage />} />
+          <Route path="/areas/appleton" element={<AppletonPage />} />
+          <Route path="/areas/racine" element={<RacinePage />} />
+          <Route path="/areas/green-bay" element={<GreenBayPage />} />
+          <Route path="/areas/oshkosh" element={<OshkoshPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

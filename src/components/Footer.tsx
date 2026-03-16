@@ -1,11 +1,23 @@
 import logo from "@/assets/logo.png";
 import { Link } from "react-router-dom";
 
+const serviceAreas = [
+  { label: "Milwaukee", href: "/areas/milwaukee" },
+  { label: "Madison", href: "/areas/madison" },
+  { label: "Waukesha", href: "/areas/waukesha" },
+  { label: "Kenosha", href: "/areas/kenosha" },
+  { label: "Appleton", href: "/areas/appleton" },
+  { label: "Racine", href: "/areas/racine" },
+  { label: "Green Bay", href: "/areas/green-bay" },
+  { label: "Oshkosh", href: "/areas/oshkosh" },
+];
+
 const Footer = () => {
   return (
     <footer className="border-t border-border py-12">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-start justify-between gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img src={logo} alt="Modern Edge Technology" className="h-10 w-auto" />
@@ -18,13 +30,33 @@ const Footer = () => {
             </address>
           </div>
 
-          <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-            <a href="#services" className="hover:text-foreground transition-colors duration-250">Solutions</a>
-            <a href="#partnerships" className="hover:text-foreground transition-colors duration-250">Partnerships</a>
-            <a href="#about" className="hover:text-foreground transition-colors duration-250">About</a>
-            <Link to="/blog" className="hover:text-foreground transition-colors duration-250">Blog</Link>
-            <Link to="/quote" className="hover:text-foreground transition-colors duration-250">Get a Quote</Link>
-            <a href="#contact" className="hover:text-foreground transition-colors duration-250">Contact</a>
+          {/* Navigation */}
+          <div>
+            <h4 className="text-xs font-mono-display uppercase tracking-wider text-foreground mb-4">Navigation</h4>
+            <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+              <a href="/#services" className="hover:text-foreground transition-colors duration-250">Solutions</a>
+              <a href="/#partnerships" className="hover:text-foreground transition-colors duration-250">Partnerships</a>
+              <Link to="/about" className="hover:text-foreground transition-colors duration-250">About</Link>
+              <Link to="/blog" className="hover:text-foreground transition-colors duration-250">Blog</Link>
+              <Link to="/quote" className="hover:text-foreground transition-colors duration-250">Get a Quote</Link>
+              <Link to="/contact" className="hover:text-foreground transition-colors duration-250">Contact</Link>
+            </div>
+          </div>
+
+          {/* Areas We Serve */}
+          <div>
+            <h4 className="text-xs font-mono-display uppercase tracking-wider text-foreground mb-4">Areas We Serve</h4>
+            <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
+              {serviceAreas.map((area) => (
+                <Link
+                  key={area.label}
+                  to={area.href}
+                  className="hover:text-foreground transition-colors duration-250"
+                >
+                  {area.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
