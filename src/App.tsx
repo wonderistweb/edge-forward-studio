@@ -88,6 +88,14 @@ const App = () => (
           <Route path="/services/wireless-networks" element={<WirelessNetworksPage />} />
           <Route path="/services/business-continuity" element={<BusinessContinuityPage />} />
           <Route path="/services/e-rate" element={<ERateServicesPage />} />
+          <Route path="/areas/milwaukee" element={<MilwaukeePage />} />
+          <Route path="/areas/madison" element={<MadisonPage />} />
+          <Route path="/areas/waukesha" element={<WaukeshaPage />} />
+          <Route path="/areas/kenosha" element={<KenoshaPage />} />
+          <Route path="/areas/appleton" element={<AppletonPage />} />
+          <Route path="/areas/racine" element={<RacinePage />} />
+          <Route path="/areas/green-bay" element={<GreenBayPage />} />
+          <Route path="/areas/oshkosh" element={<OshkoshPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
