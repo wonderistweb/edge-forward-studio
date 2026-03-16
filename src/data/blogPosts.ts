@@ -32,6 +32,7 @@ export const blogPosts: BlogPost[] = [
     category: "Managed IT",
     date: "2026-03-10",
     readTime: "8 min",
+    coverImage: blogManagedIt,
     author: { name: "Mark Duerwachter", role: "VP of Business Operations" },
     content: `The era of "break-fix" IT is over. Small and medium businesses that still rely on calling a technician only when something goes wrong are hemorrhaging money in ways they may not even realize. Having spent over two decades consulting with organizations ranging from ten-person shops to multi-site enterprises, I can state with absolute certainty: the reactive IT model is the single biggest operational liability most SMBs carry on their books today.
 
