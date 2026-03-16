@@ -428,8 +428,10 @@ What's your property's WiFi complaint rate? DM me for a free wireless assessment
             </div>
             <MetricsBar metrics={{ impressions: "120K/mo", ctr: "3.2%", cpc: "$2.15" }} />
           </motion.div>
+          )}
 
           {/* ── Google Display ── */}
+          {show("general") && (
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-2">
               <MapPin size={18} className="text-primary" />
