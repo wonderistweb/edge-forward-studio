@@ -191,6 +191,107 @@ const EratePage = () => {
         </div>
       </section>
 
+      {/* MIBS Section */}
+      <section className="border-b border-border py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+            <Server className="text-primary mb-4" size={32} />
+            <h2 className="text-3xl md:text-4xl font-medium uppercase mt-3">Managed Internal Broadband Services (MIBS)</h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl">
+              MIBS allow schools to procure networking equipment as a managed service — bundling hardware, installation, and ongoing management into a single E-Rate eligible package under Category 2.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            {/* What is MIBS */}
+            <div>
+              <h3 className="font-mono-display text-sm uppercase tracking-wider text-primary mb-6">Why MIBS Matters</h3>
+              <div className="space-y-4">
+                {[
+                  { title: "CapEx → OpEx", desc: "Convert large capital purchases into manageable operational expenses spread across the service period — easier to budget and approve at the board level." },
+                  { title: "Inclusive Management", desc: "MIBS contracts include ongoing monitoring, maintenance, firmware updates, and basic support — your APs aren't just installed and forgotten." },
+                  { title: "Budget Maximization", desc: "Each school gets $167/student (min $25,000 floor). MIBS bundles eligible equipment and services to maximize this allocation in a single package." },
+                  { title: "Simplified Procurement", desc: "One Form 470 posting covers equipment, installation, and management — instead of bidding each component separately." },
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-4">
+                    <CheckCircle size={16} className="text-primary shrink-0 mt-1" />
+                    <div>
+                      <div className="text-sm font-medium text-foreground">{item.title}</div>
+                      <div className="text-xs text-muted-foreground mt-1 leading-relaxed">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Eligible vs Not */}
+            <div>
+              <div className="grid gap-px bg-border">
+                <div className="bg-card p-6">
+                  <h3 className="font-mono-display text-sm uppercase tracking-wider text-primary mb-4">Eligible Under MIBS</h3>
+                  <ul className="space-y-2">
+                    {[
+                      "WiFi 6/6E/7 access points + licensing",
+                      "Managed network switches",
+                      "Structured cabling (Cat6/6A, fiber)",
+                      "UPS/battery backup for network closets",
+                      "Racks, enclosures, cable management",
+                      "Firewall & CIPA-compliant content filtering",
+                      "Professional installation & configuration",
+                      "Ongoing monitoring & firmware management",
+                      "Caching servers",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-xs text-muted-foreground">
+                        <CheckCircle size={12} className="text-primary shrink-0 mt-0.5" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-card p-6">
+                  <h3 className="font-mono-display text-sm uppercase tracking-wider text-destructive mb-4">Not Eligible</h3>
+                  <ul className="space-y-2">
+                    {[
+                      "End-user devices (Chromebooks, tablets, laptops)",
+                      "Administrative servers",
+                      "Security cameras & physical security",
+                      "Phone systems (separate Category 1)",
+                      "Training & professional development",
+                      "Software not tied to eligible equipment",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-xs text-muted-foreground">
+                        <span className="text-destructive shrink-0 mt-0.5">✕</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Common MIBS Mistakes */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h3 className="font-mono-display text-sm uppercase tracking-wider text-primary mb-6">Common MIBS Mistakes</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+              {[
+                { title: "No Site Survey", desc: "Installing APs by classroom count instead of RF analysis leads to coverage gaps or co-channel interference. We've seen districts waste $50K+ on APs that degraded performance." },
+                { title: "Ignoring 6GHz", desc: "WiFi 6E on 6GHz provides cleaner spectrum for high-density classrooms. Districts still deploying WiFi 5 are buying equipment obsolete before the funding cycle ends." },
+                { title: "Bad Cost Allocation", desc: "If a MIBS contract includes any ineligible components without proper cost allocation, the entire contract can be denied by USAC." },
+                { title: "Missing Filing Windows", desc: "E-Rate runs on a strict annual cycle. Missing the Form 470 window by one day means waiting an entire year." },
+                { title: "Not Tracking Budget Reset", desc: "Category 2 budgets reset every 5 years. Districts that don't track utilization leave significant money unclaimed." },
+                { title: "Self-Filing", desc: "Districts working with qualified E-Rate consultants receive 30-50% more funding on average than those that self-file." },
+              ].map((mistake) => (
+                <div key={mistake.title} className="bg-card p-6">
+                  <h4 className="font-mono-display text-xs uppercase tracking-wider text-destructive mb-2">{mistake.title}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{mistake.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* How We Help */}
       <section className="border-b border-border py-24">
         <div className="max-w-7xl mx-auto px-6">
