@@ -14,6 +14,7 @@ const fade = {
 };
 
 export interface CityPageData {
+  heroImage: string;
   city: string;
   region: string;
   metaDescription: string;
