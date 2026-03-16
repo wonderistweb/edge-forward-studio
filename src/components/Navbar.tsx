@@ -45,15 +45,15 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleHashClick = (href: string) => {
-    setMobileOpen(false);
-    if (location.pathname !== "/") {
-      navigate("/" + href);
-    } else {
-      const el = document.querySelector(href);
-      el?.scrollIntoView({ behavior: "smooth" });
+  // Handle hash scrolling after navigation
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.querySelector(location.hash);
+        el?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
     }
-  };
+  }, [location]);
 
   return (
     <motion.nav
