@@ -161,19 +161,19 @@ Modern Edge Technology`,
     ],
   },
   {
-    name: "E-Rate Awareness",
-    audience: "K-12 school administrators & IT coordinators",
-    goal: "Drive E-Rate eligibility consultations during the application window",
+    name: "E-Rate Awareness — Schools & Libraries",
+    audience: "K-12 school administrators, IT coordinators, library directors & board members",
+    goal: "Drive E-Rate eligibility consultations for every school and library with unclaimed funding",
     emails: [
       {
         day: "Day 0",
-        subject: "Your School Could Be Missing Out on 90% Technology Funding",
+        subject: "Your School/Library Could Be Missing Out on 90% Technology Funding",
         preview: "The E-Rate program funds up to 90% of networking & telecom costs...",
         body: `Hi {{first_name}},
 
-Did you know that billions of dollars in federal technology funding go unclaimed by schools every year?
+Did you know that billions of dollars in federal technology funding go unclaimed by schools and libraries every year?
 
-The **E-Rate program** (Schools and Libraries Universal Service Support Mechanism) provides discounts of **20% to 90%** on eligible telecommunications and networking equipment for K-12 schools and libraries. Since 1997, the program has distributed over $50 billion.
+The **E-Rate program** (Schools and Libraries Universal Service Support Mechanism) provides discounts of **20% to 90%** on eligible telecommunications and networking equipment for K-12 schools and public libraries. Since 1997, the program has distributed over $50 billion.
 
 Here's what E-Rate can fund:
 - **Internet access & transport** (fiber, cable, wireless)
@@ -181,10 +181,13 @@ Here's what E-Rate can fund:
 - **Network switches** (core, distribution, access layer)
 - **Structured cabling** (Cat6/Cat6A, fiber optic)
 - **Routers & UPS systems**
+- **Managed Internal Broadband Services (MIBS)**
 
-A school district with 5,000 students at an 80% discount rate has a five-year Category 2 budget of **$835,000**. That's enough to fund a complete network modernization — and your district pays only 20%.
+**For schools**: $167 per student in Category 2 funding. A district with 5,000 students at an 80% discount rate has a five-year budget of **$835,000**.
 
-We've helped schools secure over **$12 million** in E-Rate funding. Want to find out what your district qualifies for?
+**For libraries**: $2.39 per square foot in Category 2 funding. A 15,000 sq ft branch library qualifies for **$35,850** — and most library systems have multiple branches.
+
+We've helped schools and libraries secure over **$12 million** in E-Rate funding. Want to find out what you qualify for?
 
 **Free eligibility consultation**: {{calendar_link}}
 
@@ -194,8 +197,34 @@ VP of Business Operations
 Modern Edge Technology`,
       },
       {
-        day: "Day 4",
-        subject: "E-Rate Application Deadlines Are Approaching",
+        day: "Day 3",
+        subject: "Library Directors: Your Patrons Deserve Better WiFi",
+        preview: "E-Rate covers up to 90% of your WiFi upgrade — here's how...",
+        body: `Hi {{first_name}},
+
+If you run a public library, your patrons are probably complaining about WiFi. Slow speeds, dropped connections, inability to stream educational content or join video calls — these aren't minor inconveniences. They're barriers to the digital equity your library exists to provide.
+
+The good news: **E-Rate can fund 60-90% of a complete wireless network upgrade.**
+
+Here's what we typically deploy for library systems:
+
+📡 **Enterprise WiFi 6E access points** — handling 200+ simultaneous patron devices without breaking a sweat
+🔒 **CIPA-compliant content filtering** — required for E-Rate eligibility, protects minors while preserving adult access
+🔌 **Managed switches & structured cabling** — the backbone that makes everything work
+🛡️ **Firewall & network segmentation** — separating staff, public, and IoT networks
+
+**Real example**: A 3-branch library system with 45,000 total sq ft qualified for **$107,550** in Category 2 funding at a 70% discount rate. Their out-of-pocket cost for a complete network modernization: **$46,093** instead of $153,643.
+
+The application window is open. We handle every form, every bid, every compliance requirement.
+
+**Check your library's eligibility**: {{calendar_link}}
+
+Best,
+Mark`,
+      },
+      {
+        day: "Day 6",
+        subject: "E-Rate Application Deadlines Are Approaching — Don't Wait Another Year",
         preview: "Missing a deadline by even one day can forfeit your entire year's funding...",
         body: `Hi {{first_name}},
 
@@ -216,6 +245,8 @@ The most common mistakes that kill applications:
 
 **Institutions that work with a qualified E-Rate vendor receive 30-50% more funding** than those that self-file. Our team manages the entire lifecycle — from needs assessment through compliance documentation.
 
+This applies to **both schools AND libraries**. If you have students or patrons, you almost certainly qualify.
+
 Don't leave federal money on the table. Let's review your eligibility before the window closes.
 
 {{calendar_link}}
@@ -224,35 +255,88 @@ Best,
 Mark`,
       },
       {
-        day: "Day 8",
-        subject: "How One District Saved $400K on Network Infrastructure",
-        preview: "A real example of E-Rate in action — and what it funded...",
+        day: "Day 10",
+        subject: "MIBS: The Smartest Way to Use Your E-Rate Dollars",
+        preview: "Managed Internal Broadband Services bundle equipment + management into one E-Rate package...",
         body: `Hi {{first_name}},
 
-Let me share a real example of E-Rate in action.
+Most schools and libraries apply for E-Rate to buy equipment — access points, switches, cabling. But there's a smarter approach that most don't know about: **MIBS (Managed Internal Broadband Services).**
 
-**The situation**: A 5,000-student district needed a complete wireless network upgrade. Their existing infrastructure was 8 years old, couldn't support 1:1 device programs, and had dead zones in 40% of classrooms.
+MIBS lets you bundle eligible equipment, installation, AND ongoing management into a single E-Rate contract. Here's why that matters:
 
-**The project scope**:
-- 180 enterprise wireless access points
-- 24 network switches
-- Complete structured cabling upgrade (Cat6A)
-- Wireless controllers and management platform
-- 5-year support contracts
+**💰 CapEx → OpEx**: Instead of a large capital purchase, spread costs across the service period. Easier to budget. Easier to get board approval.
 
-**Total project cost**: $500,000
+**🔧 Inclusive Management**: Your access points aren't just installed and forgotten. MIBS contracts include monitoring, firmware updates, troubleshooting, and performance optimization — all covered by E-Rate.
 
-**E-Rate discount rate**: 80% (based on NSLP eligibility)
+**📋 Simplified Procurement**: One Form 470 covers everything. One competitive bid process. One contract. One invoice.
 
-**District out-of-pocket**: $100,000
+**📊 Budget Maximization**: Schools get $167/student. Libraries get $2.39/sq ft. MIBS bundles help you use every eligible dollar.
 
-**Federal funding secured**: $400,000
+**What's eligible under MIBS**:
+✅ WiFi 6/6E/7 access points + licensing
+✅ Managed network switches
+✅ Structured cabling (Cat6/6A, fiber)
+✅ UPS/battery backup
+✅ Firewall & content filtering
+✅ Installation & configuration
+✅ Ongoing monitoring & maintenance
 
-The entire application process — Form 470 filing, competitive bidding management, Form 471 submission, PIA response support — was managed by our team. The district's IT coordinator spent approximately 10 hours total on E-Rate paperwork over the entire cycle.
+**What's NOT eligible**: Chromebooks, tablets, servers, cameras, phone systems, training.
 
-The deployment was completed over summer break. When students returned in August, every classroom had enterprise-grade WiFi for the first time. Teacher satisfaction scores increased 34%. Student device connectivity issues dropped 91%.
+We structure MIBS contracts for maximum E-Rate coverage while maintaining full USAC compliance. One mistake in cost allocation can get your entire application denied — we've never had one rejected.
 
-**Your district could achieve similar results.** Let's start with a free eligibility review.
+Ready to explore MIBS for your school or library?
+
+{{calendar_link}}
+
+Best,
+Mark`,
+      },
+      {
+        day: "Day 14",
+        subject: "How One District Saved $400K — And a Library System Saved $107K",
+        preview: "Real E-Rate results from organizations just like yours...",
+        body: `Hi {{first_name}},
+
+Let me share two real examples of E-Rate in action.
+
+**🏫 School District — 5,000 Students**
+
+The situation: Complete wireless network upgrade needed. 8-year-old infrastructure couldn't support 1:1 Chromebook programs. Dead zones in 40% of classrooms.
+
+The project:
+- 180 enterprise wireless access points (WiFi 6E)
+- 24 managed network switches
+- Complete Cat6A cabling upgrade
+- Wireless controllers and cloud management
+- 5-year MIBS support contract
+
+**Total cost**: $500,000
+**E-Rate discount**: 80%
+**District paid**: $100,000
+**Federal funding**: $400,000
+
+Result: Zero WiFi-related test disruptions. Teacher satisfaction up 34%. Student connectivity issues down 91%.
+
+**📚 Library System — 3 Branches, 45,000 sq ft**
+
+The situation: Patron WiFi complaints at every branch. 200+ simultaneous users crashing consumer-grade networks. No CIPA-compliant filtering.
+
+The project:
+- 42 enterprise access points across 3 branches
+- Managed switches and SD-WAN connectivity
+- CIPA-compliant content filtering
+- Network segmentation (staff, public, IoT)
+- 3-year MIBS contract with monitoring
+
+**Total cost**: $153,643
+**E-Rate discount**: 70%
+**Library paid**: $46,093
+**Federal funding**: $107,550
+
+Result: WiFi complaints dropped to near zero. Patron satisfaction scores increased 28%. IT troubleshooting time reduced 75%.
+
+**Your organization could achieve similar results.** We handle the entire process — you focus on students and patrons.
 
 {{calendar_link}}
 
