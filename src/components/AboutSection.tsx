@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import markPhoto from "@/assets/mark-duerwachter.jpg";
 
 const AboutSection = () => {
   return (
@@ -49,6 +50,44 @@ const AboutSection = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Leadership */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
+          className="mt-24"
+        >
+          <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Leadership</span>
+          <h3 className="text-2xl md:text-3xl font-medium uppercase mt-3 mb-12">
+            The people behind the infrastructure
+          </h3>
+
+          <div className="grid md:grid-cols-2 gap-px bg-border max-w-3xl">
+            <div className="bg-card p-0">
+              <img
+                src={markPhoto}
+                alt="Mark Duerwachter, Vice President of Business Operations"
+                className="w-full aspect-square object-cover object-top"
+              />
+            </div>
+            <div className="bg-card p-8 flex flex-col justify-center">
+              <h4 className="text-xl font-mono-display font-medium uppercase tracking-tight">
+                Mark Duerwachter
+              </h4>
+              <p className="text-sm text-primary font-mono-display uppercase tracking-wider mt-1 mb-6">
+                Vice President of Business Operations
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                With over two decades of experience in enterprise IT infrastructure, Mark leads Modern Edge Technology's business operations and client strategy. His background spans managed services, cybersecurity, cloud architecture, and telecommunications across industries including manufacturing, finance, healthcare, and education.
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Mark's hands-on approach to technology consulting has helped hundreds of organizations transform their IT from a cost center into a strategic competitive advantage. He is a published thought leader on topics including Zero Trust architecture, business continuity planning, and the evolving MSP landscape.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

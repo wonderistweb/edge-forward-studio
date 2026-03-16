@@ -70,6 +70,9 @@ const BlogPage = () => {
                     </span>
                     <ArrowRight size={14} className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-250" />
                   </div>
+                  <div className="text-xs text-muted-foreground mt-3">
+                    By {post.author.name}
+                  </div>
                 </Link>
               </motion.div>
             ))}

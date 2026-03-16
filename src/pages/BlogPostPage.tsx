@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import markPhoto from "@/assets/mark-duerwachter.jpg";
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -53,6 +54,15 @@ const BlogPostPage = () => {
             <h1 className="text-3xl md:text-4xl font-medium uppercase leading-tight mb-8">
               {post.title}
             </h1>
+
+            {/* Author */}
+            <div className="flex items-center gap-4 mb-8">
+              <img src={markPhoto} alt={post.author.name} className="w-12 h-12 rounded-full object-cover border border-border" />
+              <div>
+                <div className="text-sm font-medium text-foreground">{post.author.name}</div>
+                <div className="text-xs text-muted-foreground">{post.author.role}</div>
+              </div>
+            </div>
 
             <div className="h-px bg-border mb-12" />
 
