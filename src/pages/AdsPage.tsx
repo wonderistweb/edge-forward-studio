@@ -517,8 +517,10 @@ DM me or comment "ERATE" for a free eligibility check 👇
             </div>
             <MetricsBar metrics={{ impressions: "40K/mo", ctr: "2.8%", cpc: "$3.40" }} />
           </motion.div>
+          )}
 
           {/* ── E-Rate Google Search: Direct ── */}
+          {show("erate") && (
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-3 mb-2">
               <Search size={18} className="text-primary" />
