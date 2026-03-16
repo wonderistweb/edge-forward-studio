@@ -25,10 +25,10 @@ const AboutSection = () => {
             transition={{ delay: 0.1, duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
           >
             <p className="text-muted-foreground leading-relaxed text-lg mb-8">
-              Our mission is to deliver top-tier managed IT services that combine enterprise-level expertise with unbeatable value. We are committed to helping businesses grow by providing reliable, responsive, and cost-effective IT solutions — without compromising on quality or service.
+              Based in the Milwaukee area and serving businesses across Southern Wisconsin and statewide, our mission is to deliver top-tier managed IT services that combine enterprise-level expertise with unbeatable value. We help Wisconsin businesses grow by providing reliable, responsive, and cost-effective IT solutions — without compromising on quality or service.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              By continuously optimizing our operations, we make world-class technology support accessible to organizations of all sizes. Our low markup model and flexible agreements without long-term contracts help you maximize your IT budget and maintain financial flexibility.
+              By continuously optimizing our operations, we make world-class technology support accessible to organizations of all sizes across Wisconsin. Our low markup model and flexible agreements without long-term contracts help you maximize your IT budget and maintain financial flexibility.
             </p>
 
             {/* Metrics */}
