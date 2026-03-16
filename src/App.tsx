@@ -12,6 +12,9 @@ import HospitalityPage from "./pages/HospitalityPage.tsx";
 import CorporatePage from "./pages/CorporatePage.tsx";
 import CustomPage from "./pages/CustomPage.tsx";
 import EratePage from "./pages/EratePage.tsx";
+import AdsPage from "./pages/AdsPage.tsx";
+import EmailsPage from "./pages/EmailsPage.tsx";
+import EbookPage from "./pages/EbookPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -32,6 +35,9 @@ const App = () => (
           <Route path="/industries/corporate" element={<CorporatePage />} />
           <Route path="/industries/custom" element={<CustomPage />} />
           <Route path="/e-rate" element={<EratePage />} />
+          <Route path="/marketing/ads" element={<AdsPage />} />
+          <Route path="/marketing/emails" element={<EmailsPage />} />
+          <Route path="/marketing/ebook" element={<EbookPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
