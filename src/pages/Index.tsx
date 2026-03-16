@@ -7,6 +7,7 @@ import PartnershipsSection from "@/components/PartnershipsSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
