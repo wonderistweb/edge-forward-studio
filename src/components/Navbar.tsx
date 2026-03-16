@@ -68,7 +68,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Modern Edge Technology" className={`h-10 w-auto ${theme === "dark" ? "brightness-0 invert" : "brightness-0 sepia saturate-[10] hue-rotate-[240deg]"}`} />
+          <img src={logo} alt="Modern Edge Technology" className="h-10 w-auto nav-logo" />
         </Link>
 
         {/* Desktop Nav */}
