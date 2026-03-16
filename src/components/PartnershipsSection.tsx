@@ -7,11 +7,6 @@ import logoDell from "@/assets/partners/dell.png";
 import logoVoip from "@/assets/partners/voip-supply.png";
 import logoFortinet from "@/assets/partners/fortinet.png";
 import logoVertiv from "@/assets/partners/vertiv.png";
-import logoSamsung from "@/assets/partners/samsung.jpg";
-import logoIntel from "@/assets/partners/intel.png";
-import logoSynology from "@/assets/partners/synology.png";
-import logoHp from "@/assets/partners/hp.png";
-import logoAxis from "@/assets/partners/axis.png";
 
 const partners = [
   { name: "3CX", logo: logo3cx },
@@ -21,11 +16,6 @@ const partners = [
   { name: "VoIP Supply", logo: logoVoip },
   { name: "Fortinet", logo: logoFortinet },
   { name: "Vertiv", logo: logoVertiv },
-  { name: "Samsung", logo: logoSamsung },
-  { name: "Intel", logo: logoIntel },
-  { name: "Synology", logo: logoSynology },
-  { name: "HP", logo: logoHp },
-  { name: "Axis", logo: logoAxis },
 ];
 
 const PartnershipsSection = () => {
@@ -48,7 +38,7 @@ const PartnershipsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-border">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-px bg-border">
           {partners.map((partner, i) => (
             <motion.div
               key={partner.name}
