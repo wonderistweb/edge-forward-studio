@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
+import IndustryHero from "@/components/IndustryHero";
+import heroImg from "@/assets/industry-hero-custom.jpg";
 
 const fade = {
   initial: { opacity: 0, y: 24 },
@@ -30,28 +32,13 @@ const CustomPage = () => {
       <Navbar />
       <FloatingMarketingMenu />
 
-      {/* Hero */}
-      <section className="pt-32 pb-20 border-b border-border">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fade}>
-            <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Industries</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase mt-3 max-w-4xl">
-              Custom IT Solutions
-            </h1>
-            <p className="text-lg text-muted-foreground mt-6 max-w-2xl leading-relaxed">
-              No two businesses are identical. We design and implement technology solutions tailored to your specific industry, environment, and operational requirements — not off-the-shelf packages.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-8">
-              <Button variant="hero" size="lg" asChild>
-                <Link to="/quote">Start a Conversation <ArrowRight className="ml-2" size={16} /></Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link to="/case-study/school-wifi-redesign">View Case Study <ArrowRight className="ml-2" size={16} /></Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <IndustryHero
+        image={heroImg}
+        title="Custom IT Solutions"
+        description="No two businesses are identical. We design and implement technology solutions tailored to your specific industry, environment, and operational requirements — not off-the-shelf packages."
+        primaryCta={{ label: "Start a Conversation", to: "/quote" }}
+        secondaryCta={{ label: "View Case Study", to: "/case-study/school-wifi-redesign" }}
+      />
 
       {/* Approach Banner */}
       <section className="border-b border-border">

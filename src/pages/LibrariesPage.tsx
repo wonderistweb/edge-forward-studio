@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
+import IndustryHero from "@/components/IndustryHero";
+import heroImg from "@/assets/industry-hero-libraries.jpg";
 
 const fade = {
   initial: { opacity: 0, y: 24 },
@@ -30,28 +32,12 @@ const LibrariesPage = () => {
       <Navbar />
       <FloatingMarketingMenu />
 
-      {/* Hero */}
-      <section className="pt-32 pb-20 border-b border-border">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fade}>
-            <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Industries</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase mt-3 max-w-4xl">
-              Library Technology Solutions
-            </h1>
-            <p className="text-lg text-muted-foreground mt-6 max-w-2xl leading-relaxed">
-              Modern libraries are digital hubs — not just book repositories. We build the technology infrastructure that supports public computing, digital literacy programs, maker spaces, and community engagement.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-8">
-              <Button variant="hero" size="lg" asChild>
-                <Link to="/quote">Get a Free Assessment <ArrowRight className="ml-2" size={16} /></Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link to="/e-rate">E-Rate Funding <ArrowRight className="ml-2" size={16} /></Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <IndustryHero
+        image={heroImg}
+        title="Library Technology Solutions"
+        description="Modern libraries are digital hubs — not just book repositories. We build the technology infrastructure that supports public computing, digital literacy programs, maker spaces, and community engagement."
+        secondaryCta={{ label: "E-Rate Funding", to: "/e-rate" }}
+      />
 
       {/* E-Rate CTA */}
       <section className="border-b border-border">
