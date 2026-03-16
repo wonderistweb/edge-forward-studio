@@ -558,6 +558,7 @@ DM me or comment "ERATE" for a free eligibility check 👇
             </div>
             <MetricsBar metrics={{ impressions: "12K/mo", ctr: "6.1%", cpc: "$9.25" }} />
           </motion.div>
+          )}
 
         </div>
       </section>
