@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Mail, Clock, Send, ChevronDown } from "lucide-react";
+import { ArrowLeft, Mail, Clock, Send, ChevronDown, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -16,441 +16,554 @@ interface Email {
 
 interface Sequence {
   name: string;
+  campaign: string;
   audience: string;
   goal: string;
   emails: Email[];
 }
 
+const campaigns = [
+  { id: "all", label: "All Campaigns" },
+  { id: "general", label: "General / MSP" },
+  { id: "erate", label: "E-Rate" },
+  { id: "cybersecurity", label: "Cybersecurity" },
+];
+
 const sequences: Sequence[] = [
   {
     name: "New Lead Nurture",
+    campaign: "general",
     audience: "Website form submissions & free assessment requests",
     goal: "Convert cold leads to booked discovery calls within 14 days",
     emails: [
       {
         day: "Day 0",
-        subject: "Your Free IT Assessment — Here's What Happens Next",
-        preview: "Thanks for reaching out. Here's exactly what to expect...",
-        body: `Hi {{first_name}},
+        subject: "Your IT is costing you $268K/yr. Here's the math.",
+        preview: "You requested an assessment. Here's what we're going to find...",
+        body: `{{first_name}},
 
-Thanks for requesting a free IT infrastructure assessment from Modern Edge Technology. I'm Mark Duerwachter, VP of Business Operations, and I'll be personally overseeing your assessment.
+You just requested a free IT assessment. Good move.
 
-Here's exactly what happens next:
+Here's what I'm going to tell you before we even look at your network:
 
-1. **Discovery Call (15 min)** — I'll reach out within 24 hours to schedule a brief call. We'll discuss your current environment, pain points, and what you're hoping to achieve.
+**Your IT is costing you 3-5x what it should.**
 
-2. **On-Site or Remote Assessment (2-4 hrs)** — Our engineering team conducts a comprehensive audit of your network, security posture, backup systems, and infrastructure health.
+How do I know? Because in 500+ assessments, we've never — not once — found a business running reactive IT that wasn't massively overpaying.
 
-3. **Findings Report** — Within 5 business days, you'll receive a detailed report with prioritized recommendations, risk scores, and a proposed roadmap.
+The average 50-person company on break-fix IT spends **$268,000-$647,000/year**. That's not a typo. That includes:
 
-There's no obligation and no sales pressure. Our goal is to give you an honest picture of where your IT stands — and where it could be.
+→ $48K-$72K in repair bills
+→ $120K-$200K in downtime (12-16 hrs/yr of unplanned outages)
+→ $35K-$150K in security incident cleanup
+→ $50K-$200K in compliance remediation
 
-In the meantime, you might find this useful: our latest article on [why SMBs can no longer afford to ignore managed IT]({{blog_link}}) breaks down the real cost of reactive IT support.
+We replace all of that for **$87K-$165K/year**. Same company. Better results. 99.99% uptime.
 
-Looking forward to connecting.
+**Here's what happens next:**
 
-Best,
+1. I call you within 24 hours
+2. Our engineers audit your entire environment (2-4 hrs)
+3. You get a brutally honest report with prioritized fixes
+
+No contract. No obligation. No BS.
+
+If your IT is solid, I'll tell you. If it's a ticking time bomb (it usually is), I'll tell you that too.
+
+Talk soon,
 Mark Duerwachter
-VP of Business Operations
-Modern Edge Technology
-{{phone}} | {{email}}`,
+Modern Edge Technology`,
       },
       {
         day: "Day 3",
-        subject: "The #1 IT Mistake That Costs SMBs $268K/Year",
-        preview: "Most businesses don't realize how much reactive IT actually costs...",
-        body: `Hi {{first_name}},
+        subject: "The $647K question nobody asks their IT guy",
+        preview: "Your IT provider has zero incentive to fix this. Here's why...",
+        body: `{{first_name}},
 
-I wanted to share something that comes up in almost every assessment we conduct.
+Quick thought experiment:
 
-The average SMB with 50 employees spends between **$268,000 and $647,000 per year** on reactive IT — and most of them don't realize it. That number includes:
+Your break-fix IT guy charges by the hour. More problems = more billable hours. More downtime = more emergency calls. More fires = more revenue for them.
 
-- **Break-fix repair bills**: $48K-$72K/year
-- **Downtime costs** (12-16 hours/year): $120K-$200K/year  
-- **Security incident costs**: $35K-$150K/year
-- **Compliance remediation**: $50K-$200K/year
+**Why would they ever fix the root cause?**
 
-Compare that to managed IT services for the same company: **$87,000-$165,000/year** — with 99.99% uptime, 24/7 monitoring, and zero surprise bills.
+They wouldn't. And they don't. That's why the same problems keep happening.
 
-The math speaks for itself. But the real value isn't in the spreadsheet — it's in the peace of mind that comes from knowing your infrastructure is monitored, maintained, and protected around the clock.
+The managed model flips this entirely:
 
-If you haven't had a chance to schedule your free assessment yet, just reply to this email and I'll get something on the calendar.
+→ We charge a flat monthly fee
+→ Every outage costs US money (not you)
+→ Every fire we prevent saves US time
+→ Our entire incentive is to make your IT boring
 
-Best,
-Mark`,
+**Boring IT = profitable business.**
+
+The companies paying us $7K-$14K/month used to spend $22K-$54K/month on reactive IT. They didn't cut costs by switching — they cut costs by 60-75%.
+
+Still haven't booked your assessment? Two options:
+
+1. Reply "yes" and I'll call you
+2. Grab a time: {{calendar_link}}
+
+Either way takes 30 seconds.
+
+— Mark`,
       },
       {
         day: "Day 7",
-        subject: "Quick question about your IT setup",
-        preview: "I had a thought about your environment that I wanted to share...",
-        body: `Hi {{first_name}},
+        subject: "Your backup probably doesn't work. (Seriously.)",
+        preview: "73% of the businesses we audit have broken backups. Here's the scary part...",
+        body: `{{first_name}},
 
-Quick question — do you know when your last backup was successfully tested?
+I need to ask you one question:
 
-I ask because in 73% of the assessments we conduct, we discover that backup systems are either:
-- Not running at all (failed silently weeks or months ago)
-- Running but never tested (so recovery is unverified)
-- Missing critical systems (backing up files but not databases or configurations)
+**When was the last time someone actually tested restoring from your backup?**
 
-A backup that's never been tested isn't a backup — it's a hypothesis. And 60% of businesses that experience significant data loss shut down within 6 months.
+Not "when did the backup run." When did someone restore a file, a database, an entire server — and verify it actually worked?
 
-Our free assessment includes a complete backup audit. We'll verify that your backups are running, test a restoration, and confirm your recovery time and recovery point objectives are achievable.
+If the answer is "I don't know" or "never," you're in the majority. And you're gambling your entire business on an assumption.
 
-No cost. No obligation. Just clarity about whether your business could survive a worst-case scenario.
+Here's what we find in 73% of assessments:
 
-Want to get that scheduled? Reply here or grab a time: {{calendar_link}}
+🔴 Backups failed silently weeks ago — nobody noticed
+🔴 Backups run but have never been test-restored
+🔴 Critical systems aren't included in the backup scope
+🔴 Recovery would take 5-7 days (business can't survive 5-7 days)
 
-Best,
-Mark`,
+**60% of businesses that lose their data shut down within 6 months.**
+
+Not "have a bad quarter." Shut down. Permanently.
+
+Our assessment includes a full backup audit — we test your restores, verify your RPO and RTO, and tell you exactly where you stand.
+
+Free. No strings. 2-4 hours of your time for total peace of mind (or a wake-up call you needed).
+
+{{calendar_link}}
+
+— Mark`,
       },
       {
         day: "Day 10",
-        subject: "What we found at a company just like yours",
-        preview: "A recent client assessment revealed some surprises worth sharing...",
-        body: `Hi {{first_name}},
+        subject: "We found 12 critical vulnerabilities. The client had 'no IT problems.'",
+        preview: "A real assessment from last week. This is what 'fine' looks like...",
+        body: `{{first_name}},
 
-I wanted to share a quick case study that might resonate with your situation.
+Real story from last week.
 
-We recently conducted a free assessment for a 45-person company in the {{industry}} space. They believed their IT was "fine" — they had a firewall, antivirus on most machines, and a backup that ran nightly.
+45-person company. {{industry}} space. Owner told me: "Our IT is fine. We just want a second opinion."
 
-Here's what we actually found:
+Here's what "fine" looked like:
 
-🔴 **Critical**: Firewall firmware was 3 years out of date with 12 known CVEs
-🔴 **Critical**: 8 workstations had no endpoint protection at all
-🟡 **High**: Backup hadn't completed successfully in 6 weeks (no alerts configured)
-🟡 **High**: 3 user accounts from former employees still active with full access
-🟡 **High**: No multi-factor authentication on any system, including email
-🔵 **Medium**: Network had zero segmentation — guest WiFi on same VLAN as accounting
+🔴 Firewall firmware: 3 years outdated, 12 known exploit paths
+🔴 8 workstations with ZERO endpoint protection
+🔴 Backup hadn't completed in 6 WEEKS (no alerts set up)
+🔴 3 former employee accounts still active with full access
+🔴 No MFA on email, VPN, or any cloud service
+🔴 Guest WiFi on same network as accounting software
 
-Any one of these findings could have been the entry point for a ransomware attack. Together, they represented a ticking time bomb.
+Any ONE of these = ransomware entry point.
+ALL of them together = guaranteed breach. Just a matter of when.
 
-We remediated everything within 30 days and transitioned them to our managed services platform. Six months later: zero security incidents, zero unplanned outages, and their monthly IT cost dropped 40%.
+**We fixed everything in 30 days.**
 
-Your assessment might reveal similar findings — or it might confirm that you're in great shape. Either way, you'll have clarity.
+Six months later:
+→ Zero security incidents
+→ Zero unplanned outages
+→ Monthly IT cost dropped 40%
 
-Ready to find out? {{calendar_link}}
+That's not magic. That's what proactive IT looks like.
 
-Best,
-Mark`,
+Your assessment takes 2-4 hours. You'll either sleep better tonight or get the wake-up call that saves your business.
+
+{{calendar_link}}
+
+— Mark`,
       },
       {
         day: "Day 14",
-        subject: "Last chance: your free IT assessment offer",
-        preview: "I don't want you to miss out on this — here's why it matters...",
-        body: `Hi {{first_name}},
+        subject: "Last email. But read this before you delete it.",
+        preview: "Every business owner who got breached said the same thing...",
+        body: `{{first_name}},
 
-This is my last note about your free IT assessment — I don't want to overstay my welcome in your inbox.
+Last email. I promise.
 
-But I do want to leave you with this: every organization I've worked with that experienced a significant IT failure — ransomware, data loss, extended outage — said the same thing afterward:
+But I need you to read this one line:
 
-**"We knew we should have addressed this sooner."**
+**Every single business owner who got breached told me the same thing: "I knew I should have done something sooner."**
 
-The assessment is free. It takes 2-4 hours. There's no obligation, no contract, and no sales pitch. You get a detailed report of your infrastructure's health, a prioritized list of vulnerabilities, and a roadmap for addressing them — whether you work with us or not.
+Every. Single. One.
 
-If now isn't the right time, I completely understand. But if there's even a small voice in the back of your mind saying "we should probably look at this," trust that instinct.
+Not "I had no idea." Not "nobody told me." It was always: "I knew. I just didn't make it a priority."
 
-Book your assessment: {{calendar_link}}
-Or simply reply to this email.
+The assessment is:
+→ Free
+→ 2-4 hours
+→ No obligation
+→ No contract
+→ No sales pitch
 
-Wishing you all the best either way.
+You get a report. A roadmap. Clarity.
 
-Mark Duerwachter
-VP of Business Operations
-Modern Edge Technology`,
+Whether you work with us or not, you'll know exactly where you stand.
+
+Reply "yes" or book here: {{calendar_link}}
+
+After this, I'm out of your inbox.
+
+— Mark`,
       },
     ],
   },
   {
-    name: "E-Rate Awareness — Schools & Libraries",
-    audience: "K-12 school administrators, IT coordinators, library directors & board members",
-    goal: "Drive E-Rate eligibility consultations for every school and library with unclaimed funding",
+    name: "E-Rate Blitz — Schools & Libraries",
+    campaign: "erate",
+    audience: "Every K-12 superintendent, IT director, library director & board member with eligible E-Rate funds",
+    goal: "Ensure no school or library leaves federal dollars unclaimed",
     emails: [
       {
         day: "Day 0",
-        subject: "Your School/Library Could Be Missing Out on 90% Technology Funding",
-        preview: "The E-Rate program funds up to 90% of networking & telecom costs...",
-        body: `Hi {{first_name}},
+        subject: "You're leaving $835,000 on the table. Here's the proof.",
+        preview: "Federal money your school/library already qualifies for — unclaimed...",
+        body: `{{first_name}},
 
-Did you know that billions of dollars in federal technology funding go unclaimed by schools and libraries every year?
+I'm going to tell you a number. And it's going to make you uncomfortable.
 
-The **E-Rate program** (Schools and Libraries Universal Service Support Mechanism) provides discounts of **20% to 90%** on eligible telecommunications and networking equipment for K-12 schools and public libraries. Since 1997, the program has distributed over $50 billion.
+**$4 billion.** That's how much E-Rate funding is available every year for schools and libraries.
 
-Here's what E-Rate can fund:
-- **Internet access & transport** (fiber, cable, wireless)
-- **WiFi access points & controllers**
-- **Network switches** (core, distribution, access layer)
-- **Structured cabling** (Cat6/Cat6A, fiber optic)
-- **Routers & UPS systems**
-- **Managed Internal Broadband Services (MIBS)**
+**Billions** of it goes unclaimed. Every. Single. Year.
 
-**For schools**: $167 per student in Category 2 funding. A district with 5,000 students at an 80% discount rate has a five-year budget of **$835,000**.
+Schools and libraries that qualify for 60-90% discounts on WiFi, switches, cabling, firewalls, and internet service just... don't apply. Because the process looks complicated. Because nobody told them. Because they assumed they didn't qualify.
 
-**For libraries**: $2.39 per square foot in Category 2 funding. A 15,000 sq ft branch library qualifies for **$35,850** — and most library systems have multiple branches.
+Let me make this simple:
 
-We've helped schools and libraries secure over **$12 million** in E-Rate funding. Want to find out what you qualify for?
+**If you have students, you qualify.**
+**If you have patrons, you qualify.**
 
-**Free eligibility consultation**: {{calendar_link}}
+Here's what the math looks like:
 
-Best,
-Mark Duerwachter
-VP of Business Operations
+📊 Schools: **$167 per student** in Category 2 funding
+→ 500 students = $83,500
+→ 2,000 students = $334,000
+→ 5,000 students = $835,000
+
+📊 Libraries: **$2.39 per square foot** in Category 2 funding
+→ 10,000 sq ft = $23,900
+→ 15,000 sq ft = $35,850
+→ 3 branches @ 15K sq ft each = $107,550
+
+**That's YOUR money. It's already allocated. The government WANTS you to take it.**
+
+We've secured **$12M+** in E-Rate funding. 98% approval rate. We handle every form, every bid, every compliance requirement.
+
+You focus on students and patrons. We handle the paperwork.
+
+Free eligibility check — takes 15 minutes: {{calendar_link}}
+
+— Mark Duerwachter
 Modern Edge Technology`,
       },
       {
         day: "Day 3",
-        subject: "Library Directors: Your Patrons Deserve Better WiFi",
-        preview: "E-Rate covers up to 90% of your WiFi upgrade — here's how...",
-        body: `Hi {{first_name}},
+        subject: "Your library's WiFi complaints end here. (90% funded.)",
+        preview: "E-Rate will pay for 60-90% of your WiFi upgrade. No catch...",
+        body: `{{first_name}},
 
-If you run a public library, your patrons are probably complaining about WiFi. Slow speeds, dropped connections, inability to stream educational content or join video calls — these aren't minor inconveniences. They're barriers to the digital equity your library exists to provide.
+Your patrons are complaining about WiFi. I know because they ALL are.
 
-The good news: **E-Rate can fund 60-90% of a complete wireless network upgrade.**
+200 people on consumer-grade networking equipment = disaster. Dropped video calls. Streaming that buffers every 30 seconds. Kids who can't complete homework. Adults who can't apply for jobs.
 
-Here's what we typically deploy for library systems:
+**Your library exists for digital equity. Broken WiFi defeats the purpose.**
 
-📡 **Enterprise WiFi 6E access points** — handling 200+ simultaneous patron devices without breaking a sweat
-🔒 **CIPA-compliant content filtering** — required for E-Rate eligibility, protects minors while preserving adult access
-🔌 **Managed switches & structured cabling** — the backbone that makes everything work
-🛡️ **Firewall & network segmentation** — separating staff, public, and IoT networks
+Here's the thing: the federal government will pay for 60-90% of a complete wireless network upgrade. It's called E-Rate. And your library almost certainly qualifies.
 
-**Real example**: A 3-branch library system with 45,000 total sq ft qualified for **$107,550** in Category 2 funding at a 70% discount rate. Their out-of-pocket cost for a complete network modernization: **$46,093** instead of $153,643.
+What we deploy for library systems:
 
-The application window is open. We handle every form, every bid, every compliance requirement.
+→ Enterprise WiFi 6E — handles 200+ simultaneous devices without flinching
+→ CIPA-compliant filtering — required for E-Rate, protects minors
+→ Network segmentation — staff, public, and IoT on separate networks
+→ Managed switches & cabling — the infrastructure that makes it all work
 
-**Check your library's eligibility**: {{calendar_link}}
+**Real numbers from a real library:**
 
-Best,
-Mark`,
+3 branches. 45,000 total sq ft. 70% discount rate.
+
+Total project cost: $153,643
+Library paid: $46,093
+**Federal funding: $107,550**
+
+That's not a grant application that takes 6 months. That's E-Rate. We handle the forms. You get enterprise WiFi.
+
+15-minute eligibility check: {{calendar_link}}
+
+— Mark`,
       },
       {
         day: "Day 6",
-        subject: "E-Rate Application Deadlines Are Approaching — Don't Wait Another Year",
-        preview: "Missing a deadline by even one day can forfeit your entire year's funding...",
-        body: `Hi {{first_name}},
+        subject: "Miss this deadline, wait 365 days. Not kidding.",
+        preview: "E-Rate has RIGID deadlines. One day late = one year wait...",
+        body: `{{first_name}},
 
-The E-Rate application timeline is rigid — and the consequences of missing a deadline are severe. Missing by even **one day** can result in denial of your entire application for that funding year.
+I'm not going to sugarcoat this.
 
-**Key dates you need to know:**
+**E-Rate has the strictest deadlines of any federal program I've worked with.**
 
-📅 **October-November**: Form 470 must be posted (initiates 28-day competitive bidding)
-📅 **January-March**: Form 471 filing window (funding request)
-📅 **After funding commitment**: Form 486 due within 120 days
+Miss the Form 470 window by ONE day? Wait a full year.
+File Form 486 one day late? Forfeit your ENTIRE year's funding.
+One typo on a service date? Application denied.
 
-The most common mistakes that kill applications:
-1. Insufficient competitive bidding documentation
-2. Mismatched service dates between forms
-3. Requesting ineligible equipment
-4. Missing the Form 486 deadline
-5. Inadequate record retention (10-year requirement)
+Here are the dates burned into my calendar:
 
-**Institutions that work with a qualified E-Rate vendor receive 30-50% more funding** than those that self-file. Our team manages the entire lifecycle — from needs assessment through compliance documentation.
+📅 Oct-Nov: Form 470 posted (starts 28-day competitive bid)
+📅 Jan-Mar: Form 471 filing window
+📅 120 days after approval: Form 486 deadline
 
-This applies to **both schools AND libraries**. If you have students or patrons, you almost certainly qualify.
+The top 5 mistakes that KILL applications:
 
-Don't leave federal money on the table. Let's review your eligibility before the window closes.
+1. Bad bid documentation (USAC audits this aggressively)
+2. Service dates don't match across forms (one day off = denied)
+3. Including ineligible items (Chromebooks, cameras, phones = NO)
+4. Missing Form 486 (120-day clock starts ticking immediately)
+5. Not keeping records for 10 years (yes, TEN years)
+
+Schools and libraries that use a qualified E-Rate consultant get **30-50% more funding** than self-filers.
+
+We've filed hundreds of applications. Zero rejections for compliance errors. Ever.
+
+The window is open NOW. Let's get your application started before it slams shut.
 
 {{calendar_link}}
 
-Best,
-Mark`,
+— Mark`,
       },
       {
         day: "Day 10",
-        subject: "MIBS: The Smartest Way to Use Your E-Rate Dollars",
-        preview: "Managed Internal Broadband Services bundle equipment + management into one E-Rate package...",
-        body: `Hi {{first_name}},
+        subject: "MIBS: How to get managed WiFi for pennies on the dollar",
+        preview: "Most E-Rate applicants don't know about this. It changes everything...",
+        body: `{{first_name}},
 
-Most schools and libraries apply for E-Rate to buy equipment — access points, switches, cabling. But there's a smarter approach that most don't know about: **MIBS (Managed Internal Broadband Services).**
+Most schools and libraries use E-Rate to BUY equipment.
 
-MIBS lets you bundle eligible equipment, installation, AND ongoing management into a single E-Rate contract. Here's why that matters:
+Smart schools and libraries use E-Rate to get **managed equipment**.
 
-**💰 CapEx → OpEx**: Instead of a large capital purchase, spread costs across the service period. Easier to budget. Easier to get board approval.
+It's called **MIBS — Managed Internal Broadband Services.** And it's the single best-kept secret in the E-Rate program.
 
-**🔧 Inclusive Management**: Your access points aren't just installed and forgotten. MIBS contracts include monitoring, firmware updates, troubleshooting, and performance optimization — all covered by E-Rate.
+Here's the difference:
 
-**📋 Simplified Procurement**: One Form 470 covers everything. One competitive bid process. One contract. One invoice.
+❌ Without MIBS: You buy APs. They sit on the ceiling. Nobody monitors them. Firmware goes stale. Performance degrades. You don't know until teachers complain.
 
-**📊 Budget Maximization**: Schools get $167/student. Libraries get $2.39/sq ft. MIBS bundles help you use every eligible dollar.
+✅ With MIBS: You get APs + installation + monitoring + firmware updates + troubleshooting + performance optimization. ALL covered by E-Rate.
 
-**What's eligible under MIBS**:
-✅ WiFi 6/6E/7 access points + licensing
-✅ Managed network switches
-✅ Structured cabling (Cat6/6A, fiber)
-✅ UPS/battery backup
-✅ Firewall & content filtering
-✅ Installation & configuration
-✅ Ongoing monitoring & maintenance
+Same discount. Same funding. But instead of equipment collecting dust, you get a **fully managed network**.
 
-**What's NOT eligible**: Chromebooks, tablets, servers, cameras, phone systems, training.
+**What MIBS covers:**
+→ WiFi 6E/7 access points + licensing
+→ Managed network switches
+→ Structured cabling
+→ UPS/battery backup
+→ Firewall & CIPA filtering
+→ Professional installation
+→ Ongoing monitoring & maintenance
 
-We structure MIBS contracts for maximum E-Rate coverage while maintaining full USAC compliance. One mistake in cost allocation can get your entire application denied — we've never had one rejected.
+**What it doesn't cover:**
+→ Chromebooks, tablets, laptops
+→ Security cameras
+→ Phone systems
+→ Training
 
-Ready to explore MIBS for your school or library?
+We structure MIBS contracts to squeeze every eligible dollar out of your Category 2 budget. $167/student for schools. $2.39/sq ft for libraries.
+
+**We've never had a MIBS application rejected.** Not once.
+
+Want to see what MIBS looks like for your organization?
 
 {{calendar_link}}
 
-Best,
-Mark`,
+— Mark`,
       },
       {
         day: "Day 14",
-        subject: "How One District Saved $400K — And a Library System Saved $107K",
-        preview: "Real E-Rate results from organizations just like yours...",
-        body: `Hi {{first_name}},
+        subject: "$400K for a school. $107K for a library. Real E-Rate results.",
+        preview: "Two real projects. Real numbers. Your organization could be next...",
+        body: `{{first_name}},
 
-Let me share two real examples of E-Rate in action.
+No theory. No projections. Just results.
 
-**🏫 School District — 5,000 Students**
+**🏫 SCHOOL DISTRICT — 5,000 students**
 
-The situation: Complete wireless network upgrade needed. 8-year-old infrastructure couldn't support 1:1 Chromebook programs. Dead zones in 40% of classrooms.
+Problem: 8-year-old WiFi. Dead zones in 40% of classrooms. State testing kept crashing. Teachers furious.
 
-The project:
-- 180 enterprise wireless access points (WiFi 6E)
-- 24 managed network switches
-- Complete Cat6A cabling upgrade
-- Wireless controllers and cloud management
-- 5-year MIBS support contract
+What we deployed:
+→ 180 WiFi 6E access points
+→ 24 managed switches
+→ Complete Cat6A cabling upgrade
+→ 5-year MIBS contract
 
-**Total cost**: $500,000
-**E-Rate discount**: 80%
-**District paid**: $100,000
-**Federal funding**: $400,000
+The numbers:
+Total cost: $500,000
+E-Rate discount: 80%
+**District paid: $100,000**
+**Federal funding: $400,000**
 
-Result: Zero WiFi-related test disruptions. Teacher satisfaction up 34%. Student connectivity issues down 91%.
+Results after one semester:
+→ ZERO WiFi-related test disruptions (was 47 the prior year)
+→ Teacher satisfaction up 34%
+→ Student connectivity issues down 91%
+→ IT help desk tickets dropped 85%
 
-**📚 Library System — 3 Branches, 45,000 sq ft**
+---
 
-The situation: Patron WiFi complaints at every branch. 200+ simultaneous users crashing consumer-grade networks. No CIPA-compliant filtering.
+**📚 LIBRARY SYSTEM — 3 branches, 45,000 sq ft**
 
-The project:
-- 42 enterprise access points across 3 branches
-- Managed switches and SD-WAN connectivity
-- CIPA-compliant content filtering
-- Network segmentation (staff, public, IoT)
-- 3-year MIBS contract with monitoring
+Problem: Patron WiFi complaints at EVERY branch. 200+ users crashing consumer-grade equipment. No CIPA filtering (not even E-Rate eligible without it).
 
-**Total cost**: $153,643
-**E-Rate discount**: 70%
-**Library paid**: $46,093
-**Federal funding**: $107,550
+What we deployed:
+→ 42 enterprise APs across 3 branches
+→ SD-WAN connecting all branches
+→ CIPA-compliant filtering
+→ Full network segmentation
+→ 3-year MIBS contract
 
-Result: WiFi complaints dropped to near zero. Patron satisfaction scores increased 28%. IT troubleshooting time reduced 75%.
+The numbers:
+Total cost: $153,643
+E-Rate discount: 70%
+**Library paid: $46,093**
+**Federal funding: $107,550**
 
-**Your organization could achieve similar results.** We handle the entire process — you focus on students and patrons.
+Results:
+→ WiFi complaints: near zero
+→ Patron satisfaction up 28%
+→ IT troubleshooting time down 75%
+
+---
+
+**Your organization is next.** The money is there. The funding window is open. We handle everything.
+
+15 minutes on the phone. That's all it takes to start.
 
 {{calendar_link}}
 
-Best,
-Mark`,
+— Mark`,
       },
     ],
   },
   {
-    name: "Cybersecurity Urgency",
-    audience: "Business owners who downloaded security content",
-    goal: "Convert security-aware leads into managed security service clients",
+    name: "Cybersecurity Wake-Up Call",
+    campaign: "cybersecurity",
+    audience: "Business owners who downloaded security content or visited security pages",
+    goal: "Create urgency and convert to managed security clients",
     emails: [
       {
         day: "Day 0",
-        subject: "Your Cybersecurity Checklist — Plus Something That Surprised Us",
-        preview: "Thanks for downloading our security guide. Here's a finding from this week...",
-        body: `Hi {{first_name}},
+        subject: "You have a 67% chance of getting ransomwared. Here's why.",
+        preview: "The stats are terrifying. But the fix costs less than a part-time employee...",
+        body: `{{first_name}},
 
-Thanks for downloading our cybersecurity checklist. You clearly take your organization's security seriously — and in 2026, that's not optional.
+You downloaded our cybersecurity checklist. Which means you already suspect something is wrong.
 
-I wanted to share something from an assessment we completed this week. A 60-person company — profitable, well-run, good reputation — had what they believed was solid security. Firewall, antivirus, "the usual."
+Let me confirm it.
 
-In the first 30 minutes of our assessment, we found:
-- **14 devices** with no endpoint protection
-- **Zero multi-factor authentication** (including on their email and VPN)
-- **6 former employee accounts** still active in Active Directory
-- A backup system that **hadn't completed a successful job in 3 weeks**
+**67% of ransomware attacks target businesses with fewer than 100 employees.**
 
-This isn't unusual. This is *typical*. We see similar findings in 70%+ of our assessments.
+Not Fortune 500s. Not banks. Businesses like yours.
 
-The checklist you downloaded will help you identify your own gaps. But if you want a professional assessment — conducted by engineers who've evaluated hundreds of environments — we offer them free of charge.
+Average ransom demand: **$1.5 million**
+Average recovery time: **22 days**
+Percentage that pay and get ALL data back: **0%** (average recovery is 65%)
+Percentage attacked AGAIN within 12 months: **80%**
+Percentage that close permanently within 6 months: **60%**
 
-No obligation. No sales pitch. Just a clear-eyed look at where you stand.
+Read that last one again. **Sixty percent close. Forever.**
+
+Now here's the part that should make you angry:
+
+**Preventing all of this costs $8K-$20K/year.** For a 50-person company. That's less than a part-time employee.
+
+We assessed a 60-person company last week. "Good reputation. Profitable. Solid security." Their words.
+
+In 30 minutes we found:
+→ 14 devices with ZERO endpoint protection
+→ No MFA anywhere (email, VPN, cloud apps)
+→ 6 former employee accounts still active
+→ Backup hadn't completed in 3 weeks
+
+That's not unusual. That's AVERAGE.
+
+Free security assessment. 2 hours. You'll know exactly where you stand.
 
 {{calendar_link}}
 
-Best,
-Mark Duerwachter
-VP of Business Operations
-Modern Edge Technology`,
+— Mark`,
       },
       {
         day: "Day 5",
-        subject: "67% of Ransomware Attacks Target Businesses Under 100 Employees",
-        preview: "The stats are worse than you think — but prevention is more affordable than you'd expect...",
-        body: `Hi {{first_name}},
+        subject: "The $1.85M mistake you're making right now",
+        preview: "Ransomware costs 100x more than prevention. These are the exact numbers...",
+        body: `{{first_name}},
 
-I want to put some numbers in front of you — not to scare you, but because I've watched too many businesses learn these lessons the hard way.
+Let me put two numbers in front of you:
 
-**Ransomware in 2026 — the numbers:**
-- 67% of attacks target businesses under 100 employees
-- Average ransom demand: $1.5 million
-- Average recovery time: 22 days
-- Organizations that pay recover only 65% of data
-- 80% of organizations that pay are attacked again within 12 months
-- 60% of affected SMBs close within 6 months
+**Cost of prevention:** $8,000-$20,000/year
+**Cost of a breach:** $1,850,000 average
 
-**The cost of prevention:**
-- Comprehensive managed security for a 50-person company: $8,000-$20,000/year
-- That's 1/100th the cost of a single successful attack
+That's a 100:1 ratio. You're either spending $1 on prevention or $100 on cleanup. There is no third option.
 
-Prevention includes:
-✅ 24/7 managed detection and response
-✅ Endpoint protection on every device
-✅ Email security with AI-powered threat detection
-✅ Automated patch management
-✅ Immutable backup with verified restores
-✅ Security awareness training with phishing simulation
-✅ Incident response planning and testing
+Here's what $8K-$20K/year buys you:
 
-Every layer matters. Missing even one creates the gap an attacker needs.
+✅ 24/7 managed detection & response (humans watching your network around the clock)
+✅ Endpoint protection on EVERY device
+✅ AI-powered email security
+✅ Automated patch management (no more "we'll get to it next week")
+✅ Immutable backups with verified restores
+✅ Security awareness training + phishing simulations
+✅ Incident response plan (tested, not theoretical)
 
-Would a 30-minute security review be worth your time? I'll walk through your current posture and identify your three highest-priority improvements — no strings attached.
+**Every layer matters.** Attackers only need ONE gap. One unpatched server. One phished employee. One reused password. One missing MFA prompt.
+
+You either close the gaps or you pray. And prayer is not a cybersecurity strategy.
+
+30-minute security review. I'll walk through your posture and give you your three highest-priority fixes. Free. No strings.
 
 {{calendar_link}}
 
-Best,
-Mark`,
+— Mark`,
       },
       {
         day: "Day 10",
-        subject: "Your cyber insurance might not cover you",
-        preview: "Insurers are now requiring specific controls — here's what they check...",
-        body: `Hi {{first_name}},
+        subject: "Your cyber insurance is probably worthless. Here's the test.",
+        preview: "Insurers are denying claims left and right. Check these 8 boxes or you're exposed...",
+        body: `{{first_name}},
 
-Here's something that catches many business owners off guard: **cyber insurance premiums have increased 300% in three years** — and insurers are now denying coverage to organizations that can't demonstrate specific security controls.
+Plot twist: **your cyber insurance might not pay out when you need it.**
 
-Before issuing or renewing a policy, most underwriters now require evidence of:
+Premiums have jumped 300% in three years. And insurers are now DENYING claims to organizations that can't prove specific security controls were in place BEFORE the breach.
 
-☐ Multi-factor authentication on all remote access and email
-☐ Endpoint detection and response on all devices
-☐ Regular patch management with documented cadence
-☐ Backup systems with tested recovery procedures
+Here's their checklist. Fail any item and you're looking at:
+→ Coverage denied entirely
+→ Premiums 5-10x higher on renewal
+→ Exclusions that make the policy worthless
+
+**The 8 controls every insurer now requires:**
+
+☐ MFA on all remote access and email
+☐ EDR (endpoint detection & response) on all devices
+☐ Documented patch management cadence
+☐ Tested backup & recovery procedures
 ☐ Security awareness training program
-☐ Incident response plan
+☐ Written incident response plan
 ☐ Network segmentation
-☐ Email filtering and anti-phishing controls
+☐ Email filtering & anti-phishing controls
 
-If you can't check every box, you're likely facing one of three scenarios:
-1. **Denied coverage** entirely
-2. **Dramatically higher premiums** (sometimes 5-10x)
-3. **Coverage exclusions** that render the policy useless when you need it
+**How many can you check right now?**
 
-When a breach occurs without insurance, the average SMB recovery cost exceeds **$1.85 million**.
+If it's not 8/8, you're either paying too much for insurance, getting denied coverage, or holding a policy with so many exclusions it's basically wallpaper.
 
-We help clients implement every control on that checklist — often within 30-60 days — and provide the documentation insurers require. Several clients have seen their premiums decrease after implementing our managed security services.
+We implement all 8 controls — typically within 30-60 days. Several clients saw their premiums DECREASE after working with us because insurers reward proper security posture.
 
-Worth a conversation?
+Average breach without insurance: **$1.85M.** Out of pocket. Game over.
+
+Let's make sure that's not you.
 
 {{calendar_link}}
 
-Best,
-Mark`,
+— Mark`,
       },
     ],
   },
@@ -522,6 +635,12 @@ const SequenceAccordion = ({ sequence }: { sequence: Sequence }) => {
 };
 
 const EmailsPage = () => {
+  const [activeCampaign, setActiveCampaign] = useState("all");
+
+  const filtered = activeCampaign === "all"
+    ? sequences
+    : sequences.filter((s) => s.campaign === activeCampaign);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -536,24 +655,50 @@ const EmailsPage = () => {
             <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Marketing Showcase</span>
             <h1 className="text-4xl md:text-5xl font-medium uppercase mt-3">Email Sequences</h1>
             <p className="text-muted-foreground mt-4 max-w-2xl text-lg leading-relaxed">
-              Automated email nurture campaigns designed to educate prospects, build trust, and drive conversions across key verticals.
+              High-conversion email campaigns written in a direct, value-first style. No fluff. No corporate speak. Just results.
             </p>
           </motion.div>
         </div>
       </section>
 
+      {/* Campaign Toggles */}
+      <section className="border-b border-border">
+        <div className="max-w-5xl mx-auto px-6 py-4">
+          <div className="flex items-center gap-3 flex-wrap">
+            <Filter size={14} className="text-muted-foreground" />
+            {campaigns.map((c) => (
+              <button
+                key={c.id}
+                onClick={() => setActiveCampaign(c.id)}
+                className={`text-xs font-mono-display uppercase tracking-wider px-4 py-2 border transition-colors ${
+                  activeCampaign === c.id
+                    ? "border-primary bg-primary/10 text-primary"
+                    : "border-border text-muted-foreground hover:text-foreground hover:border-foreground/30"
+                }`}
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-6">
-          {sequences.map((seq, i) => (
-            <SequenceAccordion key={i} sequence={seq} />
-          ))}
+          {filtered.length === 0 ? (
+            <div className="text-center text-muted-foreground py-20">No sequences for this campaign.</div>
+          ) : (
+            filtered.map((seq, i) => (
+              <SequenceAccordion key={i} sequence={seq} />
+            ))
+          )}
         </div>
       </section>
 
       <section className="border-t border-border py-16">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-2xl font-medium uppercase">Ready to automate your outreach?</h2>
-          <p className="text-muted-foreground mt-3 max-w-lg mx-auto text-sm">These sequences are customized per client. Every email is written by industry experts and optimized for deliverability.</p>
+          <p className="text-muted-foreground mt-3 max-w-lg mx-auto text-sm">Every email written to convert. No fluff. No "just checking in." Pure value and urgency.</p>
           <Button variant="hero" size="lg" className="mt-6" asChild>
             <Link to="/quote">Get Started</Link>
           </Button>
