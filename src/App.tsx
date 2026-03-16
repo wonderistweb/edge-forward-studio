@@ -17,6 +17,7 @@ import EmailsPage from "./pages/EmailsPage.tsx";
 import EbookPage from "./pages/EbookPage.tsx";
 import CaseStudyPage from "./pages/CaseStudyPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
+import LibrariesPage from "./pages/LibrariesPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/quote" element={<QuotePage />} />
           <Route path="/industries/education" element={<EducationPage />} />
+          <Route path="/industries/libraries" element={<LibrariesPage />} />
           <Route path="/industries/hospitality" element={<HospitalityPage />} />
           <Route path="/industries/corporate" element={<CorporatePage />} />
           <Route path="/industries/custom" element={<CustomPage />} />

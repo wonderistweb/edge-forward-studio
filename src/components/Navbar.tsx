@@ -7,6 +7,7 @@ import logo from "@/assets/logo.png";
 
 const industryItems = [
   { label: "Education (K-12)", href: "/industries/education" },
+  { label: "Libraries", href: "/industries/libraries" },
   { label: "Hospitality", href: "/industries/hospitality" },
   { label: "Corporate", href: "/industries/corporate" },
   { label: "Custom", href: "/industries/custom" },
