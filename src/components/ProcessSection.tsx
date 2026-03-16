@@ -46,7 +46,7 @@ const ProcessSection = () => {
                 Needs Analysis
               </h3>
               <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-                We sit down with your team to understand your infrastructure, pain points, and growth objectives — building a comprehensive technology roadmap.
+                We learn about your infrastructure, pain points, and growth objectives — then build a comprehensive technology roadmap tailored to your business.
               </p>
               <Button asChild variant="hero" size="sm" className="mt-4 w-fit">
                 <Link to="/quote">Get Started <ArrowRight className="ml-1" /></Link>
