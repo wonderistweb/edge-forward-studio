@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
+import IndustryHero from "@/components/IndustryHero";
+import heroImg from "@/assets/industry-hero-realestate.jpg";
 
 const fade = {
   initial: { opacity: 0, y: 24 },
@@ -30,25 +32,12 @@ const RealEstatePage = () => {
       <Navbar />
       <FloatingMarketingMenu />
 
-      <section className="pt-32 pb-20 border-b border-border">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fade}>
-            <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Industries</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase mt-3 max-w-4xl">Real Estate Technology</h1>
-            <p className="text-lg text-muted-foreground mt-6 max-w-2xl leading-relaxed">
-              Smart building infrastructure that attracts premium tenants, reduces operating costs, and positions your properties as technology-forward assets in a competitive market.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-8">
-              <Button variant="hero" size="lg" asChild>
-                <Link to="/quote">Get a Free Assessment <ArrowRight className="ml-2" size={16} /></Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link to="/case-study/school-wifi-redesign">View Case Study <ArrowRight className="ml-2" size={16} /></Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <IndustryHero
+        image={heroImg}
+        title="Real Estate Technology"
+        description="Smart building infrastructure that attracts premium tenants, reduces operating costs, and positions your properties as technology-forward assets in a competitive market."
+        secondaryCta={{ label: "View Case Study", to: "/case-study/school-wifi-redesign" }}
+      />
 
       <section className="border-b border-border">
         <div className="max-w-7xl mx-auto px-6 py-16">
