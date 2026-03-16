@@ -10,7 +10,15 @@ const industryItems = [
   { label: "Libraries", href: "/industries/libraries" },
   { label: "Hospitality", href: "/industries/hospitality" },
   { label: "Corporate", href: "/industries/corporate" },
-  { label: "Custom", href: "/industries/custom" },
+  { label: "Healthcare", href: "/industries/healthcare" },
+  { label: "Manufacturing", href: "/industries/manufacturing" },
+  { label: "Retail", href: "/industries/retail" },
+  { label: "Government", href: "/industries/government" },
+  { label: "Non-Profit", href: "/industries/non-profit" },
+  { label: "Legal", href: "/industries/legal" },
+  { label: "Financial Services", href: "/industries/financial-services" },
+  { label: "Real Estate", href: "/industries/real-estate" },
+  { label: "Custom Solutions", href: "/industries/custom" },
   { label: "E-Rate Program", href: "/e-rate" },
 ];
 
@@ -82,14 +90,14 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-2 w-56 bg-card border border-border shadow-xl"
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-card border border-border shadow-xl grid grid-cols-2"
                     >
                       {industryItems.map((sub) => (
                         <Link
                           key={sub.label}
                           to={sub.href}
                           onClick={() => setIndustriesOpen(false)}
-                          className="block px-5 py-3 text-sm font-mono-display uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-150 border-b border-border last:border-b-0"
+                          className="block px-5 py-3 text-sm font-mono-display uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-150 border-b border-border"
                         >
                           {sub.label}
                         </Link>
