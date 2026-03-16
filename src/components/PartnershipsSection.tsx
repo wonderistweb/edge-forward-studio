@@ -1,8 +1,31 @@
 import { motion } from "framer-motion";
 
+import logo3cx from "@/assets/partners/3cx.png";
+import logoLenovo from "@/assets/partners/lenovo.png";
+import logoRhombus from "@/assets/partners/rhombus.png";
+import logoDell from "@/assets/partners/dell.png";
+import logoVoip from "@/assets/partners/voip-supply.png";
+import logoFortinet from "@/assets/partners/fortinet.png";
+import logoVertiv from "@/assets/partners/vertiv.png";
+import logoSamsung from "@/assets/partners/samsung.jpg";
+import logoIntel from "@/assets/partners/intel.png";
+import logoSynology from "@/assets/partners/synology.png";
+import logoHp from "@/assets/partners/hp.png";
+import logoAxis from "@/assets/partners/axis.png";
+
 const partners = [
-  "3CX", "Lenovo", "Rhombus", "Dell", "VoIP Supply",
-  "Fortinet", "Vertiv", "Samsung", "Intel", "Synology", "HP", "Axis",
+  { name: "3CX", logo: logo3cx },
+  { name: "Lenovo", logo: logoLenovo },
+  { name: "Rhombus", logo: logoRhombus },
+  { name: "Dell", logo: logoDell },
+  { name: "VoIP Supply", logo: logoVoip },
+  { name: "Fortinet", logo: logoFortinet },
+  { name: "Vertiv", logo: logoVertiv },
+  { name: "Samsung", logo: logoSamsung },
+  { name: "Intel", logo: logoIntel },
+  { name: "Synology", logo: logoSynology },
+  { name: "HP", logo: logoHp },
+  { name: "Axis", logo: logoAxis },
 ];
 
 const PartnershipsSection = () => {
@@ -28,16 +51,18 @@ const PartnershipsSection = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-border">
           {partners.map((partner, i) => (
             <motion.div
-              key={partner}
+              key={partner.name}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.04, duration: 0.4 }}
-              className="bg-card hover:bg-card-hover flex items-center justify-center p-8 transition-colors duration-250 snap-curve group"
+              className="bg-card hover:bg-secondary flex items-center justify-center p-6 transition-colors duration-250 snap-curve group"
             >
-              <span className="font-mono-display text-sm uppercase tracking-wider text-muted-foreground group-hover:text-foreground transition-colors duration-250">
-                {partner}
-              </span>
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="max-h-16 max-w-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-250 brightness-0 invert"
+              />
             </motion.div>
           ))}
         </div>
