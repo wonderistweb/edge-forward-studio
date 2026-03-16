@@ -27,6 +27,7 @@ import LegalPage from "./pages/LegalPage.tsx";
 import FinancialServicesPage from "./pages/FinancialServicesPage.tsx";
 import RealEstatePage from "./pages/RealEstatePage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
+import { ScrollToTop } from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<BlogPage />} />
