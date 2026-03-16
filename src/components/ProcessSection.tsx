@@ -57,7 +57,7 @@ const ProcessSection = () => {
             className="relative bg-card overflow-hidden group"
           >
             <img
-              src={markConsultation2}
+              src={infrastructureAudit}
               alt="Mark discussing infrastructure with a client"
               className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500 snap-curve"
             />
