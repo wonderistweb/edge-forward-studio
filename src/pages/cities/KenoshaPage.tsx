@@ -1,7 +1,9 @@
 import CityPage from "@/components/CityPage";
 import type { CityPageData } from "@/components/CityPage";
+import heroImage from "@/assets/cities/kenosha.jpg";
 
 const data: CityPageData = {
+  heroImage,
   city: "Kenosha",
   region: "Kenosha County & Southeast Wisconsin",
   metaDescription: "Modern Edge Technology delivers managed IT services, cybersecurity, and network infrastructure to businesses in Kenosha, WI and southeast Wisconsin.",

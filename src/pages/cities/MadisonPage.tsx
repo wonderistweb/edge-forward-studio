@@ -1,7 +1,9 @@
 import CityPage from "@/components/CityPage";
 import type { CityPageData } from "@/components/CityPage";
+import heroImage from "@/assets/cities/madison.jpg";
 
 const data: CityPageData = {
+  heroImage,
   city: "Madison",
   region: "Dane County & Southern Wisconsin",
   metaDescription: "Modern Edge Technology delivers managed IT services, cybersecurity, and cloud solutions to businesses in Madison, WI and the Dane County area.",

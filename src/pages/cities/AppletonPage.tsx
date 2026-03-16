@@ -1,7 +1,9 @@
 import CityPage from "@/components/CityPage";
 import type { CityPageData } from "@/components/CityPage";
+import heroImage from "@/assets/cities/appleton.jpg";
 
 const data: CityPageData = {
+  heroImage,
   city: "Appleton",
   region: "Fox Valley & Northeast Wisconsin",
   metaDescription: "Modern Edge Technology provides managed IT services, cybersecurity, and cloud infrastructure to businesses in Appleton, WI and the Fox Valley region.",

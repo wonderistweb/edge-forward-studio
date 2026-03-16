@@ -1,7 +1,9 @@
 import CityPage from "@/components/CityPage";
 import type { CityPageData } from "@/components/CityPage";
+import heroImage from "@/assets/cities/oshkosh.jpg";
 
 const data: CityPageData = {
+  heroImage,
   city: "Oshkosh",
   region: "Winnebago County & Fox Valley",
   metaDescription: "Modern Edge Technology delivers managed IT services, cybersecurity, and network solutions to businesses in Oshkosh, WI and Winnebago County.",
