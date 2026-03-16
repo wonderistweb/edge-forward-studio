@@ -28,7 +28,7 @@ const navItems = [
   { label: "Partnerships", href: "#partnerships" },
   { label: "About", href: "/about", isRoute: true },
   { label: "Blog", href: "/blog", isRoute: true },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact", isRoute: true },
 ];
 
 const Navbar = () => {

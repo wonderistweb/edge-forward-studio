@@ -26,6 +26,7 @@ import NonProfitPage from "./pages/NonProfitPage.tsx";
 import LegalPage from "./pages/LegalPage.tsx";
 import FinancialServicesPage from "./pages/FinancialServicesPage.tsx";
 import RealEstatePage from "./pages/RealEstatePage.tsx";
+import ContactPage from "./pages/ContactPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -59,6 +60,7 @@ const App = () => (
           <Route path="/industries/legal" element={<LegalPage />} />
           <Route path="/industries/financial-services" element={<FinancialServicesPage />} />
           <Route path="/industries/real-estate" element={<RealEstatePage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
