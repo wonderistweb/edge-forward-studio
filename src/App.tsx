@@ -18,6 +18,14 @@ import EbookPage from "./pages/EbookPage.tsx";
 import CaseStudyPage from "./pages/CaseStudyPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import LibrariesPage from "./pages/LibrariesPage.tsx";
+import HealthcarePage from "./pages/HealthcarePage.tsx";
+import ManufacturingPage from "./pages/ManufacturingPage.tsx";
+import RetailPage from "./pages/RetailPage.tsx";
+import GovernmentPage from "./pages/GovernmentPage.tsx";
+import NonProfitPage from "./pages/NonProfitPage.tsx";
+import LegalPage from "./pages/LegalPage.tsx";
+import FinancialServicesPage from "./pages/FinancialServicesPage.tsx";
+import RealEstatePage from "./pages/RealEstatePage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
