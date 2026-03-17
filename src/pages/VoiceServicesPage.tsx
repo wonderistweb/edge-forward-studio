@@ -35,7 +35,7 @@ const VoiceServicesPage = () => {
       <IndustryHero
         image={heroImg}
         title="Voice Services"
-        description="Modern voice solutions from traditional PBX to cloud-based VoIP platforms that integrate seamlessly with your business operations."
+        description="Modern cloud-based VoIP platforms and unified communications solutions that integrate seamlessly with your business operations."
       />
 
       <section className="border-b border-border py-24">

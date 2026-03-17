@@ -18,7 +18,7 @@ const services = [
   {
     icon: Phone,
     title: "Voice Services",
-    description: "Modern voice solutions from traditional PBX to cloud-based VoIP platforms that integrate with your business operations.",
+    description: "Modern cloud-based VoIP platforms and unified communications solutions that integrate seamlessly with your business operations.",
     href: "/services/voice-services",
   },
   {
