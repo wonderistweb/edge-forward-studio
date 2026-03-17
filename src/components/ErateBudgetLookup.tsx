@@ -15,7 +15,7 @@ const titleCase = (s: string) =>
     .toLowerCase()
     .replace(/\b\w/g, (c) => c.toUpperCase());
 
-const ErateBudgetLookup = () => {
+const ErateBudgetLookup = ({ embedded = false }: { embedded?: boolean }) => {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<ErateBudget | null>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -54,6 +54,85 @@ const ErateBudgetLookup = () => {
   const usedPercentage = selected
     ? ((selected.fundedAmount + selected.pendingAmount) / selected.totalBudget) * 100
     : 0;
+
+  if (embedded) {
+    return (
+      <div>
+        {/* Search */}
+        <div className="relative">
+          <div className="relative animate-erate-glow rounded-sm">
+            <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" />
+            <input
+              ref={inputRef}
+              type="text"
+              value={query}
+              onChange={(e) => { setQuery(e.target.value); setIsOpen(true); setSelected(null); }}
+              onFocus={() => query.length >= 2 && setIsOpen(true)}
+              placeholder="Search your school district..."
+              className="w-full bg-background border-2 border-primary/50 focus:border-primary pl-12 pr-4 py-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none transition-colors shadow-[0_0_20px_hsl(var(--primary)/0.15)]"
+            />
+            <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
+          </div>
+          <AnimatePresence>
+            {isOpen && filtered.length > 0 && (
+              <motion.div
+                ref={dropdownRef}
+                initial={{ opacity: 0, y: -4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.15 }}
+                className="absolute z-50 w-full mt-px border border-border bg-card shadow-lg max-h-60 overflow-y-auto"
+              >
+                {filtered.map((b) => (
+                  <button key={b.ben} onClick={() => handleSelect(b)} className="w-full text-left px-4 py-3 hover:bg-accent/50 transition-colors border-b border-border last:border-b-0 flex items-center justify-between gap-4">
+                    <div>
+                      <p className="text-sm font-medium text-foreground">{titleCase(b.name)}</p>
+                      <p className="text-xs text-muted-foreground">{titleCase(b.city)}, WI</p>
+                    </div>
+                    <span className="text-xs font-mono-display text-primary shrink-0">{fmt(b.totalBudget)}</span>
+                  </button>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+          {isOpen && query.length >= 2 && filtered.length === 0 && (
+            <div className="absolute z-50 w-full mt-px border border-border bg-card px-4 py-6 text-center">
+              <p className="text-sm text-muted-foreground">No districts found matching "{query}"</p>
+            </div>
+          )}
+        </div>
+
+        {/* Selected result (compact) */}
+        <AnimatePresence>
+          {selected && (
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 12 }} transition={{ duration: 0.3 }} className="mt-6 border border-border bg-card">
+              <div className="px-5 py-4 border-b border-border">
+                <h3 className="text-base font-medium uppercase">{titleCase(selected.name)}</h3>
+                <p className="text-xs text-muted-foreground mt-1">{titleCase(selected.city)}, WI · {selected.budgetCycle}</p>
+              </div>
+              <div className="grid grid-cols-2 gap-px bg-border">
+                <div className="bg-card p-4">
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Total Budget</p>
+                  <p className="text-lg font-medium">{fmt(selected.totalBudget)}</p>
+                </div>
+                <div className="bg-card p-4">
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Available</p>
+                  <p className="text-lg font-medium text-primary">{fmt(selected.availableAmount)}</p>
+                </div>
+              </div>
+              <div className="px-5 py-4 border-t border-border bg-primary/5">
+                <Button variant="hero" size="default" asChild className="w-full">
+                  <Link to="/quote">
+                    Get Help Maximizing These Funds <ArrowRight className="ml-2" size={16} />
+                  </Link>
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    );
+  }
 
   return (
     <section className="border-b border-border py-24 section-tinted">
