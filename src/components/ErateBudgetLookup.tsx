@@ -64,7 +64,7 @@ const ErateBudgetLookup = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
-          className="bg-primary/5 border border-primary/20 p-8 md:p-12 mb-0"
+          className="bg-primary/10 border border-primary/30 p-8 md:p-12 mb-0 relative overflow-hidden"
         >
           <div className="flex flex-col lg:flex-row lg:items-end gap-8">
             <div className="flex-1">
@@ -81,10 +81,10 @@ const ErateBudgetLookup = () => {
 
             {/* Search input inline */}
             <div className="relative w-full lg:max-w-md shrink-0">
-              <div className="relative">
+              <div className="relative animate-erate-glow rounded-sm">
                 <Search
                   size={18}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-primary"
                 />
                 <input
                   ref={inputRef}
@@ -97,7 +97,7 @@ const ErateBudgetLookup = () => {
                   }}
                   onFocus={() => query.length >= 2 && setIsOpen(true)}
                   placeholder="Search your school district..."
-                  className="w-full bg-background border-2 border-primary/30 focus:border-primary pl-12 pr-4 py-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none transition-colors"
+                  className="w-full bg-background border-2 border-primary/50 focus:border-primary pl-12 pr-4 py-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none transition-colors shadow-[0_0_20px_hsl(var(--primary)/0.15)]"
                 />
                 <ChevronDown
                   size={16}

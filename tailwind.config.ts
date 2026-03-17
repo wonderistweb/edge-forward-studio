@@ -80,11 +80,16 @@ export default {
           "0%, 100%": { opacity: "0.3" },
           "50%": { opacity: "1" },
         },
+        "erate-glow": {
+          "0%, 100%": { boxShadow: "0 0 15px hsl(270 50% 50% / 0.2), 0 0 30px hsl(270 50% 50% / 0.1)" },
+          "50%": { boxShadow: "0 0 25px hsl(270 50% 50% / 0.4), 0 0 50px hsl(270 50% 50% / 0.2)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-line": "pulse-line 3s ease-in-out infinite",
+        "erate-glow": "erate-glow 2.5s ease-in-out infinite",
       },
     },
   },
