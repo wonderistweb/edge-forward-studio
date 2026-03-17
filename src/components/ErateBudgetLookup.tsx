@@ -135,7 +135,7 @@ const ErateBudgetLookup = ({ embedded = false }: { embedded?: boolean }) => {
   }
 
   return (
-    <section className="border-b border-border py-24 section-tinted">
+    <section id="budget-lookup" className="border-b border-border py-24 section-tinted">
       <div className="max-w-7xl mx-auto px-6">
         {/* Hero-style CTA block */}
         <motion.div
