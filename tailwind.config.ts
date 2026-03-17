@@ -89,6 +89,7 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-line": "pulse-line 3s ease-in-out infinite",
+        "erate-glow": "erate-glow 2.5s ease-in-out infinite",
       },
     },
   },
