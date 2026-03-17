@@ -12,6 +12,18 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
           >
+            <span className="text-sm font-mono-display text-primary uppercase tracking-wider">About</span>
+            <h2 className="text-3xl md:text-4xl font-medium uppercase mt-3">
+              Enterprise expertise,<br />accessible scale
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
+          >
             <p className="text-muted-foreground leading-relaxed text-lg mb-8">
               Based in the Milwaukee area and serving businesses across Southern Wisconsin and statewide, our mission is to deliver top-tier managed IT services that combine enterprise-level expertise with unbeatable value. We help Wisconsin businesses grow by providing reliable, responsive, and cost-effective IT solutions — without compromising on quality or service.
             </p>
@@ -36,18 +48,6 @@ const AboutSection = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
-          >
-            <span className="text-sm font-mono-display text-primary uppercase tracking-wider">About</span>
-            <h2 className="text-3xl md:text-4xl font-medium uppercase mt-3">
-              Enterprise expertise,<br />accessible scale
-            </h2>
           </motion.div>
         </div>
 
