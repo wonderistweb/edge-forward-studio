@@ -12,18 +12,6 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
           >
-            <span className="text-sm font-mono-display text-primary uppercase tracking-wider">About</span>
-            <h2 className="text-3xl md:text-4xl font-medium uppercase mt-3">
-              Enterprise expertise,<br />accessible scale
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
-          >
             <p className="text-muted-foreground leading-relaxed text-lg mb-8">
               Based in the Milwaukee area and serving businesses across Southern Wisconsin and statewide, our mission is to deliver top-tier managed IT services that combine enterprise-level expertise with unbeatable value. We help Wisconsin businesses grow by providing reliable, responsive, and cost-effective IT solutions — without compromising on quality or service.
             </p>
@@ -49,6 +37,18 @@ const AboutSection = () => {
               ))}
             </div>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
+          >
+            <span className="text-sm font-mono-display text-primary uppercase tracking-wider">About</span>
+            <h2 className="text-3xl md:text-4xl font-medium uppercase mt-3">
+              Enterprise expertise,<br />accessible scale
+            </h2>
+          </motion.div>
         </div>
 
         {/* Leadership */}
@@ -65,13 +65,6 @@ const AboutSection = () => {
           </h3>
 
           <div className="grid md:grid-cols-2 gap-px bg-border">
-            <div className="bg-card p-0">
-              <img
-                src={markPhoto}
-                alt="Mark Duerwachter, Vice President of Business Operations"
-                className="w-full aspect-[3/4] object-cover object-top scale-x-[-1]"
-              />
-            </div>
             <div className="bg-card p-8 md:p-12 flex flex-col justify-center">
               <h4 className="text-xl font-mono-display font-medium uppercase tracking-tight">
                 Mark Duerwachter
@@ -85,6 +78,13 @@ const AboutSection = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Mark's strategic approach to technology consulting has helped hundreds of organizations transform their IT from a cost center into a competitive advantage. He is a published thought leader on topics including Zero Trust architecture, business continuity planning, and the evolving MSP landscape.
               </p>
+            </div>
+            <div className="bg-card p-0">
+              <img
+                src={markPhoto}
+                alt="Mark Duerwachter, Vice President of Business Operations"
+                className="w-full aspect-[3/4] object-cover object-top"
+              />
             </div>
           </div>
         </motion.div>
