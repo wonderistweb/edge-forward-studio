@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import IndustryHero from "@/components/IndustryHero";
+import ErateBudgetLookup from "@/components/ErateBudgetLookup";
 import heroImg from "@/assets/industry-hero-erate.jpg";
 
 const timeline = [
@@ -86,6 +87,8 @@ const EratePage = () => {
           </div>
         </div>
       </section>
+
+      <ErateBudgetLookup />
 
       {/* Discount Rates */}
       <section className="border-b border-border py-24">
