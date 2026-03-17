@@ -58,43 +58,47 @@ const ErateBudgetLookup = () => {
   return (
     <section className="border-b border-border py-24 section-tinted">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Hero-style CTA block */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
-          className="mb-12"
+          className="bg-primary/5 border border-primary/20 p-8 md:p-12 mb-0"
         >
-          <span className="text-xs font-mono-display text-primary uppercase tracking-wider">
-            FY2026–2030 Category 2
-          </span>
-          <h2 className="text-3xl font-medium uppercase mt-3 max-w-2xl">
-            Check your district's E-Rate funding
-          </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl leading-relaxed">
-            Search for your Wisconsin school district or library to see your allocated Category 2 budget for the upcoming funding cycle.
-          </p>
-        </motion.div>
+          <div className="flex flex-col lg:flex-row lg:items-end gap-8">
+            <div className="flex-1">
+              <span className="inline-flex items-center gap-2 text-xs font-mono-display text-primary uppercase tracking-wider bg-primary/10 px-3 py-1 mb-4">
+                <DollarSign size={14} /> FY2026–2030 Category 2
+              </span>
+              <h2 className="text-3xl md:text-4xl font-medium uppercase mt-2 max-w-2xl">
+                How much E-Rate funding is your district leaving on the table?
+              </h2>
+              <p className="text-muted-foreground mt-4 max-w-xl leading-relaxed">
+                Wisconsin school districts have millions in allocated Category 2 budgets. Find yours instantly — search below to see your available funding.
+              </p>
+            </div>
 
-        {/* Search */}
-        <div className="relative max-w-xl">
-          <div className="relative">
-            <Search
-              size={18}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground"
-            />
-            <input
-              ref={inputRef}
-              type="text"
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setIsOpen(true);
-                setSelected(null);
-              }}
-              onFocus={() => query.length >= 2 && setIsOpen(true)}
-              placeholder="Start typing your district name..."
-              className="w-full bg-card border border-border pl-12 pr-4 py-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+            {/* Search input inline */}
+            <div className="relative w-full lg:max-w-md shrink-0">
+              <div className="relative">
+                <Search
+                  size={18}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground"
+                />
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={query}
+                  onChange={(e) => {
+                    setQuery(e.target.value);
+                    setIsOpen(true);
+                    setSelected(null);
+                  }}
+                  onFocus={() => query.length >= 2 && setIsOpen(true)}
+                  placeholder="Search your school district..."
+                  className="w-full bg-background border-2 border-primary/30 focus:border-primary pl-12 pr-4 py-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none transition-colors"
+                />
             />
             <ChevronDown
               size={16}
