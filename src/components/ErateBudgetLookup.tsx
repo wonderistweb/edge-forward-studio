@@ -99,54 +99,55 @@ const ErateBudgetLookup = () => {
                   placeholder="Search your school district..."
                   className="w-full bg-background border-2 border-primary/30 focus:border-primary pl-12 pr-4 py-4 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none transition-colors"
                 />
-            />
-            <ChevronDown
-              size={16}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground"
-            />
-          </div>
+                <ChevronDown
+                  size={16}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground"
+                />
+              </div>
 
-          <AnimatePresence>
-            {isOpen && filtered.length > 0 && (
-              <motion.div
-                ref={dropdownRef}
-                initial={{ opacity: 0, y: -4 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -4 }}
-                transition={{ duration: 0.15 }}
-                className="absolute z-50 w-full mt-px border border-border bg-card shadow-lg max-h-80 overflow-y-auto"
-              >
-                {filtered.map((b) => (
-                  <button
-                    key={b.ben}
-                    onClick={() => handleSelect(b)}
-                    className="w-full text-left px-4 py-3 hover:bg-accent/50 transition-colors border-b border-border last:border-b-0 flex items-center justify-between gap-4"
+              <AnimatePresence>
+                {isOpen && filtered.length > 0 && (
+                  <motion.div
+                    ref={dropdownRef}
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute z-50 w-full mt-px border border-border bg-card shadow-lg max-h-80 overflow-y-auto"
                   >
-                    <div>
-                      <p className="text-sm font-medium text-foreground">
-                        {titleCase(b.name)}
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        {titleCase(b.city)}, WI · {b.applicantType}
-                      </p>
-                    </div>
-                    <span className="text-xs font-mono-display text-primary shrink-0">
-                      {fmt(b.totalBudget)}
-                    </span>
-                  </button>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
+                    {filtered.map((b) => (
+                      <button
+                        key={b.ben}
+                        onClick={() => handleSelect(b)}
+                        className="w-full text-left px-4 py-3 hover:bg-accent/50 transition-colors border-b border-border last:border-b-0 flex items-center justify-between gap-4"
+                      >
+                        <div>
+                          <p className="text-sm font-medium text-foreground">
+                            {titleCase(b.name)}
+                          </p>
+                          <p className="text-xs text-muted-foreground">
+                            {titleCase(b.city)}, WI · {b.applicantType}
+                          </p>
+                        </div>
+                        <span className="text-xs font-mono-display text-primary shrink-0">
+                          {fmt(b.totalBudget)}
+                        </span>
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-          {isOpen && query.length >= 2 && filtered.length === 0 && (
-            <div className="absolute z-50 w-full mt-px border border-border bg-card px-4 py-6 text-center">
-              <p className="text-sm text-muted-foreground">
-                No districts found matching "{query}"
-              </p>
+              {isOpen && query.length >= 2 && filtered.length === 0 && (
+                <div className="absolute z-50 w-full mt-px border border-border bg-card px-4 py-6 text-center">
+                  <p className="text-sm text-muted-foreground">
+                    No districts found matching "{query}"
+                  </p>
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          </div>
+        </motion.div>
 
         {/* Selected District Result */}
         <AnimatePresence>
