@@ -66,19 +66,33 @@ const IndustryHero = ({
             {description}
           </p>
           <div className="flex flex-wrap gap-4 mt-8">
-            <Button variant="hero" size="lg" asChild>
-              <Link to={primaryCta.to}>
+            {primaryCta.to.startsWith("#") ? (
+              <Button variant="hero" size="lg" onClick={() => document.querySelector(primaryCta.to)?.scrollIntoView({ behavior: "smooth" })}>
                 {primaryCta.label}
                 <ArrowRight className="ml-2" size={16} />
-              </Link>
-            </Button>
-            {secondaryCta && (
-              <Button variant="outline" size="lg" asChild>
-                <Link to={secondaryCta.to}>
-                  {secondaryCta.label}
+              </Button>
+            ) : (
+              <Button variant="hero" size="lg" asChild>
+                <Link to={primaryCta.to}>
+                  {primaryCta.label}
                   <ArrowRight className="ml-2" size={16} />
                 </Link>
               </Button>
+            )}
+            {secondaryCta && (
+              secondaryCta.to.startsWith("#") ? (
+                <Button variant="outline" size="lg" onClick={() => document.querySelector(secondaryCta.to)?.scrollIntoView({ behavior: "smooth" })}>
+                  {secondaryCta.label}
+                  <ArrowRight className="ml-2" size={16} />
+                </Button>
+              ) : (
+                <Button variant="outline" size="lg" asChild>
+                  <Link to={secondaryCta.to}>
+                    {secondaryCta.label}
+                    <ArrowRight className="ml-2" size={16} />
+                  </Link>
+                </Button>
+              )
             )}
           </div>
         </motion.div>
