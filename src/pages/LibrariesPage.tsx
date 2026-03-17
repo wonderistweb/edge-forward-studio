@@ -58,6 +58,9 @@ const LibrariesPage = () => {
         </div>
       </section>
 
+      {/* Library E-Rate Budget Lookup */}
+      <LibraryBudgetLookup />
+
       {/* Services */}
       <section className="border-b border-border py-24">
         <div className="max-w-7xl mx-auto px-6">
