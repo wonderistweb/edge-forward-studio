@@ -69,7 +69,7 @@ const AboutSection = () => {
               <img
                 src={markPhoto}
                 alt="Mark Duerwachter, Vice President of Business Operations"
-                className="w-full aspect-[3/4] object-cover object-top"
+                className="w-full aspect-[3/4] object-cover object-top scale-x-[-1]"
               />
             </div>
             <div className="bg-card p-8 md:p-12 flex flex-col justify-center">
