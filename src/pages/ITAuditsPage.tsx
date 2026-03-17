@@ -66,8 +66,7 @@ const ITAuditsPage = () => {
             {[
               { title: "Discovery & Scanning", desc: "Non-invasive scanning tools map every device, service, user, and data flow across your network. No guesswork — just a complete, accurate picture of your environment." },
               { title: "Analysis & Risk Scoring", desc: "Every finding is categorized by severity, likelihood, and business impact. Not a 200-page report — a prioritized action plan your team can execute." },
-              { title: "Executive Reporting", desc: "Board-ready summaries with risk heat maps, compliance scorecards, and ROI projections for recommended remediations. Technical detail for your IT team, business context for leadership." },
-              { title: "Remediation Support", desc: "Beyond identifying problems, we provide clear remediation guidance and can support implementation — from firewall reconfigurations to policy development." },
+              { title: "Executive Reporting", desc: "Board-ready summaries with risk heat maps, compliance scorecards, and ROI projections for recommended improvements. Technical detail for your IT team, business context for leadership." },
             ].map((c) => (
               <motion.div key={c.title} className="bg-card p-8" {...fade}>
                 <h3 className="font-mono-display text-sm uppercase tracking-wider mb-3">{c.title}</h3>
