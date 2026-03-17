@@ -21,48 +21,33 @@ const LibraryWhitepaperPage = () => {
       <Navbar />
       <FloatingMarketingMenu />
 
-      {/* Hero */}
-      <section className="pt-32 pb-20 border-b border-border">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div {...fade}>
-              <Link to="/industries/libraries" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8">
-                <ArrowLeft size={14} /> Libraries
-              </Link>
-              <span className="block text-sm font-mono-display text-primary uppercase tracking-wider mb-3">Free Whitepaper</span>
-              <h1 className="text-4xl md:text-5xl font-medium uppercase leading-[1.1] mb-6">
-                Is your library leaving federal money on the table?
-              </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                94% of Wisconsin public libraries have unclaimed E-Rate Category 2 funding — over $28 million sitting untouched. This whitepaper explains why, and what your library can do about it right now.
-              </p>
-              <a href="/met_library_whitepaper.docx" download>
-                <Button size="lg" className="gap-2">
-                  <Download size={18} />
-                  Download the Whitepaper
-                </Button>
-              </a>
-            </motion.div>
+      <IndustryHero
+        image={heroImg}
+        title="Is Your Library Leaving Federal Money on the Table?"
+        description="94% of Wisconsin public libraries have unclaimed E-Rate Category 2 funding — over $28 million sitting untouched. Download the free whitepaper to learn why, and what your library can do about it."
+        primaryCta={{ label: "Download Whitepaper", to: "/met_library_whitepaper.docx" }}
+        secondaryCta={{ label: "Schedule a Consultation", to: "/contact" }}
+      />
 
-            <motion.div {...fade} transition={{ ...fade.transition, delay: 0.1 }}>
-              <div className="grid grid-cols-2 gap-px bg-border">
-                {[
-                  { value: "301", label: "Libraries with no C2 funding" },
-                  { value: "$28M+", label: "Unclaimed budget statewide" },
-                  { value: "94%", label: "Libraries leaving money behind" },
-                  { value: "$25K", label: "Minimum budget per library" },
-                ].map((stat) => (
-                  <div key={stat.label} className="bg-card p-8">
-                    <div className="text-3xl font-mono-display font-semibold text-primary tabular-nums mb-2">
-                      {stat.value}
-                    </div>
-                    <div className="text-xs text-muted-foreground uppercase tracking-wider">
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
+      {/* Stats Bar */}
+      <section className="border-b border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+            {[
+              { value: "301", label: "Libraries with no C2 funding" },
+              { value: "$28M+", label: "Unclaimed budget statewide" },
+              { value: "94%", label: "Libraries leaving money behind" },
+              { value: "$25K", label: "Minimum budget per library" },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-card p-8">
+                <div className="text-3xl font-mono-display font-semibold text-primary tabular-nums mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">
+                  {stat.label}
+                </div>
               </div>
-            </motion.div>
+            ))}
           </div>
         </div>
       </section>
