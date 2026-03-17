@@ -98,7 +98,7 @@ const LibraryBudgetLookup = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
-          className="bg-primary/10 border border-primary/30 p-8 md:p-12 relative overflow-hidden"
+          className="bg-primary/10 border border-primary/30 p-8 md:p-12 relative"
         >
           <div className="flex flex-col lg:flex-row lg:items-end gap-8">
             <div className="flex-1">
