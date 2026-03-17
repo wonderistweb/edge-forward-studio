@@ -37,7 +37,7 @@ const LibrariesPage = () => {
         image={heroImg}
         title="Library Technology Solutions"
         description="Modern libraries are digital hubs — not just book repositories. We build the technology infrastructure that supports public computing, digital literacy programs, maker spaces, and community engagement."
-        primaryCta={{ label: "Check Your E-Rate Budget", to: "#budget-lookup" }}
+        primaryCta={{ label: "See What You're Leaving on the Table", to: "#budget-lookup" }}
         secondaryCta={{ label: "E-Rate Funding", to: "/e-rate" }}
       />
 

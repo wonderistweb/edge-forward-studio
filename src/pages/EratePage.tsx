@@ -34,7 +34,7 @@ const EratePage = () => {
         image={heroImg}
         title="E-Rate: Up to 90% Funding for School & Library Technology"
         description="The E-Rate program (Schools and Libraries Universal Service Support Mechanism) has distributed over $50 billion since 1997. We help institutions maximize their funding and navigate the complex application process."
-        primaryCta={{ label: "Check Your Budget", to: "#budget-lookup" }}
+        primaryCta={{ label: "See What You're Leaving on the Table", to: "#budget-lookup" }}
         secondaryCta={{ label: "Learn How It Works", to: "#how-it-works" }}
       />
 
