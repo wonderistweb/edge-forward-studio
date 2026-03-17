@@ -88,6 +88,8 @@ const EratePage = () => {
         </div>
       </section>
 
+      <ErateBudgetLookup />
+
       {/* Discount Rates */}
       <section className="border-b border-border py-24">
         <div className="max-w-7xl mx-auto px-6">
