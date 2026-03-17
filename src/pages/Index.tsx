@@ -8,7 +8,7 @@ import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
-import ErateSeasonPopup from "@/components/ErateSeasonPopup";
+
 import { Link } from "react-router-dom";
 import { ArrowRight, DollarSign, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <FloatingMarketingMenu />
-      <ErateSeasonPopup />
+      
       <HeroSection />
       <ServicesSection />
       <ProcessSection />
