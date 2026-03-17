@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
 import IndustryHero from "@/components/IndustryHero";
+import ErateBudgetLookup from "@/components/ErateBudgetLookup";
 import heroImg from "@/assets/industry-hero-erate.jpg";
 
 const fade = {
