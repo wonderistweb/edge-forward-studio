@@ -31,6 +31,12 @@ const Index = () => {
       <section className="py-20 border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="bg-card border border-border p-1">
+              <div className="bg-secondary px-3 py-1.5 flex items-center gap-2 border-b border-border text-xs font-mono-display text-muted-foreground uppercase tracking-wider">
+                6GHz Heat Map Preview
+              </div>
+              <img src={heatmapImage} alt="WiFi heat map" className="w-full" />
+            </div>
             <div>
               <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Featured Case Study</span>
               <h2 className="text-3xl font-medium uppercase mt-3">235K sq ft School WiFi Redesign</h2>
@@ -48,12 +54,6 @@ const Index = () => {
                   <ArrowRight className="ml-2" size={16} />
                 </Link>
               </Button>
-            </div>
-            <div className="bg-card border border-border p-1">
-              <div className="bg-secondary px-3 py-1.5 flex items-center gap-2 border-b border-border text-xs font-mono-display text-muted-foreground uppercase tracking-wider">
-                6GHz Heat Map Preview
-              </div>
-              <img src={heatmapImage} alt="WiFi heat map" className="w-full" />
             </div>
           </div>
         </div>
