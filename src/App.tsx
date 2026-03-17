@@ -18,6 +18,7 @@ import EbookPage from "./pages/EbookPage.tsx";
 import CaseStudyPage from "./pages/CaseStudyPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import LibrariesPage from "./pages/LibrariesPage.tsx";
+import LibraryWhitepaperPage from "./pages/LibraryWhitepaperPage.tsx";
 import HealthcarePage from "./pages/HealthcarePage.tsx";
 import ManufacturingPage from "./pages/ManufacturingPage.tsx";
 import RetailPage from "./pages/RetailPage.tsx";
