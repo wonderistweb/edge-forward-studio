@@ -63,6 +63,19 @@ const Index = () => {
       <section className="py-20 border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-2 gap-px bg-border">
+              {[
+                { value: "$167", unit: "/student", label: "Category 2 Budget (Schools)" },
+                { value: "$2.39", unit: "/sq ft", label: "Category 2 Budget (Libraries)" },
+                { value: "90%", unit: "max", label: "Discount Rate" },
+                { value: "150+", unit: "served", label: "Schools & Libraries" },
+              ].map((stat) => (
+                <div key={stat.label} className="bg-card p-6 text-center">
+                  <div className="text-2xl font-mono-display font-semibold text-primary">{stat.value}<span className="text-sm text-muted-foreground font-normal">{stat.unit}</span></div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mt-2">{stat.label}</div>
+                </div>
+              ))}
+            </div>
             <div>
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-mono-display uppercase tracking-wider px-3 py-1 mb-6">
                 <DollarSign size={14} /> Federal Funding Program
@@ -92,19 +105,6 @@ const Index = () => {
                   </Link>
                 </Button>
               </div>
-            </div>
-            <div className="grid grid-cols-2 gap-px bg-border">
-              {[
-                { value: "$167", unit: "/student", label: "Category 2 Budget (Schools)" },
-                { value: "$2.39", unit: "/sq ft", label: "Category 2 Budget (Libraries)" },
-                { value: "90%", unit: "max", label: "Discount Rate" },
-                { value: "150+", unit: "served", label: "Schools & Libraries" },
-              ].map((stat) => (
-                <div key={stat.label} className="bg-card p-6 text-center">
-                  <div className="text-2xl font-mono-display font-semibold text-primary">{stat.value}<span className="text-sm text-muted-foreground font-normal">{stat.unit}</span></div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider mt-2">{stat.label}</div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
