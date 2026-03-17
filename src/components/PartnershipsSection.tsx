@@ -81,7 +81,7 @@ const PartnershipsSection = () => {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className={`object-contain opacity-80 group-hover:opacity-100 transition-all duration-250 partner-logo-invert ${partner.logoClassName}`}
+                className="w-[70%] h-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-250 partner-logo-invert"
               />
             </motion.div>
           ))}
