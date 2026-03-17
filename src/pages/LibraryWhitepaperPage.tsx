@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
+import IndustryHero from "@/components/IndustryHero";
+import heroImg from "@/assets/industry-hero-libraries.jpg";
 
 const fade = {
   initial: { opacity: 0, y: 24 },
