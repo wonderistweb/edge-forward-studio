@@ -15,7 +15,7 @@ const titleCase = (s: string) =>
     .toLowerCase()
     .replace(/\b\w/g, (c) => c.toUpperCase());
 
-const ErateBudgetLookup = () => {
+const ErateBudgetLookup = ({ embedded = false }: { embedded?: boolean }) => {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<ErateBudget | null>(null);
   const [isOpen, setIsOpen] = useState(false);
