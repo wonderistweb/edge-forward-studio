@@ -24,28 +24,28 @@ import logoVertiv from "@/assets/partners/vertiv.png";
 import logoVoip from "@/assets/partners/voip-supply.png";
 
 const partners = [
-  { name: "3CX", logo: logo3cx, logoClassName: "max-h-14 max-w-[170px] md:max-w-[190px]" },
-  { name: "Acer", logo: logoAcer, logoClassName: "max-h-10 max-w-[150px] md:max-w-[165px]" },
-  { name: "Asus", logo: logoAsus, logoClassName: "max-h-10 max-w-[150px] md:max-w-[165px]" },
-  { name: "Axis Communications", logo: logoAxis, logoClassName: "max-h-10 max-w-[150px] md:max-w-[165px]" },
-  { name: "Cato Networks", logo: logoCato, logoClassName: "max-h-14 max-w-[150px] md:max-w-[165px]" },
-  { name: "Cisco", logo: logoCisco, logoClassName: "max-h-8 max-w-[135px] md:max-w-[150px]" },
-  { name: "Dell", logo: logoDell, logoClassName: "max-h-14 max-w-[150px] md:max-w-[165px]" },
-  { name: "Fortinet", logo: logoFortinet, logoClassName: "max-h-10 max-w-[185px]" },
-  { name: "Google", logo: logoGoogle, logoClassName: "max-h-10 max-w-[150px] md:max-w-[165px]" },
-  { name: "HP", logo: logoHp, logoClassName: "max-h-10 max-w-[140px] md:max-w-[155px]" },
-  { name: "HPE", logo: logoHpe, logoClassName: "max-h-10 max-w-[150px] md:max-w-[165px]" },
-  { name: "Intel", logo: logoIntel, logoClassName: "max-h-10 max-w-[130px] md:max-w-[145px]" },
-  { name: "Lenovo", logo: logoLenovo, logoClassName: "max-h-14 max-w-[190px]" },
-  { name: "Microsoft", logo: logoMicrosoft, logoClassName: "max-h-9 max-w-[125px] md:max-w-[140px]" },
-  { name: "NinjaOne", logo: logoNinjaOne, logoClassName: "max-h-9 max-w-[125px] md:max-w-[140px]" },
-  { name: "Rhombus", logo: logoRhombus, logoClassName: "max-h-12 max-w-[170px] md:max-w-[185px]" },
-  { name: "Ring", logo: logoRing, logoClassName: "max-h-9 max-w-[120px] md:max-w-[135px]" },
-  { name: "Ruckus", logo: logoRuckus, logoClassName: "max-h-9 max-w-[130px] md:max-w-[145px]" },
-  { name: "Synology", logo: logoSynology, logoClassName: "max-h-12 max-w-[170px] md:max-w-[185px]" },
-  { name: "Ubiquiti", logo: logoUbiquiti, logoClassName: "max-h-10 max-w-[155px] md:max-w-[170px]" },
-  { name: "Vertiv", logo: logoVertiv, logoClassName: "max-h-9 max-w-[120px] md:max-w-[135px]" },
-  { name: "VoIP Supply", logo: logoVoip, logoClassName: "max-h-14 max-w-[190px]" },
+  { name: "3CX", logo: logo3cx },
+  { name: "Acer", logo: logoAcer },
+  { name: "Asus", logo: logoAsus },
+  { name: "Axis Communications", logo: logoAxis },
+  { name: "Cato Networks", logo: logoCato },
+  { name: "Cisco", logo: logoCisco },
+  { name: "Dell", logo: logoDell },
+  { name: "Fortinet", logo: logoFortinet },
+  { name: "Google", logo: logoGoogle },
+  { name: "HP", logo: logoHp },
+  { name: "HPE", logo: logoHpe },
+  { name: "Intel", logo: logoIntel },
+  { name: "Lenovo", logo: logoLenovo },
+  { name: "Microsoft", logo: logoMicrosoft },
+  { name: "NinjaOne", logo: logoNinjaOne },
+  { name: "Rhombus", logo: logoRhombus },
+  { name: "Ring", logo: logoRing },
+  { name: "Ruckus", logo: logoRuckus },
+  { name: "Synology", logo: logoSynology },
+  { name: "Ubiquiti", logo: logoUbiquiti },
+  { name: "Vertiv", logo: logoVertiv },
+  { name: "VoIP Supply", logo: logoVoip },
 ];
 
 const PartnershipsSection = () => {
@@ -81,7 +81,7 @@ const PartnershipsSection = () => {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className={`h-auto w-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-250 partner-logo-invert ${partner.logoClassName}`}
+                className="h-10 w-auto max-w-[140px] object-contain opacity-80 group-hover:opacity-100 transition-all duration-250 partner-logo-invert"
               />
             </motion.div>
           ))}
