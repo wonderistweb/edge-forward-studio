@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { TrendingDown, Users, FileX, Truck } from "lucide-react";
 import markPhoto from "@/assets/mark-hero.png";
 
 const AboutSection = () => {
@@ -25,10 +26,10 @@ const AboutSection = () => {
             transition={{ delay: 0.1, duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
           >
             <p className="text-muted-foreground leading-relaxed text-lg mb-8">
-              Based in the Milwaukee area and serving businesses across Southern Wisconsin and statewide, our mission is to deliver top-tier managed IT services that combine enterprise-level expertise with unbeatable value. We help Wisconsin businesses grow by providing reliable, responsive, and cost-effective IT solutions — without compromising on quality or service.
+              We run a lean operation — deliberately. No fancy vehicle fleet. No commission-driven sales reps. No bloated overhead. Just a focused team of senior engineers who know infrastructure inside and out. Every dollar we save in overhead is a dollar we pass directly to you.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              By continuously optimizing our operations, we make world-class technology support accessible to organizations of all sizes across Wisconsin. Our low markup model and flexible agreements without long-term contracts help you maximize your IT budget and maintain financial flexibility.
+              Our low-markup model means you get enterprise-grade IT services at a fraction of what traditional MSPs charge. No long-term contracts, no hidden fees, no inflated pricing to cover expenses that don't benefit you. Just world-class technology support, priced fairly.
             </p>
 
             {/* Metrics */}
@@ -50,6 +51,35 @@ const AboutSection = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Why We Cost Less */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15, duration: 0.6, ease: [0.2, 1, 0.3, 1] }}
+          className="mt-24"
+        >
+          <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Our Model</span>
+          <h3 className="text-2xl md:text-3xl font-medium uppercase mt-3 mb-12">
+            Lean and mean — savings passed to you
+          </h3>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+            {[
+              { icon: TrendingDown, title: "Low Markup", desc: "Minimal margins on hardware, software, and services. We compete on value, not inflated pricing." },
+              { icon: Users, title: "Lean Expert Team", desc: "Senior engineers only — no layers of management or junior techs learning on your dime." },
+              { icon: Truck, title: "No Fleet Overhead", desc: "No branded vehicle fleet or warehouse costs eating into your budget. We invest in talent, not appearances." },
+              { icon: FileX, title: "No Long-Term Contracts", desc: "Month-to-month flexibility. We keep your business by earning it, not by locking you in." },
+            ].map((item) => (
+              <div key={item.title} className="bg-card p-8">
+                <item.icon size={24} strokeWidth={1.5} className="text-primary mb-4" />
+                <h4 className="text-sm font-mono-display font-medium uppercase tracking-tight mb-3">{item.title}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Leadership */}
         <motion.div
