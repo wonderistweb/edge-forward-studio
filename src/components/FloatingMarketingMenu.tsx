@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Megaphone, X, Image, Mail, BookOpen } from "lucide-react";
+import { Megaphone, X, Image, Mail, BookOpen, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const menuItems = [
   { icon: Image, label: "Ad Examples", href: "/marketing/ads", desc: "Campaign creatives" },
   { icon: Mail, label: "Email Sequences", href: "/marketing/emails", desc: "Nurture campaigns" },
   { icon: BookOpen, label: "E-Book", href: "/marketing/ebook", desc: "Expert guide" },
+  { icon: FileText, label: "Library Whitepaper", href: "/marketing/library-whitepaper", desc: "E-Rate funding report" },
 ];
 
 const FloatingMarketingMenu = () => {
