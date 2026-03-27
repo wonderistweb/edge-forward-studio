@@ -17,12 +17,12 @@ const fade = {
 };
 
 const services = [
-  { icon: FileCheck, title: "Form 470 & RFP", desc: "We prepare and file your Form 470, develop compliant RFPs, manage the competitive bidding process, and evaluate vendor responses." },
-  { icon: DollarSign, title: "Funding Applications", desc: "Complete Form 471 preparation, filing, and PIA response management — maximizing your discount rate and funding approval likelihood." },
+  { icon: FileCheck, title: "Form 470 & RFP Guidance", desc: "We guide you through Form 470 preparation, develop compliant RFPs, manage the competitive bidding process, and evaluate vendor responses." },
+  { icon: DollarSign, title: "Funding Application Support", desc: "Expert guidance on Form 471 preparation, PIA response strategy, and documentation — maximizing your discount rate and funding approval likelihood." },
   { icon: ClipboardList, title: "Compliance Management", desc: "Document retention, CIPA compliance, competitive bidding documentation, and audit preparation to protect your funding." },
   { icon: Wifi, title: "Category 1 Services", desc: "Internet access, WAN, and telecommunications services — we identify eligible services and ensure proper cost allocation." },
   { icon: Building, title: "Category 2 Services", desc: "Internal connections, managed Wi-Fi, switches, routers, cabling, and UPS — maximizing your 5-year C2 budget allocation." },
-  { icon: Calendar, title: "Timeline Management", desc: "E-Rate has strict filing windows and deadlines. We manage every date — from Form 470 posting to service delivery and invoicing." },
+  { icon: Calendar, title: "Timeline Management", desc: "E-Rate has strict filing windows and deadlines. We track every date — from posting windows to service delivery and invoicing." },
   { icon: Users, title: "Vendor Coordination", desc: "We coordinate between your district, service providers, and USAC to ensure smooth implementation and timely reimbursement." },
   { icon: GraduationCap, title: "Training & Support", desc: "Staff training on E-Rate compliance requirements, EPC portal navigation, and ongoing program guidance throughout the funding year." },
 ];

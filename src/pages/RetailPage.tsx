@@ -36,7 +36,7 @@ const RetailPage = () => {
         image={heroImg}
         title="Retail Technology"
         description="PCI-compliant infrastructure that powers in-store experiences, protects transactions, and connects every location — from single storefronts to national chains."
-        secondaryCta={{ label: "View Case Study", to: "/case-study/school-wifi-redesign" }}
+        
       />
 
       <section className="border-b border-border">

@@ -24,28 +24,28 @@ import logoVertiv from "@/assets/partners/vertiv.png";
 import logoVoip from "@/assets/partners/voip-supply.png";
 
 const partners = [
-  { name: "3CX", logo: logo3cx, logoClassName: "h-10 w-auto" },
-  { name: "Acer", logo: logoAcer, logoClassName: "h-6 w-auto" },
-  { name: "Asus", logo: logoAsus, logoClassName: "h-6 w-auto" },
-  { name: "Axis Communications", logo: logoAxis, logoClassName: "h-6 w-auto" },
-  { name: "Cato Networks", logo: logoCato, logoClassName: "h-10 w-auto" },
-  { name: "Cisco", logo: logoCisco, logoClassName: "h-10 w-auto" },
-  { name: "Dell", logo: logoDell, logoClassName: "h-12 w-auto" },
-  { name: "Fortinet", logo: logoFortinet, logoClassName: "h-7 w-auto" },
-  { name: "Google", logo: logoGoogle, logoClassName: "h-7 w-auto" },
-  { name: "HP", logo: logoHp, logoClassName: "h-7 w-auto" },
-  { name: "HPE", logo: logoHpe, logoClassName: "h-7 w-auto" },
-  { name: "Intel", logo: logoIntel, logoClassName: "h-7 w-auto" },
-  { name: "Lenovo", logo: logoLenovo, logoClassName: "h-7 w-auto" },
-  { name: "Microsoft", logo: logoMicrosoft, logoClassName: "h-6 w-auto" },
-  { name: "NinjaOne", logo: logoNinjaOne, logoClassName: "h-6 w-auto" },
-  { name: "Rhombus", logo: logoRhombus, logoClassName: "h-8 w-auto" },
-  { name: "Ring", logo: logoRing, logoClassName: "h-6 w-auto" },
-  { name: "Ruckus", logo: logoRuckus, logoClassName: "h-6 w-auto" },
-  { name: "Synology", logo: logoSynology, logoClassName: "h-7 w-auto" },
-  { name: "Ubiquiti", logo: logoUbiquiti, logoClassName: "h-7 w-auto" },
-  { name: "Vertiv", logo: logoVertiv, logoClassName: "h-6 w-auto" },
-  { name: "VoIP Supply", logo: logoVoip, logoClassName: "h-10 w-auto" },
+  { name: "3CX", logo: logo3cx, logoClassName: "h-10 w-auto", url: "https://www.3cx.com" },
+  { name: "Acer", logo: logoAcer, logoClassName: "h-6 w-auto", url: "https://www.acer.com" },
+  { name: "Asus", logo: logoAsus, logoClassName: "h-6 w-auto", url: "https://www.asus.com" },
+  { name: "Axis Communications", logo: logoAxis, logoClassName: "h-6 w-auto", url: "https://www.axis.com" },
+  { name: "Cato Networks", logo: logoCato, logoClassName: "h-10 w-auto", url: "https://www.catonetworks.com" },
+  { name: "Cisco", logo: logoCisco, logoClassName: "h-10 w-auto", url: "https://www.cisco.com" },
+  { name: "Dell", logo: logoDell, logoClassName: "h-12 w-auto", url: "https://www.dell.com" },
+  { name: "Fortinet", logo: logoFortinet, logoClassName: "h-7 w-auto", url: "https://www.fortinet.com" },
+  { name: "Google", logo: logoGoogle, logoClassName: "h-7 w-auto", url: "https://workspace.google.com" },
+  { name: "HP", logo: logoHp, logoClassName: "h-7 w-auto", url: "https://www.hp.com" },
+  { name: "HPE", logo: logoHpe, logoClassName: "h-7 w-auto", url: "https://www.hpe.com" },
+  { name: "Intel", logo: logoIntel, logoClassName: "h-7 w-auto", url: "https://www.intel.com" },
+  { name: "Lenovo", logo: logoLenovo, logoClassName: "h-7 w-auto", url: "https://www.lenovo.com" },
+  { name: "Microsoft", logo: logoMicrosoft, logoClassName: "h-6 w-auto", url: "https://www.microsoft.com" },
+  { name: "NinjaOne", logo: logoNinjaOne, logoClassName: "h-6 w-auto", url: "https://www.ninjaone.com" },
+  { name: "Rhombus", logo: logoRhombus, logoClassName: "h-8 w-auto", url: "https://www.rhombus.com" },
+  { name: "Ring", logo: logoRing, logoClassName: "h-6 w-auto", url: "https://ring.com" },
+  { name: "Ruckus", logo: logoRuckus, logoClassName: "h-6 w-auto", url: "https://www.commscope.com/ruckus" },
+  { name: "Synology", logo: logoSynology, logoClassName: "h-7 w-auto", url: "https://www.synology.com" },
+  { name: "Ubiquiti", logo: logoUbiquiti, logoClassName: "h-7 w-auto", url: "https://www.ui.com" },
+  { name: "Vertiv", logo: logoVertiv, logoClassName: "h-6 w-auto", url: "https://www.vertiv.com" },
+  { name: "VoIP Supply", logo: logoVoip, logoClassName: "h-10 w-auto", url: "https://www.voipsupply.com" },
 ];
 
 const PartnershipsSection = () => {
@@ -78,11 +78,13 @@ const PartnershipsSection = () => {
               transition={{ delay: i * 0.03, duration: 0.4 }}
               className="bg-card hover:bg-card-hover flex min-h-[118px] items-center justify-center px-5 py-8 md:min-h-[132px] md:px-6 transition-colors duration-250 snap-curve group"
             >
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="w-[70%] h-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-250 partner-logo-invert"
-              />
+              <a href={partner.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full">
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="w-[70%] h-auto object-contain opacity-80 group-hover:opacity-100 transition-all duration-250 partner-logo-invert"
+                />
+              </a>
             </motion.div>
           ))}
         </div>

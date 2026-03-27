@@ -36,7 +36,7 @@ const FinancialServicesPage = () => {
         image={heroImg}
         title="Financial Services IT"
         description="Secure, compliant, resilient technology infrastructure for banks, RIAs, broker-dealers, and fintech companies — where security isn't optional, it's existential."
-        secondaryCta={{ label: "View Case Study", to: "/case-study/school-wifi-redesign" }}
+        
       />
 
       <section className="border-b border-border">

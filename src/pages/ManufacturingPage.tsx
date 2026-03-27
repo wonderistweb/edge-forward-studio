@@ -36,7 +36,7 @@ const ManufacturingPage = () => {
         image={heroImg}
         title="Manufacturing IT"
         description="Industrial-grade technology infrastructure for factory floors, warehouses, and production environments — where downtime means lost revenue and safety risks."
-        secondaryCta={{ label: "View Case Study", to: "/case-study/school-wifi-redesign" }}
+        
       />
 
       <section className="border-b border-border">

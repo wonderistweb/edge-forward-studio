@@ -36,7 +36,7 @@ const RealEstatePage = () => {
         image={heroImg}
         title="Real Estate Technology"
         description="Smart building infrastructure that attracts premium tenants, reduces operating costs, and positions your properties as technology-forward assets in a competitive market."
-        secondaryCta={{ label: "View Case Study", to: "/case-study/school-wifi-redesign" }}
+        
       />
 
       <section className="border-b border-border">

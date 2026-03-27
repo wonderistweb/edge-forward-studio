@@ -15,7 +15,7 @@ import EratePage from "./pages/EratePage.tsx";
 import AdsPage from "./pages/AdsPage.tsx";
 import EmailsPage from "./pages/EmailsPage.tsx";
 import EbookPage from "./pages/EbookPage.tsx";
-import CaseStudyPage from "./pages/CaseStudyPage.tsx";
+
 import AboutPage from "./pages/AboutPage.tsx";
 import LibrariesPage from "./pages/LibrariesPage.tsx";
 import LibraryWhitepaperPage from "./pages/LibraryWhitepaperPage.tsx";
@@ -71,7 +71,7 @@ const App = () => (
           <Route path="/marketing/emails" element={<EmailsPage />} />
           <Route path="/marketing/ebook" element={<EbookPage />} />
           <Route path="/marketing/library-whitepaper" element={<LibraryWhitepaperPage />} />
-          <Route path="/case-study/school-wifi-redesign" element={<CaseStudyPage />} />
+          
           <Route path="/industries/healthcare" element={<HealthcarePage />} />
           <Route path="/industries/manufacturing" element={<ManufacturingPage />} />
           <Route path="/industries/retail" element={<RetailPage />} />
