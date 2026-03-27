@@ -27,37 +27,6 @@ const Index = () => {
       <PartnershipsSection />
       <AboutSection />
 
-      {/* Case Study CTA */}
-      <section className="py-20 border-t border-border">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-card border border-border p-1">
-              <div className="bg-secondary px-3 py-1.5 flex items-center gap-2 border-b border-border text-xs font-mono-display text-muted-foreground uppercase tracking-wider">
-                6GHz Heat Map Preview
-              </div>
-              <img src={heatmapImage} alt="WiFi heat map" className="w-full" />
-            </div>
-            <div>
-              <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Featured Case Study</span>
-              <h2 className="text-3xl font-medium uppercase mt-3">235K sq ft School WiFi Redesign</h2>
-              <p className="text-muted-foreground mt-4 leading-relaxed">
-                How we deployed enterprise-grade 6GHz wireless coverage across a K-12 campus — eliminating dead zones, reducing IT tickets by 85%, and securing $180K in E-Rate funding.
-              </p>
-              <div className="flex flex-wrap gap-3 mt-6">
-                {["WiFi 6E", "84+ APs", "E-Rate Funded", "Zero Downtime"].map((tag) => (
-                  <span key={tag} className="text-xs font-mono-display text-primary border border-primary/30 px-3 py-1 uppercase tracking-wider">{tag}</span>
-                ))}
-              </div>
-              <Button variant="outline" size="lg" className="mt-8" asChild>
-                <Link to="/case-study/school-wifi-redesign">
-                  Read Full Case Study
-                  <ArrowRight className="ml-2" size={16} />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* E-Rate CTA */}
       <section className="py-20 border-t border-border">
