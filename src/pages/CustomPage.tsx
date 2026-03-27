@@ -37,7 +37,7 @@ const CustomPage = () => {
         title="Custom IT Solutions"
         description="No two businesses are identical. We design and implement technology solutions tailored to your specific industry, environment, and operational requirements — not off-the-shelf packages."
         primaryCta={{ label: "Start a Conversation", to: "/quote" }}
-        secondaryCta={{ label: "View Case Study", to: "/case-study/school-wifi-redesign" }}
+        
       />
 
       {/* Approach Banner */}

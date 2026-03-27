@@ -36,7 +36,7 @@ const LegalPage = () => {
         image={heroImg}
         title="Legal IT"
         description="Technology infrastructure that protects attorney-client privilege, supports litigation workflows, and meets the security demands of modern legal practice."
-        secondaryCta={{ label: "View Case Study", to: "/case-study/school-wifi-redesign" }}
+        
       />
 
       <section className="border-b border-border">

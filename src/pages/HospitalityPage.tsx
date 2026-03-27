@@ -36,7 +36,7 @@ const HospitalityPage = () => {
         image={heroImg}
         title="Hospitality Technology"
         description="Technology that elevates the guest experience. From high-density WiFi to integrated property management systems, we build the infrastructure that modern hospitality demands."
-        secondaryCta={{ label: "View Case Study", to: "/case-study/school-wifi-redesign" }}
+        
       />
 
       {/* Guest Experience Banner */}

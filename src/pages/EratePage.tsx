@@ -296,7 +296,7 @@ const EratePage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
             {[
               { step: "01", title: "Needs Assessment", desc: "Identify all eligible services and maximize your funding potential" },
-              { step: "02", title: "Form Preparation", desc: "Prepare and file all USAC forms with zero errors" },
+              { step: "02", title: "Application Guidance", desc: "Expert guidance on all USAC forms to ensure accuracy and compliance" },
               { step: "03", title: "Bid Management", desc: "Manage competitive bidding process for full compliance" },
               { step: "04", title: "Implementation", desc: "Deploy funded equipment and maintain compliance documentation" },
             ].map((item) => (

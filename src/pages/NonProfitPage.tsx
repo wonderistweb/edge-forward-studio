@@ -36,7 +36,7 @@ const NonProfitPage = () => {
         image={heroImg}
         title="Non-Profit IT"
         description="Mission-focused technology at non-profit-friendly pricing. We help organizations maximize donated licenses, stretch limited budgets, and build infrastructure that amplifies impact."
-        secondaryCta={{ label: "View Case Study", to: "/case-study/school-wifi-redesign" }}
+        
       />
 
       <section className="border-b border-border">

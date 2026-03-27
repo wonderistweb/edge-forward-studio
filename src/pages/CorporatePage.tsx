@@ -36,7 +36,7 @@ const CorporatePage = () => {
         image={heroImg}
         title="Corporate IT Solutions"
         description="Enterprise-grade IT infrastructure without enterprise-grade complexity. We help corporate organizations scale their technology operations with confidence, security, and predictable costs."
-        secondaryCta={{ label: "View Case Study", to: "/case-study/school-wifi-redesign" }}
+        
       />
 
       {/* Security Banner */}

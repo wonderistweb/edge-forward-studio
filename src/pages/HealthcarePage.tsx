@@ -36,7 +36,7 @@ const HealthcarePage = () => {
         image={heroImg}
         title="Healthcare IT"
         description="HIPAA-compliant technology infrastructure that supports clinical workflows, protects patient data, and keeps care delivery running without interruption."
-        secondaryCta={{ label: "View Case Study", to: "/case-study/school-wifi-redesign" }}
+        
       />
 
       <section className="border-b border-border">

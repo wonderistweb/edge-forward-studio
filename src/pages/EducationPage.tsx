@@ -47,7 +47,7 @@ const EducationPage = () => {
               <h3 className="font-mono-display text-sm uppercase tracking-wider text-primary mb-2">E-Rate Eligible</h3>
               <h2 className="text-2xl font-medium uppercase">Schools qualify for 20-90% discounts</h2>
               <p className="text-sm text-muted-foreground mt-2 max-w-lg">
-                K-12 schools are eligible for E-Rate Category 1 (internet & telecom) and Category 2 (internal connections) funding at $167/student. We handle the entire application process from 470 filing to BEAR reimbursement.
+                K-12 schools are eligible for E-Rate Category 1 (internet & telecom) and Category 2 (internal connections) funding at $167/student. We guide you through the entire application process from eligibility assessment to BEAR reimbursement.
               </p>
             </div>
             <Button variant="outline" size="lg" asChild className="shrink-0">
