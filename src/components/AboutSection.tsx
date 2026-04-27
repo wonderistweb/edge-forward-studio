@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { TrendingDown, Users, FileX, Truck } from "lucide-react";
-import markPhoto from "@/assets/mark-hero.png";
+import markPhoto from "@/assets/mark-hero-cropped.jpg";
 
 const AboutSection = () => {
   return (
@@ -113,8 +113,7 @@ const AboutSection = () => {
               <img
                 src={markPhoto}
                 alt="Mark Duerwachter, Vice President of Business Operations"
-                className="w-full aspect-[4/5] object-cover"
-                style={{ objectPosition: "center 5%" }}
+                className="w-full aspect-[4/5] object-cover object-top"
               />
             </div>
           </div>
