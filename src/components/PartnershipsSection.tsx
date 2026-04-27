@@ -76,7 +76,7 @@ const PartnershipsSection = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.03, duration: 0.4 }}
-              className="bg-card hover:bg-card-hover flex min-h-[118px] items-center justify-center px-5 py-8 md:min-h-[132px] md:px-6 transition-colors duration-250 snap-curve group"
+              className="bg-white flex min-h-[118px] items-center justify-center px-5 py-8 md:min-h-[132px] md:px-6 transition-all duration-250 snap-curve group hover:shadow-lg"
             >
               <a href={partner.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full">
                 <img
