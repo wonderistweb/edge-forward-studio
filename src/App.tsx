@@ -19,6 +19,9 @@ import EbookPage from "./pages/EbookPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import LibrariesPage from "./pages/LibrariesPage.tsx";
 import LibraryWhitepaperPage from "./pages/LibraryWhitepaperPage.tsx";
+import CaseStudiesPage from "./pages/CaseStudiesPage.tsx";
+import LibraryFundingCaseStudyPage from "./pages/cases/LibraryFundingCaseStudyPage.tsx";
+import UbiquitiCaseStudyPage from "./pages/cases/UbiquitiCaseStudyPage.tsx";
 import HealthcarePage from "./pages/HealthcarePage.tsx";
 import ManufacturingPage from "./pages/ManufacturingPage.tsx";
 import RetailPage from "./pages/RetailPage.tsx";
@@ -71,6 +74,9 @@ const App = () => (
           <Route path="/marketing/emails" element={<EmailsPage />} />
           <Route path="/marketing/ebook" element={<EbookPage />} />
           <Route path="/marketing/library-whitepaper" element={<LibraryWhitepaperPage />} />
+          <Route path="/case-studies" element={<CaseStudiesPage />} />
+          <Route path="/case-studies/wisconsin-library-funding" element={<LibraryFundingCaseStudyPage />} />
+          <Route path="/case-studies/ubiquiti-erate-specifications" element={<UbiquitiCaseStudyPage />} />
           
           <Route path="/industries/healthcare" element={<HealthcarePage />} />
           <Route path="/industries/manufacturing" element={<ManufacturingPage />} />
