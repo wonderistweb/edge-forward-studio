@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, DollarSign, CheckCircle, Library, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import libraryCaseImg from "@/assets/industry-hero-libraries.jpg";
-import erateCaseImg from "@/assets/industry-hero-education.jpg";
+import erateCaseImg from "@/assets/case-ubiquiti-products.webp";
 
 
 const Index = () => {
@@ -64,12 +64,13 @@ const Index = () => {
               },
             ].map((c) => (
               <Link key={c.to} to={c.to} className="bg-card group block overflow-hidden">
-                <div className="aspect-[16/9] overflow-hidden">
+                <div className="aspect-[16/9] overflow-hidden relative">
                   <img
                     src={c.image}
                     alt={c.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover grayscale contrast-110 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
                   />
+                  <div className="absolute inset-0 bg-primary/25 mix-blend-color pointer-events-none transition-opacity duration-700 group-hover:opacity-0" />
                 </div>
                 <div className="p-8">
                   <div className="flex items-center gap-2 text-xs font-mono-display uppercase tracking-wider text-primary mb-3">
