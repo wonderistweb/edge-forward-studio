@@ -544,7 +544,7 @@ DM me or comment "ERATE" for a free eligibility check 👇
               <div className="p-6">
                 <GoogleSearchAd
                   headline="E-Rate MIBS Experts — $12M+ Secured | Free Eligibility Check"
-                  desc1="Stop leaving federal dollars on the table. We manage the entire E-Rate lifecycle — Forms 470, 471, 486, PIA responses, and MIBS contract structuring."
+                  desc1="Stop leaving federal dollars on the table. We provide expert guidance on eligible equipment and connect you with E-Rate consultants who handle Forms 470, 471, 486, and PIA responses."
                   desc2="98% approval rate. 150+ schools & libraries served. Category 1 & 2 specialists."
                   url="https://modernedgetech.net/e-rate"
                   sitelinks={[

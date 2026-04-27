@@ -289,7 +289,7 @@ const EratePage = () => {
             <FileText className="text-primary mb-4" size={32} />
             <h2 className="text-3xl md:text-4xl font-medium uppercase mt-3">How Modern Edge Helps</h2>
             <p className="text-muted-foreground mt-4 max-w-xl">
-              We manage the entire E-Rate lifecycle — from needs assessment through compliance documentation — so you can focus on education.
+              We guide you through the E-Rate lifecycle — from needs assessment to eligible equipment recommendations — and connect you with seasoned E-Rate consultants for the filing and compliance work.
             </p>
           </motion.div>
 
