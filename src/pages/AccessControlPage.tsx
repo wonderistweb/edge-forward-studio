@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Camera, Lock, Fingerprint, Eye, DoorOpen, Bell, MonitorCheck } from "lucide-react";
+import { ArrowRight, Shield, Camera, Lock, Smartphone, Eye, DoorOpen, Bell, MonitorCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -17,9 +17,9 @@ const fade = {
 
 const services = [
   { icon: Camera, title: "IP Camera Systems", desc: "Enterprise-grade IP surveillance with 4K resolution, advanced analytics, license plate recognition, and centralized management across multiple locations." },
-  { icon: Shield, title: "Access Control", desc: "Card reader, biometric, and mobile credential systems integrated with your directory services for seamless, auditable facility access management." },
+  { icon: Shield, title: "Access Control", desc: "Card reader, PIN keypad, and mobile credential systems integrated with your directory services for seamless, auditable facility access management." },
   { icon: Eye, title: "Video Analytics", desc: "AI-powered video analysis for people counting, heat mapping, perimeter detection, and behavioral alerts — turning cameras into intelligent business tools." },
-  { icon: Fingerprint, title: "Biometric Systems", desc: "Fingerprint, facial recognition, and iris scanning for high-security environments requiring multi-factor physical authentication." },
+  { icon: Smartphone, title: "Mobile Credentials", desc: "Smartphone-based door access using Bluetooth and NFC — eliminate lost-card overhead, issue and revoke credentials instantly, and tie entry events to individual users." },
   { icon: DoorOpen, title: "Door & Gate Control", desc: "Automated door controllers, turnstiles, and gate operators integrated with access control for comprehensive perimeter and interior security." },
   { icon: Bell, title: "Alarm & Intrusion Detection", desc: "Motion sensors, glass break detectors, door contacts, and panic buttons with 24/7 monitoring and rapid response coordination." },
   { icon: Lock, title: "Visitor Management", desc: "Digital visitor check-in, badge printing, watchlist screening, and host notification systems for secure and professional visitor experiences." },
