@@ -1,11 +1,30 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft, Mail } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { toast } from "@/hooks/use-toast";
 
 const BlogPage = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    toast({
+      title: "You're subscribed",
+      description: "We'll send The Edge Report straight to your inbox.",
+    });
+    setEmail("");
+  };
+
+  // Show CTA card when post count doesn't fill the lg:grid-cols-3 row evenly
+  const showNewsletterCta = blogPosts.length % 3 !== 0;
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -86,6 +105,43 @@ const BlogPage = () => {
                 </Link>
               </motion.div>
             ))}
+            {showNewsletterCta && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: blogPosts.length * 0.05, duration: 0.4 }}
+                className="bg-card border-t-2 border-t-primary p-8 flex flex-col justify-between min-h-[400px]"
+              >
+                <div>
+                  <div className="flex items-center gap-2 mb-6">
+                    <Mail size={16} className="text-primary" />
+                    <span className="text-xs font-mono-display text-primary uppercase tracking-wider">
+                      The Edge Report
+                    </span>
+                  </div>
+                  <h3 className="text-base font-mono-display font-medium uppercase tracking-tight mb-3">
+                    Get insights in your inbox
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                    Subscribe for technical analysis and strategic guidance on managed IT, E-Rate, and infrastructure — direct from our senior engineers.
+                  </p>
+                </div>
+                <form onSubmit={handleSubscribe} className="space-y-3">
+                  <Input
+                    type="email"
+                    required
+                    placeholder="your@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="font-mono-display text-sm"
+                  />
+                  <Button type="submit" variant="hero" className="w-full">
+                    Subscribe
+                    <ArrowRight size={14} />
+                  </Button>
+                </form>
+              </motion.div>
+            )}
           </div>
         </div>
       </section>
