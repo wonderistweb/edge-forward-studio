@@ -87,6 +87,17 @@ const PartnershipsSection = () => {
               </a>
             </motion.div>
           ))}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: partners.length * 0.03, duration: 0.4 }}
+            className="bg-primary text-primary-foreground col-span-2 flex min-h-[118px] items-center justify-center px-5 py-8 md:min-h-[132px] md:px-6 transition-all duration-250 snap-curve hover:shadow-lg"
+          >
+            <span className="text-base md:text-lg font-mono-display uppercase tracking-wider text-center">
+              …and many more
+            </span>
+          </motion.div>
         </div>
       </div>
     </section>
