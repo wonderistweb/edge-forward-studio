@@ -75,7 +75,11 @@ const QuotePage = () => {
   };
 
   const canAdvance = () =>
-    formData.servicesNeeded.length > 0;
+    formData.servicesNeeded.length > 0 &&
+    formData.painPoints.length > 0 &&
+    formData.organizationType.trim() !== "" &&
+    formData.teamSize.trim() !== "" &&
+    formData.additionalNotes.trim().length >= 10;
 
   const next = () => {
     if (!canAdvance()) return;
