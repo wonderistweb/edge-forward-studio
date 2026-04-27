@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
 import libraryHero from "@/assets/industry-hero-libraries.jpg";
-import erateHero from "@/assets/industry-hero-education.jpg";
+import ubiquitiHero from "@/assets/case-ubiquiti-products.webp";
 
 const fade = {
   initial: { opacity: 0, y: 24 },
@@ -35,7 +35,7 @@ const studies = [
     title: "Why Specifying Ubiquiti on Form 470 Quietly Costs Districts More",
     summary:
       "We examined why experienced E-Rate partners hesitate to bid Ubiquiti — no price protection, thin margins, no enterprise support — and what a performance-based specification delivers instead.",
-    image: erateHero,
+    image: ubiquitiHero,
     icon: Wifi,
     metrics: [
       { value: "7+ mos", label: "470-to-purchase gap" },
