@@ -22,8 +22,16 @@ const BlogPage = () => {
     setEmail("");
   };
 
-  // Show CTA card when post count doesn't fill the lg:grid-cols-3 row evenly
-  const showNewsletterCta = blogPosts.length % 3 !== 0;
+  // Empty slots in the last row at lg (3 cols): 0, 1, or 2
+  const remainder = blogPosts.length % 3;
+  const emptySlots = remainder === 0 ? 3 : 3 - remainder;
+  // emptySlots: 3 → full new row (span 3), 2 → span 2, 1 → span 1
+  const ctaSpanClass =
+    emptySlots === 3
+      ? "lg:col-span-3 md:col-span-2"
+      : emptySlots === 2
+      ? "lg:col-span-2 md:col-span-2"
+      : "lg:col-span-1 md:col-span-2";
 
   return (
     <div className="min-h-screen bg-background">
@@ -105,43 +113,41 @@ const BlogPage = () => {
                 </Link>
               </motion.div>
             ))}
-            {showNewsletterCta && (
-              <motion.div
+            <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: blogPosts.length * 0.05, duration: 0.4 }}
-                className="bg-card border-t-2 border-t-primary p-8 flex flex-col justify-between min-h-[400px]"
+                className={`bg-card border-t-2 border-t-primary p-8 flex flex-col justify-between min-h-[400px] ${ctaSpanClass}`}
               >
-                <div>
+                <div className={emptySlots >= 2 ? "max-w-2xl" : ""}>
                   <div className="flex items-center gap-2 mb-6">
                     <Mail size={16} className="text-primary" />
                     <span className="text-xs font-mono-display text-primary uppercase tracking-wider">
                       The Edge Report
                     </span>
                   </div>
-                  <h3 className="text-base font-mono-display font-medium uppercase tracking-tight mb-3">
+                  <h3 className={`font-mono-display font-medium uppercase tracking-tight mb-3 ${emptySlots >= 2 ? "text-2xl md:text-3xl" : "text-base"}`}>
                     Get insights in your inbox
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                     Subscribe for technical analysis and strategic guidance on managed IT, E-Rate, and infrastructure — direct from our senior engineers.
                   </p>
                 </div>
-                <form onSubmit={handleSubscribe} className="space-y-3">
+                <form onSubmit={handleSubscribe} className={emptySlots >= 2 ? "flex flex-col sm:flex-row gap-3 max-w-xl" : "space-y-3"}>
                   <Input
                     type="email"
                     required
                     placeholder="your@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="font-mono-display text-sm"
+                    className="font-mono-display text-sm flex-1"
                   />
-                  <Button type="submit" variant="hero" className="w-full">
+                  <Button type="submit" variant="hero" className={emptySlots >= 2 ? "sm:w-auto" : "w-full"}>
                     Subscribe
                     <ArrowRight size={14} />
                   </Button>
                 </form>
               </motion.div>
-            )}
           </div>
         </div>
       </section>
