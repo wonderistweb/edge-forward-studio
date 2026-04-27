@@ -109,11 +109,12 @@ const AboutSection = () => {
                 Mark's strategic approach to technology consulting has helped hundreds of organizations transform their IT from a cost center into a competitive advantage. He is a published thought leader on topics including Zero Trust architecture, business continuity planning, and the evolving MSP landscape.
               </p>
             </div>
-            <div className="bg-card p-0">
+            <div className="bg-card p-0 overflow-hidden">
               <img
                 src={markPhoto}
                 alt="Mark Duerwachter, Vice President of Business Operations"
-                className="w-full aspect-[3/4] object-cover object-top"
+                className="w-full aspect-[9/8] object-cover"
+                style={{ objectPosition: "center 5%" }}
               />
             </div>
           </div>
