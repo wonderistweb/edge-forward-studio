@@ -6,10 +6,14 @@ const serviceAreas = [
   { label: "Madison", href: "/areas/madison" },
   { label: "Waukesha", href: "/areas/waukesha" },
   { label: "Kenosha", href: "/areas/kenosha" },
-  { label: "Appleton", href: "/areas/appleton" },
   { label: "Racine", href: "/areas/racine" },
-  { label: "Green Bay", href: "/areas/green-bay" },
+  { label: "Sheboygan", href: "/areas/sheboygan" },
+  { label: "Appleton", href: "/areas/appleton" },
   { label: "Oshkosh", href: "/areas/oshkosh" },
+  { label: "Green Bay", href: "/areas/green-bay" },
+  { label: "Stevens Point", href: "/areas/stevens-point" },
+  { label: "Wausau", href: "/areas/wausau" },
+  { label: "Eau Claire", href: "/areas/eau-claire" },
 ];
 
 const Footer = () => {

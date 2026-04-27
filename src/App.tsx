@@ -47,6 +47,10 @@ import AppletonPage from "./pages/cities/AppletonPage";
 import RacinePage from "./pages/cities/RacinePage";
 import GreenBayPage from "./pages/cities/GreenBayPage";
 import OshkoshPage from "./pages/cities/OshkoshPage";
+import WausauPage from "./pages/cities/WausauPage";
+import StevensPointPage from "./pages/cities/StevensPointPage";
+import EauClairePage from "./pages/cities/EauClairePage";
+import SheboyganPage from "./pages/cities/SheboyganPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -104,6 +108,10 @@ const App = () => (
           <Route path="/areas/racine" element={<RacinePage />} />
           <Route path="/areas/green-bay" element={<GreenBayPage />} />
           <Route path="/areas/oshkosh" element={<OshkoshPage />} />
+          <Route path="/areas/wausau" element={<WausauPage />} />
+          <Route path="/areas/stevens-point" element={<StevensPointPage />} />
+          <Route path="/areas/eau-claire" element={<EauClairePage />} />
+          <Route path="/areas/sheboygan" element={<SheboyganPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
