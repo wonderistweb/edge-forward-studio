@@ -75,7 +75,11 @@ const QuotePage = () => {
   };
 
   const canAdvance = () =>
-    formData.servicesNeeded.length > 0;
+    formData.servicesNeeded.length > 0 &&
+    formData.painPoints.length > 0 &&
+    formData.organizationType.trim() !== "" &&
+    formData.teamSize.trim() !== "" &&
+    formData.additionalNotes.trim().length >= 10;
 
   const next = () => {
     if (!canAdvance()) return;
@@ -204,7 +208,7 @@ const QuotePage = () => {
 
                       <div>
                         <label className={labelClass}>
-                          What's prompting the conversation? (optional)
+                          What's prompting the conversation? *
                         </label>
                         <div className="grid grid-cols-2 gap-2 mt-1">
                           {[
@@ -235,7 +239,7 @@ const QuotePage = () => {
 
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <label className={labelClass}>Organization Type</label>
+                          <label className={labelClass}>Organization Type *</label>
                           <select
                             name="organizationType"
                             value={formData.organizationType}
@@ -253,7 +257,7 @@ const QuotePage = () => {
                           </select>
                         </div>
                         <div>
-                          <label className={labelClass}>Approx. # of Users / Endpoints</label>
+                          <label className={labelClass}>Approx. # of Users / Endpoints *</label>
                           <select
                             name="teamSize"
                             value={formData.teamSize}
@@ -288,14 +292,14 @@ const QuotePage = () => {
 
                       <div>
                         <label className={labelClass}>
-                          Anything else you'd like us to know? (optional)
+                          Briefly describe what you need *
                         </label>
                         <textarea
                           name="additionalNotes"
                           value={formData.additionalNotes}
                           onChange={handleChange}
                           rows={4}
-                          placeholder="A few sentences about your situation is plenty."
+                          placeholder="A few sentences about your situation, goals, or what's not working today."
                           className={`${inputClass} resize-none`}
                         />
                       </div>
@@ -384,7 +388,7 @@ const QuotePage = () => {
                   <div className="flex flex-col items-end gap-2">
                     {!canAdvance() && (
                       <span className="text-xs text-muted-foreground">
-                        Select at least one service above to continue
+                        Please complete the required fields above to continue
                       </span>
                     )}
                     <Button
