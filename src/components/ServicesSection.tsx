@@ -48,7 +48,7 @@ const services = [
   {
     icon: GraduationCap,
     title: "E-Rate Vendor Services",
-    description: "Navigate the E-rate program for schools and libraries, with expert guidance from application through funding approval.",
+    description: "Expert guidance on eligible E-Rate equipment for schools and libraries — we connect you with consultants who handle the filing.",
     href: "/services/e-rate",
   },
 ];

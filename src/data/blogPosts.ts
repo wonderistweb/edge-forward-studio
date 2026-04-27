@@ -630,7 +630,7 @@ Having reviewed hundreds of E-Rate applications — both successful and unsucces
 
 ## How a Qualified E-Rate Vendor Helps
 
-An experienced E-Rate vendor doesn't just sell you equipment — they manage the entire lifecycle from needs assessment through compliance documentation. The right partner provides:
+An experienced E-Rate vendor doesn't just sell you equipment — they guide you through the lifecycle from needs assessment to eligible equipment selection, and connect you with E-Rate consultants for filing and compliance. The right partner provides:
 
 - **Needs assessment** that identifies all eligible services and maximizes your funding
 - **Form preparation and filing** that meets every USAC requirement

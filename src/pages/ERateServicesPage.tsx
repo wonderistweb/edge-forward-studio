@@ -36,7 +36,7 @@ const ERateServicesPage = () => {
       <IndustryHero
         image={heroImg}
         title="E-Rate Vendor Services"
-        description="Navigate the E-Rate program for schools and libraries — managing the entire process from application through implementation and reimbursement."
+        description="Expert guidance for schools and libraries on the E-Rate program — we help you scope eligible equipment, then connect you with E-Rate consultants who handle the filing."
       />
 
       <section className="border-b border-border">
