@@ -6,18 +6,7 @@ import { Link } from "react-router-dom";
 import heroBg from "@/assets/mark-consultation-3.png";
 
 const HeroSection = () => {
-  const [uptime, setUptime] = useState(99.997);
   const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setUptime((prev) => {
-        const delta = (Math.random() - 0.4) * 0.001;
-        return Math.min(99.999, Math.max(99.990, prev + delta));
-      });
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -60,14 +49,6 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
         >
-          {/* Status indicator */}
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-sm font-mono-display text-muted-foreground uppercase tracking-wider tabular-nums">
-              System Status: {uptime.toFixed(3)}% Uptime
-            </span>
-          </div>
-
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase leading-[1.05] mb-6">
             Infrastructure
             <br />
