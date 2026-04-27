@@ -73,8 +73,9 @@ const CaseStudiesPage = () => {
                 <img
                   src={s.image}
                   alt={s.title}
-                  className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto grayscale contrast-110 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
                 />
+                <div className="absolute inset-0 bg-primary/20 mix-blend-color pointer-events-none transition-opacity duration-700 group-hover:opacity-0" />
               </Link>
               <div className="lg:col-span-3 p-10 flex flex-col justify-between gap-8">
                 <div>
