@@ -93,7 +93,7 @@ const Navbar = () => {
                 onMouseEnter={() => setOpenDropdown(item.dropdownKey!)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button className="flex items-center gap-1 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider transition-colors duration-250 snap-curve">
+                <button className="flex items-center gap-1 text-foreground/80 hover:text-foreground text-sm font-mono-display uppercase tracking-wider transition-colors duration-250 snap-curve">
                   {item.label}
                   <ChevronDown size={14} className={`transition-transform duration-200 ${openDropdown === item.dropdownKey ? "rotate-180" : ""}`} />
                 </button>
@@ -111,7 +111,7 @@ const Navbar = () => {
                           key={sub.label}
                           to={sub.href}
                           onClick={() => setOpenDropdown(null)}
-                          className="block px-5 py-3 text-sm font-mono-display uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-150 border-b border-border"
+                          className="block px-5 py-3 text-sm font-mono-display uppercase tracking-wider text-foreground/80 hover:text-foreground hover:bg-secondary transition-colors duration-150 border-b border-border"
                         >
                           {sub.label}
                         </Link>
@@ -124,7 +124,7 @@ const Navbar = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                className="text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider transition-colors duration-250 snap-curve"
+                className="text-foreground/80 hover:text-foreground text-sm font-mono-display uppercase tracking-wider transition-colors duration-250 snap-curve"
               >
                 {item.label}
               </Link>
@@ -133,7 +133,7 @@ const Navbar = () => {
                 key={item.label}
                 href={`/${item.href}`}
                 onClick={() => setMobileOpen(false)}
-                className="text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider transition-colors duration-250 snap-curve"
+                className="text-foreground/80 hover:text-foreground text-sm font-mono-display uppercase tracking-wider transition-colors duration-250 snap-curve"
               >
                 {item.label}
               </a>
@@ -167,7 +167,7 @@ const Navbar = () => {
               <div key={item.label}>
                 <button
                   onClick={() => setMobileDropdown(mobileDropdown === item.dropdownKey ? null : item.dropdownKey!)}
-                  className="flex items-center justify-between w-full py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
+                  className="flex items-center justify-between w-full py-3 text-foreground/80 hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
                 >
                   {item.label}
                   <ChevronDown size={14} className={`transition-transform duration-200 ${mobileDropdown === item.dropdownKey ? "rotate-180" : ""}`} />
@@ -179,7 +179,7 @@ const Navbar = () => {
                         key={sub.label}
                         to={sub.href}
                         onClick={() => setMobileOpen(false)}
-                        className="block py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border last:border-b-0"
+                        className="block py-3 text-foreground/80 hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border last:border-b-0"
                       >
                         {sub.label}
                       </Link>
@@ -192,7 +192,7 @@ const Navbar = () => {
                 key={item.label}
                 to={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="block py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
+                className="block py-3 text-foreground/80 hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
               >
                 {item.label}
               </Link>
@@ -201,7 +201,7 @@ const Navbar = () => {
                 key={item.label}
                 href={`/${item.href}`}
                 onClick={() => setMobileOpen(false)}
-                className="block w-full text-left py-3 text-muted-foreground hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
+                className="block w-full text-left py-3 text-foreground/80 hover:text-foreground text-sm font-mono-display uppercase tracking-wider border-b border-border"
               >
                 {item.label}
               </a>
