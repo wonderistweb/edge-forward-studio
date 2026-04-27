@@ -10,8 +10,10 @@ import Footer from "@/components/Footer";
 import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
 
 import { Link } from "react-router-dom";
-import { ArrowRight, DollarSign, CheckCircle } from "lucide-react";
+import { ArrowRight, DollarSign, CheckCircle, Library, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import libraryCaseImg from "@/assets/industry-hero-libraries.jpg";
+import erateCaseImg from "@/assets/industry-hero-education.jpg";
 
 
 const Index = () => {
@@ -27,6 +29,65 @@ const Index = () => {
       <PartnershipsSection />
       <AboutSection />
 
+      {/* Case Studies */}
+      <section className="py-20 border-t border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <span className="text-sm font-mono-display text-primary uppercase tracking-wider">Case Studies</span>
+              <h2 className="text-3xl font-medium uppercase mt-2 max-w-xl">Field reports from the work</h2>
+            </div>
+            <Button variant="outline" asChild>
+              <Link to="/case-studies">
+                View All Case Studies <ArrowRight className="ml-2" size={16} />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-px bg-border">
+            {[
+              {
+                to: "/case-studies/wisconsin-library-funding",
+                eyebrow: "Public Libraries · E-Rate",
+                title: "$28M in Federal Funding Left on the Table by Wisconsin Libraries",
+                desc: "Only 6% of Wisconsin's 321 public libraries claimed any E-Rate Category 2 funding last cycle. Here's what the funded ones did differently.",
+                image: libraryCaseImg,
+                icon: Library,
+              },
+              {
+                to: "/case-studies/ubiquiti-erate-specifications",
+                eyebrow: "K-12 Schools · E-Rate",
+                title: "Why Specifying Ubiquiti on Form 470 Quietly Costs Districts More",
+                desc: "No price protection, thin margins, no enterprise support — and how a performance-based spec opens the bid pool to better partners.",
+                image: erateCaseImg,
+                icon: Wifi,
+              },
+            ].map((c) => (
+              <Link key={c.to} to={c.to} className="bg-card group block overflow-hidden">
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={c.image}
+                    alt={c.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="flex items-center gap-2 text-xs font-mono-display uppercase tracking-wider text-primary mb-3">
+                    <c.icon size={14} /> {c.eyebrow}
+                  </div>
+                  <h3 className="text-xl font-medium uppercase leading-tight group-hover:text-primary transition-colors">
+                    {c.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{c.desc}</p>
+                  <span className="inline-flex items-center gap-2 text-sm font-mono-display uppercase tracking-wider text-primary mt-6 group-hover:gap-3 transition-all">
+                    Read case study <ArrowRight size={14} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* E-Rate CTA */}
       <section className="py-20 border-t border-border">
