@@ -271,9 +271,6 @@ const AboutPage = () => {
                   <ArrowRight className="ml-2" size={16} />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link to="/case-study/school-wifi-redesign">View Case Study</Link>
-              </Button>
             </div>
           </motion.div>
         </div>
