@@ -52,6 +52,7 @@ import StevensPointPage from "./pages/cities/StevensPointPage";
 import EauClairePage from "./pages/cities/EauClairePage";
 import SheboyganPage from "./pages/cities/SheboyganPage";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { ConsentBanner } from "./components/ConsentBanner";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -115,6 +116,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ConsentBanner />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -1,13 +1,40 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      // Consent Mode v2 — set defaults BEFORE gtag loads
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'granted',
+        'security_storage': 'granted',
+        'wait_for_update': 500
+      });
+      gtag('set', 'ads_data_redaction', true);
+      gtag('set', 'url_passthrough', true);
+
+      // Apply persisted choice (if any) before tag fires
+      try {
+        var saved = localStorage.getItem('met_consent_v1');
+        if (saved) {
+          var c = JSON.parse(saved);
+          gtag('consent', 'update', {
+            'ad_storage': c.ad ? 'granted' : 'denied',
+            'ad_user_data': c.ad ? 'granted' : 'denied',
+            'ad_personalization': c.ad ? 'granted' : 'denied',
+            'analytics_storage': c.analytics ? 'granted' : 'denied'
+          });
+        }
+      } catch (e) {}
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G6LENNQ11"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-9G6LENNQ11');
     </script>
     <meta charset="UTF-8" />
