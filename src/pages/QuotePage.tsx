@@ -235,12 +235,11 @@ const QuotePage = () => {
 
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <label className={labelClass}>Organization Type *</label>
+                          <label className={labelClass}>Organization Type</label>
                           <select
                             name="organizationType"
                             value={formData.organizationType}
                             onChange={handleChange}
-                            required
                             className={inputClass}
                           >
                             <option value="">Select type</option>
@@ -254,12 +253,11 @@ const QuotePage = () => {
                           </select>
                         </div>
                         <div>
-                          <label className={labelClass}>Approx. # of Users / Endpoints *</label>
+                          <label className={labelClass}>Approx. # of Users / Endpoints</label>
                           <select
                             name="teamSize"
                             value={formData.teamSize}
                             onChange={handleChange}
-                            required
                             className={inputClass}
                           >
                             <option value="">Select size</option>
@@ -383,14 +381,21 @@ const QuotePage = () => {
                 )}
 
                 {step < 1 ? (
-                  <Button
-                    type="button"
-                    variant="hero"
-                    onClick={next}
-                    disabled={!canAdvance()}
-                  >
-                    Continue <ArrowRight size={14} className="ml-2" />
-                  </Button>
+                  <div className="flex flex-col items-end gap-2">
+                    {!canAdvance() && (
+                      <span className="text-xs text-muted-foreground">
+                        Select at least one service above to continue
+                      </span>
+                    )}
+                    <Button
+                      type="button"
+                      variant="hero"
+                      onClick={next}
+                      disabled={!canAdvance()}
+                    >
+                      Continue <ArrowRight size={14} className="ml-2" />
+                    </Button>
+                  </div>
                 ) : (
                   <Button type="submit" variant="hero">
                     Send Request <ArrowRight size={14} className="ml-2" />
