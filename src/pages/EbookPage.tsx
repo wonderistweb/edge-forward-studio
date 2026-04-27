@@ -204,7 +204,7 @@ We've secured over **$12 million in E-Rate funding** for K-12 districts. Our pro
 
 - **Free eligibility assessment** — we determine your discount rate and Category 2 budget before you commit to anything
 - **Predictive wireless design** — Ekahau-based heat mapping ensures every AP is placed for optimal coverage, not just convenience
-- **Full application management** — we handle Forms 470, 471, 486, and all PIA responses
+- **Eligible-equipment guidance** — we recommend the right gear and connect you with E-Rate consultants who handle Forms 470, 471, 486, and PIA responses
 - **MIBS contract structuring** — we structure proposals to maximize eligible services while maintaining compliance
 - **Post-funding support** — ongoing network monitoring and management included in MIBS contracts
 - **Audit preparation** — complete documentation packages ready for USAC compliance audits

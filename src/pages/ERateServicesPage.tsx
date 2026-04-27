@@ -17,7 +17,7 @@ const fade = {
 };
 
 const services = [
-  { icon: FileCheck, title: "Form 470 & RFP Guidance", desc: "We guide you through Form 470 preparation, develop compliant RFPs, manage the competitive bidding process, and evaluate vendor responses." },
+  { icon: FileCheck, title: "Form 470 & RFP Guidance", desc: "We help you draft compliant equipment specs and RFP language, and connect you with E-Rate consultants who handle Form 470 filing and the competitive bidding process." },
   { icon: DollarSign, title: "Funding Application Support", desc: "Expert guidance on Form 471 preparation, PIA response strategy, and documentation — maximizing your discount rate and funding approval likelihood." },
   { icon: ClipboardList, title: "Compliance Management", desc: "Document retention, CIPA compliance, competitive bidding documentation, and audit preparation to protect your funding." },
   { icon: Wifi, title: "Category 1 Services", desc: "Internet access, WAN, and telecommunications services — we identify eligible services and ensure proper cost allocation." },
