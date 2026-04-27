@@ -12,6 +12,9 @@ interface QuoteFormData {
   painPoints: string[];
   timeline: string;
   additionalNotes: string;
+  // Technical context
+  organizationType: string;
+  teamSize: string;
   // Step 2: Contact
   firstName: string;
   lastName: string;
@@ -25,6 +28,8 @@ const initialFormData: QuoteFormData = {
   painPoints: [],
   timeline: "",
   additionalNotes: "",
+  organizationType: "",
+  teamSize: "",
   firstName: "",
   lastName: "",
   email: "",
@@ -65,10 +70,19 @@ const QuotePage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (step < 1) return; // guard against implicit submit on Enter
     setSubmitted(true);
   };
 
-  const next = () => setStep((s) => Math.min(s + 1, 1));
+  const canAdvance = () =>
+    formData.servicesNeeded.length > 0 &&
+    formData.organizationType.trim() !== "" &&
+    formData.teamSize.trim() !== "";
+
+  const next = () => {
+    if (!canAdvance()) return;
+    setStep((s) => Math.min(s + 1, 1));
+  };
   const prev = () => setStep((s) => Math.max(s - 1, 0));
 
   return (
@@ -160,7 +174,7 @@ const QuotePage = () => {
                     <>
                       <div>
                         <label className={labelClass}>
-                          What are you interested in? (select any)
+                          What are you interested in? * (select any)
                         </label>
                         <div className="grid grid-cols-2 gap-2 mt-1">
                           {[
@@ -218,6 +232,45 @@ const QuotePage = () => {
                               {item}
                             </button>
                           ))}
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <label className={labelClass}>Organization Type *</label>
+                          <select
+                            name="organizationType"
+                            value={formData.organizationType}
+                            onChange={handleChange}
+                            required
+                            className={inputClass}
+                          >
+                            <option value="">Select type</option>
+                            <option value="k12">K-12 School / District</option>
+                            <option value="library">Library</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="business">Business / Commercial</option>
+                            <option value="nonprofit">Non-Profit</option>
+                            <option value="government">Government / Municipal</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className={labelClass}>Approx. # of Users / Endpoints *</label>
+                          <select
+                            name="teamSize"
+                            value={formData.teamSize}
+                            onChange={handleChange}
+                            required
+                            className={inputClass}
+                          >
+                            <option value="">Select size</option>
+                            <option value="1-25">1–25</option>
+                            <option value="26-100">26–100</option>
+                            <option value="101-250">101–250</option>
+                            <option value="251-500">251–500</option>
+                            <option value="500+">500+</option>
+                          </select>
                         </div>
                       </div>
 
@@ -332,7 +385,12 @@ const QuotePage = () => {
                 )}
 
                 {step < 1 ? (
-                  <Button type="button" variant="hero" onClick={next}>
+                  <Button
+                    type="button"
+                    variant="hero"
+                    onClick={next}
+                    disabled={!canAdvance()}
+                  >
                     Continue <ArrowRight size={14} className="ml-2" />
                   </Button>
                 ) : (
