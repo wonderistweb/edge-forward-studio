@@ -252,7 +252,7 @@ const LibraryBudgetLookup = () => {
                       Ready to maximize your {fmt(selected.availableAmount)} in available funding?
                     </p>
                     <p className="text-xs text-muted-foreground mt-1">
-                      Our E-Rate specialists will help you plan, apply, and implement — at no upfront cost.
+                      We can assist with recommending eligible equipment and connecting you with an E-Rate consultant who can help with filing.
                     </p>
                   </div>
                   <Button variant="hero" size="lg" asChild className="shrink-0">
