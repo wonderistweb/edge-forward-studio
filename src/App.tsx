@@ -7,6 +7,8 @@ import Index from "./pages/Index.tsx";
 import BlogPage from "./pages/BlogPage.tsx";
 import BlogPostPage from "./pages/BlogPostPage.tsx";
 import QuotePage from "./pages/QuotePage.tsx";
+import QuoteErate from "./pages/QuoteErate.tsx";
+import QuoteLibrary from "./pages/QuoteLibrary.tsx";
 import EducationPage from "./pages/EducationPage.tsx";
 import HospitalityPage from "./pages/HospitalityPage.tsx";
 import CorporatePage from "./pages/CorporatePage.tsx";
@@ -69,6 +71,8 @@ const App = () => (
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/quote" element={<QuotePage />} />
+          <Route path="/quote/erate" element={<QuoteErate />} />
+          <Route path="/quote/library" element={<QuoteLibrary />} />
           <Route path="/industries/education" element={<EducationPage />} />
           <Route path="/industries/libraries" element={<LibrariesPage />} />
           <Route path="/industries/hospitality" element={<HospitalityPage />} />
