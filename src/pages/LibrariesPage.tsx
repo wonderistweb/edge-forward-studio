@@ -146,7 +146,7 @@ const LibrariesPage = () => {
               From E-Rate applications to full network deployments — we help libraries build infrastructure that serves their communities.
             </p>
             <Button variant="hero" size="lg" className="mt-8" asChild>
-              <Link to="/quote">Get Started <ArrowRight className="ml-2" size={16} /></Link>
+              <Link to="/quote/library">Get Started <ArrowRight className="ml-2" size={16} /></Link>
             </Button>
           </motion.div>
         </div>

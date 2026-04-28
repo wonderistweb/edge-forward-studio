@@ -337,7 +337,7 @@ const EratePage = () => {
             Billions of dollars in E-Rate funding go unclaimed every year. Let us help your institution maximize its eligibility and secure the technology funding your students deserve.
           </p>
           <Button variant="hero" size="lg" className="mt-8" asChild>
-            <Link to="/quote">Start Your E-Rate Application<ArrowRight className="ml-2" size={16} /></Link>
+            <Link to="/quote/erate">Start Your E-Rate Application<ArrowRight className="ml-2" size={16} /></Link>
           </Button>
         </div>
       </section>

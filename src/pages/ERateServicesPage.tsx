@@ -50,7 +50,7 @@ const ERateServicesPage = () => {
               </p>
             </div>
             <Button variant="outline" size="lg" asChild className="shrink-0">
-              <Link to="/quote">E-Rate Consultation <ArrowRight className="ml-2" size={16} /></Link>
+              <Link to="/quote/erate">E-Rate Consultation <ArrowRight className="ml-2" size={16} /></Link>
             </Button>
           </motion.div>
         </div>
@@ -82,7 +82,7 @@ const ERateServicesPage = () => {
             <h2 className="text-3xl font-medium uppercase">Maximize your E-Rate funding</h2>
             <p className="text-muted-foreground mt-4 max-w-lg mx-auto">From initial eligibility assessment to final reimbursement — we handle the complexity so you can focus on your students and patrons.</p>
             <Button variant="hero" size="lg" className="mt-8" asChild>
-              <Link to="/quote">Get Started <ArrowRight className="ml-2" size={16} /></Link>
+              <Link to="/quote/erate">Get Started <ArrowRight className="ml-2" size={16} /></Link>
             </Button>
           </motion.div>
         </div>
