@@ -75,12 +75,11 @@ const QuotePage = () => {
     if (step < 1) return; // guard against implicit submit on Enter
     const idempotencyKey = `quote-${crypto.randomUUID()}`;
     try {
-      const { error } = await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "quote-notification",
-          recipientEmail: "mduerwachter@modernedgetech.net",
-          idempotencyKey,
-          templateData: {
+      const recipients = [
+        "mduerwachter@modernedgetech.net",
+        "michael.anderson@wonderistagency.com",
+      ];
+      const templateData = {
             name: `${formData.firstName} ${formData.lastName}`.trim(),
             email: formData.email,
             phone: formData.phone,
@@ -91,10 +90,21 @@ const QuotePage = () => {
             servicesNeeded: formData.servicesNeeded,
             painPoints: formData.painPoints,
             additionalNotes: formData.additionalNotes,
-          },
-        },
-      });
-      if (error) throw error;
+      };
+      const results = await Promise.all(
+        recipients.map((recipientEmail) =>
+          supabase.functions.invoke("send-transactional-email", {
+            body: {
+              templateName: "quote-notification",
+              recipientEmail,
+              idempotencyKey: `${idempotencyKey}-${recipientEmail}`,
+              templateData,
+            },
+          })
+        )
+      );
+      const firstError = results.find((r) => r.error)?.error;
+      if (firstError) throw firstError;
     } catch (err) {
       console.error("Quote notification failed", err);
       toast({
