@@ -141,7 +141,7 @@ const EducationPage = () => {
               From E-Rate applications to full network deployments — we help school districts build infrastructure that supports every student.
             </p>
             <Button variant="hero" size="lg" className="mt-8" asChild>
-              <Link to="/quote">Get a Free Assessment <ArrowRight className="ml-2" size={16} /></Link>
+              <Link to="/quote/erate">Get a Free Assessment <ArrowRight className="ml-2" size={16} /></Link>
             </Button>
           </motion.div>
         </div>
