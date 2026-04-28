@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -12,15 +14,47 @@ const ContactSection = () => {
     topic: "",
     message: "",
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic
-    console.log("Form submitted:", formData);
+    if (submitting) return;
+    setSubmitting(true);
+    const idempotencyKey = `contact-${crypto.randomUUID()}`;
+    try {
+      const { error } = await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "contact-notification",
+          recipientEmail: "mduerwachter@modernedgetech.net",
+          idempotencyKey,
+          templateData: {
+            name: `${formData.firstName} ${formData.lastName}`.trim(),
+            email: formData.email,
+            phone: formData.phone,
+            source: formData.topic,
+            message: formData.message,
+          },
+        },
+      });
+      if (error) throw error;
+      setSubmitted(true);
+      toast({ title: "Inquiry submitted", description: "We'll respond within one business day." });
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", topic: "", message: "" });
+    } catch (err) {
+      console.error("Contact submission failed", err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -139,8 +173,8 @@ const ContactSection = () => {
                 className="w-full bg-card border border-border px-4 py-3 text-sm text-foreground focus:border-primary focus:outline-none transition-colors duration-250 rounded-sm resize-none"
               />
             </div>
-            <Button variant="hero" size="lg" type="submit" className="w-full">
-              Submit Inquiry
+            <Button variant="hero" size="lg" type="submit" className="w-full" disabled={submitting}>
+              {submitting ? "Submitting…" : submitted ? "Submitted — we'll be in touch" : "Submit Inquiry"}
               <ArrowRight className="ml-2" size={16} />
             </Button>
           </motion.form>
