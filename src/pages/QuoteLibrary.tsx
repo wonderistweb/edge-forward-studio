@@ -82,12 +82,11 @@ const QuoteLibrary = () => {
     if (step < 1) return;
     const idempotencyKey = `library-${crypto.randomUUID()}`;
     try {
-      const { error } = await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "library-notification",
-          recipientEmail: "mduerwachter@modernedgetech.net",
-          idempotencyKey,
-          templateData: {
+      const recipients = [
+        "mduerwachter@modernedgetech.net",
+        "michael.anderson@wonderistagency.com",
+      ];
+      const templateData = {
             name: `${formData.firstName} ${formData.lastName}`.trim(),
             email: formData.email,
             phone: formData.phone,
@@ -98,10 +97,21 @@ const QuoteLibrary = () => {
             currentChallenges: formData.currentChallenges,
             erateInterest: formData.erateInterest,
             projectSummary: formData.projectSummary,
-          },
-        },
-      });
-      if (error) throw error;
+      };
+      const results = await Promise.all(
+        recipients.map((recipientEmail) =>
+          supabase.functions.invoke("send-transactional-email", {
+            body: {
+              templateName: "library-notification",
+              recipientEmail,
+              idempotencyKey: `${idempotencyKey}-${recipientEmail}`,
+              templateData,
+            },
+          })
+        )
+      );
+      const firstError = results.find((r) => r.error)?.error;
+      if (firstError) throw firstError;
     } catch (err) {
       console.error("Library notification failed", err);
       toast({ title: "Submission received", description: "We'll be in touch shortly." });

@@ -82,12 +82,11 @@ const QuoteErate = () => {
     if (step < 1) return;
     const idempotencyKey = `erate-${crypto.randomUUID()}`;
     try {
-      const { error } = await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "erate-notification",
-          recipientEmail: "mduerwachter@modernedgetech.net",
-          idempotencyKey,
-          templateData: {
+      const recipients = [
+        "mduerwachter@modernedgetech.net",
+        "michael.anderson@wonderistagency.com",
+      ];
+      const templateData = {
             name: `${formData.firstName} ${formData.lastName}`.trim(),
             email: formData.email,
             phone: formData.phone,
@@ -99,10 +98,21 @@ const QuoteErate = () => {
             helpAreas: formData.helpAreas,
             studentCount: formData.studentCount,
             projectSummary: formData.projectSummary,
-          },
-        },
-      });
-      if (error) throw error;
+      };
+      const results = await Promise.all(
+        recipients.map((recipientEmail) =>
+          supabase.functions.invoke("send-transactional-email", {
+            body: {
+              templateName: "erate-notification",
+              recipientEmail,
+              idempotencyKey: `${idempotencyKey}-${recipientEmail}`,
+              templateData,
+            },
+          })
+        )
+      );
+      const firstError = results.find((r) => r.error)?.error;
+      if (firstError) throw firstError;
     } catch (err) {
       console.error("E-Rate notification failed", err);
       toast({ title: "Submission received", description: "We'll be in touch shortly." });

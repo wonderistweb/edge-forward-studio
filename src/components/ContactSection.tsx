@@ -27,21 +27,31 @@ const ContactSection = () => {
     setSubmitting(true);
     const idempotencyKey = `contact-${crypto.randomUUID()}`;
     try {
-      const { error } = await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "contact-notification",
-          recipientEmail: "mduerwachter@modernedgetech.net",
-          idempotencyKey,
-          templateData: {
+      const recipients = [
+        "mduerwachter@modernedgetech.net",
+        "michael.anderson@wonderistagency.com",
+      ];
+      const templateData = {
             name: `${formData.firstName} ${formData.lastName}`.trim(),
             email: formData.email,
             phone: formData.phone,
             source: formData.topic,
             message: formData.message,
-          },
-        },
-      });
-      if (error) throw error;
+      };
+      const results = await Promise.all(
+        recipients.map((recipientEmail) =>
+          supabase.functions.invoke("send-transactional-email", {
+            body: {
+              templateName: "contact-notification",
+              recipientEmail,
+              idempotencyKey: `${idempotencyKey}-${recipientEmail}`,
+              templateData,
+            },
+          })
+        )
+      );
+      const firstError = results.find((r) => r.error)?.error;
+      if (firstError) throw firstError;
       setSubmitted(true);
       toast({ title: "Inquiry submitted", description: "We'll respond within one business day." });
       setFormData({ firstName: "", lastName: "", email: "", phone: "", topic: "", message: "" });
