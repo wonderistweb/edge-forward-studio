@@ -41,7 +41,7 @@ const partners = [
   { name: "NinjaOne", logo: logoNinjaOne, logoClassName: "h-6 w-auto", url: "https://www.ninjaone.com" },
   { name: "Rhombus", logo: logoRhombus, logoClassName: "h-8 w-auto", url: "https://www.rhombus.com" },
   { name: "Ring", logo: logoRing, logoClassName: "h-6 w-auto", url: "https://ring.com" },
-  { name: "Ruckus", logo: logoRuckus, logoClassName: "h-6 w-auto", url: "https://www.commscope.com/ruckus" },
+  { name: "Ruckus", logo: logoRuckus, logoClassName: "h-6 w-auto", url: "https://www.ruckusnetworks.com/" },
   { name: "Synology", logo: logoSynology, logoClassName: "h-7 w-auto", url: "https://www.synology.com" },
   { name: "Ubiquiti", logo: logoUbiquiti, logoClassName: "h-7 w-auto", url: "https://www.ui.com" },
   { name: "Vertiv", logo: logoVertiv, logoClassName: "h-6 w-auto", url: "https://www.vertiv.com" },
