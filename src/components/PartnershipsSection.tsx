@@ -42,7 +42,7 @@ const partners = [
   { name: "Rhombus", logo: logoRhombus, logoClassName: "h-8 w-auto", url: "https://www.rhombus.com" },
   { name: "Ring", logo: logoRing, logoClassName: "h-6 w-auto", url: "https://ring.com" },
   { name: "Ruckus", logo: logoRuckus, logoClassName: "h-6 w-auto", url: "https://www.ruckusnetworks.com/" },
-  { name: "Synology", logo: logoSynology, logoClassName: "h-7 w-auto", url: "https://www.synology.com" },
+  { name: "Synology", logo: logoSynology, logoClassName: "h-7 w-auto", url: "https://www.synology.com/en-us" },
   { name: "Ubiquiti", logo: logoUbiquiti, logoClassName: "h-7 w-auto", url: "https://www.ui.com" },
   { name: "Vertiv", logo: logoVertiv, logoClassName: "h-6 w-auto", url: "https://www.vertiv.com" },
   { name: "VoIPTools", logo: logoVoip, logoClassName: "h-10 w-auto", url: "https://voiptools.com/" },
