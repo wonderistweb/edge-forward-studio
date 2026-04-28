@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 interface QuoteFormData {
   // Step 1: Why are you reaching out
@@ -68,9 +70,38 @@ const QuotePage = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (step < 1) return; // guard against implicit submit on Enter
+    const idempotencyKey = `quote-${crypto.randomUUID()}`;
+    try {
+      const { error } = await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "quote-notification",
+          recipientEmail: "mduerwachter@modernedgetech.net",
+          idempotencyKey,
+          templateData: {
+            name: `${formData.firstName} ${formData.lastName}`.trim(),
+            email: formData.email,
+            phone: formData.phone,
+            company: formData.company,
+            organizationType: formData.organizationType,
+            teamSize: formData.teamSize,
+            timeline: formData.timeline,
+            servicesNeeded: formData.servicesNeeded,
+            painPoints: formData.painPoints,
+            additionalNotes: formData.additionalNotes,
+          },
+        },
+      });
+      if (error) throw error;
+    } catch (err) {
+      console.error("Quote notification failed", err);
+      toast({
+        title: "Submission received",
+        description: "We'll be in touch shortly.",
+      });
+    }
     setSubmitted(true);
   };
 

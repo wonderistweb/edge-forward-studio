@@ -56,6 +56,7 @@ import SheboyganPage from "./pages/cities/SheboyganPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { ConsentBanner } from "./components/ConsentBanner";
 import NotFound from "./pages/NotFound.tsx";
+import UnsubscribePage from "./pages/UnsubscribePage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -117,6 +118,7 @@ const App = () => (
           <Route path="/areas/stevens-point" element={<StevensPointPage />} />
           <Route path="/areas/eau-claire" element={<EauClairePage />} />
           <Route path="/areas/sheboygan" element={<SheboyganPage />} />
+          <Route path="/unsubscribe" element={<UnsubscribePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
