@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 interface LibraryFormData {
   // Step 1
@@ -75,9 +77,35 @@ const QuoteLibrary = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (step < 1) return;
+    const idempotencyKey = `library-${crypto.randomUUID()}`;
+    try {
+      const { error } = await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "library-notification",
+          recipientEmail: "mduerwachter@modernedgetech.net",
+          idempotencyKey,
+          templateData: {
+            name: `${formData.firstName} ${formData.lastName}`.trim(),
+            email: formData.email,
+            phone: formData.phone,
+            libraryName: formData.libraryName,
+            libraryType: formData.libraryType,
+            branches: formData.branchCount,
+            servicesNeeded: formData.servicesNeeded,
+            currentChallenges: formData.currentChallenges,
+            erateInterest: formData.erateInterest,
+            projectSummary: formData.projectSummary,
+          },
+        },
+      });
+      if (error) throw error;
+    } catch (err) {
+      console.error("Library notification failed", err);
+      toast({ title: "Submission received", description: "We'll be in touch shortly." });
+    }
     setSubmitted(true);
   };
 
