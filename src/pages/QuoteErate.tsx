@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 interface ErateFormData {
   // Step 1
@@ -75,9 +77,36 @@ const QuoteErate = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (step < 1) return;
+    const idempotencyKey = `erate-${crypto.randomUUID()}`;
+    try {
+      const { error } = await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "erate-notification",
+          recipientEmail: "mduerwachter@modernedgetech.net",
+          idempotencyKey,
+          templateData: {
+            name: `${formData.firstName} ${formData.lastName}`.trim(),
+            email: formData.email,
+            phone: formData.phone,
+            organization: formData.organizationName,
+            applicantType: formData.applicantType,
+            fundingYear: formData.fundingYear,
+            servicesNeeded: formData.servicesNeeded,
+            processStatus: formData.currentStatus,
+            helpAreas: formData.helpAreas,
+            studentCount: formData.studentCount,
+            projectSummary: formData.projectSummary,
+          },
+        },
+      });
+      if (error) throw error;
+    } catch (err) {
+      console.error("E-Rate notification failed", err);
+      toast({ title: "Submission received", description: "We'll be in touch shortly." });
+    }
     setSubmitted(true);
   };
 
