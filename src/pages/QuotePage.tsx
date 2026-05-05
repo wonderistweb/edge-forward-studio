@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
+import { ArrowRight, ArrowLeft, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -53,6 +53,7 @@ const QuotePage = () => {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState<QuoteFormData>(initialFormData);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -73,6 +74,8 @@ const QuotePage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (step < 1) return; // guard against implicit submit on Enter
+    if (submitting) return;
+    setSubmitting(true);
     const idempotencyKey = `quote-${crypto.randomUUID()}`;
     try {
       const templateData = {
@@ -100,6 +103,7 @@ const QuotePage = () => {
       });
     }
     setSubmitted(true);
+    setSubmitting(false);
   };
 
   const canAdvance = () =>
@@ -429,8 +433,16 @@ const QuotePage = () => {
                     </Button>
                   </div>
                 ) : (
-                  <Button type="submit" variant="hero">
-                    Send Request <ArrowRight size={14} className="ml-2" />
+                  <Button type="submit" variant="hero" disabled={submitting}>
+                    {submitting ? (
+                      <>
+                        <Loader2 size={14} className="mr-2 animate-spin" /> Sending…
+                      </>
+                    ) : (
+                      <>
+                        Send Request <ArrowRight size={14} className="ml-2" />
+                      </>
+                    )}
                   </Button>
                 )}
               </div>
