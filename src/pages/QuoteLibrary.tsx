@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { supabase } from "@/integrations/supabase/client";
+import { sendLeadNotifications } from "@/lib/leadNotifications";
 import { toast } from "@/hooks/use-toast";
 
 interface LibraryFormData {
@@ -82,10 +82,6 @@ const QuoteLibrary = () => {
     if (step < 1) return;
     const idempotencyKey = `library-${crypto.randomUUID()}`;
     try {
-      const recipients = [
-        "mduerwachter@modernedgetech.net",
-        "michael.anderson@wonderistagency.com",
-      ];
       const templateData = {
             name: `${formData.firstName} ${formData.lastName}`.trim(),
             email: formData.email,
@@ -98,20 +94,11 @@ const QuoteLibrary = () => {
             erateInterest: formData.erateInterest,
             projectSummary: formData.projectSummary,
       };
-      const results = await Promise.all(
-        recipients.map((recipientEmail) =>
-          supabase.functions.invoke("send-transactional-email", {
-            body: {
-              templateName: "library-notification",
-              recipientEmail,
-              idempotencyKey: `${idempotencyKey}-${recipientEmail}`,
-              templateData,
-            },
-          })
-        )
-      );
-      const firstError = results.find((r) => r.error)?.error;
-      if (firstError) throw firstError;
+      await sendLeadNotifications({
+        templateName: "library-notification",
+        idempotencyKey,
+        templateData,
+      });
     } catch (err) {
       console.error("Library notification failed", err);
       toast({ title: "Submission received", description: "We'll be in touch shortly." });

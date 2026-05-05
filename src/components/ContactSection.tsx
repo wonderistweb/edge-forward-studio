@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { sendLeadNotifications } from "@/lib/leadNotifications";
 import { toast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
@@ -27,10 +27,6 @@ const ContactSection = () => {
     setSubmitting(true);
     const idempotencyKey = `contact-${crypto.randomUUID()}`;
     try {
-      const recipients = [
-        "mduerwachter@modernedgetech.net",
-        "michael.anderson@wonderistagency.com",
-      ];
       const templateData = {
             name: `${formData.firstName} ${formData.lastName}`.trim(),
             email: formData.email,
@@ -38,20 +34,11 @@ const ContactSection = () => {
             source: formData.topic,
             message: formData.message,
       };
-      const results = await Promise.all(
-        recipients.map((recipientEmail) =>
-          supabase.functions.invoke("send-transactional-email", {
-            body: {
-              templateName: "contact-notification",
-              recipientEmail,
-              idempotencyKey: `${idempotencyKey}-${recipientEmail}`,
-              templateData,
-            },
-          })
-        )
-      );
-      const firstError = results.find((r) => r.error)?.error;
-      if (firstError) throw firstError;
+      await sendLeadNotifications({
+        templateName: "contact-notification",
+        idempotencyKey,
+        templateData,
+      });
       setSubmitted(true);
       toast({ title: "Inquiry submitted", description: "We'll respond within one business day." });
       setFormData({ firstName: "", lastName: "", email: "", phone: "", topic: "", message: "" });
