@@ -37,6 +37,7 @@ const ERateServicesPage = () => {
         image={heroImg}
         title="E-Rate Vendor Services"
         description="Expert guidance for schools and libraries on the E-Rate program — we help you scope eligible equipment, then connect you with E-Rate consultants who handle the filing."
+        primaryCta={{ label: "Start Your E-Rate Application", to: "/quote/erate" }}
       />
 
       <section className="border-b border-border">
