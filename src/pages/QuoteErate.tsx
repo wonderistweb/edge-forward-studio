@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
+import { ArrowRight, ArrowLeft, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -60,6 +60,7 @@ const QuoteErate = () => {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState<ErateFormData>(initialFormData);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -80,6 +81,8 @@ const QuoteErate = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (step < 1) return;
+    if (submitting) return;
+    setSubmitting(true);
     const idempotencyKey = `erate-${crypto.randomUUID()}`;
     try {
       const templateData = {
@@ -105,6 +108,7 @@ const QuoteErate = () => {
       toast({ title: "Submission received", description: "We'll be in touch shortly." });
     }
     setSubmitted(true);
+    setSubmitting(false);
   };
 
   const canAdvance = () =>
@@ -485,8 +489,16 @@ const QuoteErate = () => {
                     </Button>
                   </div>
                 ) : (
-                  <Button type="submit" variant="hero">
-                    Send Request <ArrowRight size={14} className="ml-2" />
+                  <Button type="submit" variant="hero" disabled={submitting}>
+                    {submitting ? (
+                      <>
+                        <Loader2 size={14} className="mr-2 animate-spin" /> Sending…
+                      </>
+                    ) : (
+                      <>
+                        Send Request <ArrowRight size={14} className="ml-2" />
+                      </>
+                    )}
                   </Button>
                 )}
               </div>
