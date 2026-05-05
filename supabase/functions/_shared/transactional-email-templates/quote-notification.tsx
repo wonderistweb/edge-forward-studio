@@ -76,7 +76,7 @@ const QuoteNotificationEmail = (props: QuoteNotificationProps) => (
 export const template = {
   component: QuoteNotificationEmail,
   subject: (d: Record<string, any>) =>
-    `New quote request${d?.name ? ` — ${d.name}` : ''}${d?.company ? ` (${d.company})` : ''}`,
+    `Quote Request — ${d?.name || 'New submission'}${d?.company ? ` (${d.company})` : ''}`,
   displayName: 'Quote request notification',
   previewData: {
     name: 'Jane Doe',
