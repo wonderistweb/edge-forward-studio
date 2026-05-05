@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { supabase } from "@/integrations/supabase/client";
+import { sendLeadNotifications } from "@/lib/leadNotifications";
 import { toast } from "@/hooks/use-toast";
 
 interface QuoteFormData {
@@ -75,10 +75,6 @@ const QuotePage = () => {
     if (step < 1) return; // guard against implicit submit on Enter
     const idempotencyKey = `quote-${crypto.randomUUID()}`;
     try {
-      const recipients = [
-        "mduerwachter@modernedgetech.net",
-        "michael.anderson@wonderistagency.com",
-      ];
       const templateData = {
             name: `${formData.firstName} ${formData.lastName}`.trim(),
             email: formData.email,
@@ -91,20 +87,11 @@ const QuotePage = () => {
             painPoints: formData.painPoints,
             additionalNotes: formData.additionalNotes,
       };
-      const results = await Promise.all(
-        recipients.map((recipientEmail) =>
-          supabase.functions.invoke("send-transactional-email", {
-            body: {
-              templateName: "quote-notification",
-              recipientEmail,
-              idempotencyKey: `${idempotencyKey}-${recipientEmail}`,
-              templateData,
-            },
-          })
-        )
-      );
-      const firstError = results.find((r) => r.error)?.error;
-      if (firstError) throw firstError;
+      await sendLeadNotifications({
+        templateName: "quote-notification",
+        idempotencyKey,
+        templateData,
+      });
     } catch (err) {
       console.error("Quote notification failed", err);
       toast({
