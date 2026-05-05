@@ -76,7 +76,7 @@ const LibraryNotificationEmail = (props: LibraryNotificationProps) => (
 export const template = {
   component: LibraryNotificationEmail,
   subject: (d: Record<string, any>) =>
-    `New library inquiry${d?.libraryName ? ` — ${d.libraryName}` : ''}`,
+    `Library Inquiry — ${d?.name || 'New submission'}${d?.libraryName ? ` (${d.libraryName})` : ''}`,
   displayName: 'Library inquiry notification',
   previewData: {
     name: 'Pat Lee',

@@ -78,7 +78,7 @@ const ErateNotificationEmail = (props: ErateNotificationProps) => (
 export const template = {
   component: ErateNotificationEmail,
   subject: (d: Record<string, any>) =>
-    `New E-Rate inquiry${d?.organization ? ` — ${d.organization}` : ''}`,
+    `E-Rate Inquiry — ${d?.name || 'New submission'}${d?.organization ? ` (${d.organization})` : ''}`,
   displayName: 'E-Rate inquiry notification',
   previewData: {
     name: 'Jane Smith',

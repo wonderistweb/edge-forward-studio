@@ -60,7 +60,7 @@ const ContactNotificationEmail = (props: ContactNotificationProps) => (
 export const template = {
   component: ContactNotificationEmail,
   subject: (d: Record<string, any>) =>
-    `New contact form submission${d?.name ? ` — ${d.name}` : ''}`,
+    `Contact Form — ${d?.name || 'New submission'}`,
   displayName: 'Contact form notification',
   previewData: {
     name: 'Jane Doe',
