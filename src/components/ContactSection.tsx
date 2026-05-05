@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
 import { sendLeadNotifications } from "@/lib/leadNotifications";
 import { toast } from "@/hooks/use-toast";
 
@@ -171,8 +171,21 @@ const ContactSection = () => {
               />
             </div>
             <Button variant="hero" size="lg" type="submit" className="w-full" disabled={submitting}>
-              {submitting ? "Submitting…" : submitted ? "Submitted — we'll be in touch" : "Submit Inquiry"}
-              <ArrowRight className="ml-2" size={16} />
+              {submitting ? (
+                <>
+                  <Loader2 size={16} className="mr-2 animate-spin" /> Sending…
+                </>
+              ) : submitted ? (
+                <>
+                  Submitted — we'll be in touch
+                  <ArrowRight className="ml-2" size={16} />
+                </>
+              ) : (
+                <>
+                  Submit Inquiry
+                  <ArrowRight className="ml-2" size={16} />
+                </>
+              )}
             </Button>
           </motion.form>
         </div>
