@@ -1,0 +1,13 @@
+{
+  "name": "Modern Edge Technology",
+  "short_name": "Modern Edge",
+  "description": "Managed IT, cybersecurity, cloud, and network services for Wisconsin organizations.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b10",
+  "theme_color": "#7a4dcc",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/og-image.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

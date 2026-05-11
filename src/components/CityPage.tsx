@@ -80,7 +80,18 @@ const CityPage = ({ data }: { data: CityPageData }) => {
         title={title}
         description={data.metaDescription}
         canonicalPath={canonicalPath}
-        jsonLd={localBusinessJsonLd}
+        jsonLd={[
+          localBusinessJsonLd,
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SEO_PRODUCTION_ORIGIN + "/" },
+              { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SEO_PRODUCTION_ORIGIN}/#areas` },
+              { "@type": "ListItem", position: 3, name: data.city, item: `${SEO_PRODUCTION_ORIGIN}${canonicalPath}` },
+            ],
+          },
+        ]}
       />
       <Navbar />
       <FloatingMarketingMenu />

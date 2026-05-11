@@ -36,21 +36,33 @@ const BlogPostPage = () => {
         description={post.excerpt}
         canonicalPath={`/blog/${post.slug}`}
         ogType="article"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: post.title,
-          description: post.excerpt,
-          datePublished: post.date,
-          author: { "@type": "Person", name: post.author?.name ?? "Mark Duerwachter" },
-          publisher: {
-            "@type": "Organization",
-            name: "Modern Edge Technology",
-            url: SEO_PRODUCTION_ORIGIN,
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: post.date,
+            author: { "@type": "Person", name: post.author?.name ?? "Mark Duerwachter" },
+            publisher: {
+              "@type": "Organization",
+              name: "Modern Edge Technology",
+              url: SEO_PRODUCTION_ORIGIN,
+              logo: { "@type": "ImageObject", url: `${SEO_PRODUCTION_ORIGIN}/og-image.png` },
+            },
+            mainEntityOfPage: `${SEO_PRODUCTION_ORIGIN}/blog/${post.slug}`,
+            articleSection: post.category,
           },
-          mainEntityOfPage: `${SEO_PRODUCTION_ORIGIN}/blog/${post.slug}`,
-          articleSection: post.category,
-        }}
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SEO_PRODUCTION_ORIGIN + "/" },
+              { "@type": "ListItem", position: 2, name: "The Edge Report", item: `${SEO_PRODUCTION_ORIGIN}/blog` },
+              { "@type": "ListItem", position: 3, name: post.title, item: `${SEO_PRODUCTION_ORIGIN}/blog/${post.slug}` },
+            ],
+          },
+        ]}
       />
       <Navbar />
 
