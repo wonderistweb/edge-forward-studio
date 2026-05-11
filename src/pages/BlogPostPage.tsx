@@ -5,6 +5,7 @@ import { blogPosts } from "@/data/blogPosts";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import markPhoto from "@/assets/mark-duerwachter.jpg";
+import { Seo, SEO_PRODUCTION_ORIGIN } from "@/components/Seo";
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -13,6 +14,11 @@ const BlogPostPage = () => {
   if (!post) {
     return (
       <div className="min-h-screen bg-background">
+        <Seo
+          title="Post Not Found | The Edge Report"
+          description="The blog post you are looking for could not be found."
+          robots="noindex,follow"
+        />
         <Navbar />
         <div className="pt-32 max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-3xl font-mono-display uppercase">Post Not Found</h1>
@@ -25,6 +31,27 @@ const BlogPostPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title={`${post.title} | The Edge Report`}
+        description={post.excerpt}
+        canonicalPath={`/blog/${post.slug}`}
+        ogType="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.date,
+          author: { "@type": "Person", name: post.author?.name ?? "Mark Duerwachter" },
+          publisher: {
+            "@type": "Organization",
+            name: "Modern Edge Technology",
+            url: SEO_PRODUCTION_ORIGIN,
+          },
+          mainEntityOfPage: `${SEO_PRODUCTION_ORIGIN}/blog/${post.slug}`,
+          articleSection: post.category,
+        }}
+      />
       <Navbar />
 
       <article className="pt-32 pb-32">
