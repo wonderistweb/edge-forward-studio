@@ -55,7 +55,7 @@ import EauClairePage from "./pages/cities/EauClairePage";
 import SheboyganPage from "./pages/cities/SheboyganPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { ConsentBanner } from "./components/ConsentBanner";
-import { CanonicalUrl } from "./components/CanonicalUrl";
+import { SeoRouter } from "./components/SeoRouter";
 import NotFound from "./pages/NotFound.tsx";
 import UnsubscribePage from "./pages/UnsubscribePage.tsx";
 
@@ -68,7 +68,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <CanonicalUrl />
+        <SeoRouter />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<BlogPage />} />
