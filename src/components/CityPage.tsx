@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingMarketingMenu from "@/components/FloatingMarketingMenu";
+import { Seo, SEO_PRODUCTION_ORIGIN } from "@/components/Seo";
 
 const fade = {
   initial: { opacity: 0, y: 24 },
@@ -39,8 +40,48 @@ const services = [
 ];
 
 const CityPage = ({ data }: { data: CityPageData }) => {
+  const canonicalPath = `/areas/${data.city.toLowerCase().replace(/\s+/g, "-")}`;
+  const title = `IT Services in ${data.city}, WI | Modern Edge Technology`;
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: `Modern Edge Technology — ${data.city}`,
+    description: data.metaDescription,
+    url: `${SEO_PRODUCTION_ORIGIN}${canonicalPath}`,
+    telephone: "+1-414-269-1900",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: data.city,
+      addressRegion: "WI",
+      addressCountry: "US",
+    },
+    areaServed: [
+      { "@type": "City", name: data.city, containedInPlace: { "@type": "State", name: "Wisconsin" } },
+      ...data.nearbyAreas.map((name) => ({
+        "@type": "City" as const,
+        name,
+        containedInPlace: { "@type": "State", name: "Wisconsin" },
+      })),
+    ],
+    serviceType: [
+      "Managed IT Services",
+      "Cybersecurity",
+      "Cloud Migration",
+      "Network Infrastructure",
+      "VoIP",
+      "Wireless Networks",
+      "Business Continuity",
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title={title}
+        description={data.metaDescription}
+        canonicalPath={canonicalPath}
+        jsonLd={localBusinessJsonLd}
+      />
       <Navbar />
       <FloatingMarketingMenu />
 
