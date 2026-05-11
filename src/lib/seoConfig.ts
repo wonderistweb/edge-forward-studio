@@ -70,6 +70,22 @@ export const STATIC_SEO: Record<string, StaticSeo> = {
     title: "About Modern Edge Technology | Wisconsin IT Consulting",
     description:
       "Founded by Mark Duerwachter, Modern Edge Technology delivers senior-engineer-led IT, cybersecurity, and E-Rate guidance to Wisconsin businesses, schools, and libraries.",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Mark Duerwachter",
+      jobTitle: "VP of Business Operations",
+      worksFor: { "@type": "Organization", name: BRAND, url: ORIGIN },
+      knowsAbout: [
+        "Managed IT services",
+        "Cybersecurity",
+        "Cloud migration",
+        "E-Rate program",
+        "Network design",
+        "Wisconsin K-12 and library technology",
+      ],
+      url: `${ORIGIN}/about`,
+    },
   },
 
   "/contact": {
