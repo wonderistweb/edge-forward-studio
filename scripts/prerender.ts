@@ -116,6 +116,22 @@ const injectHead = (html: string, path: string, head: HeadConfig) => {
 };
 
 await build({ build: { ssr: "src/entry-server.tsx", outDir: "dist/server", emptyOutDir: false } });
+
+// Stub browser globals required by modules that initialize at import time (e.g. supabase-js auth storage).
+const memoryStorage = (() => {
+  const store = new Map<string, string>();
+  return {
+    getItem: (k: string) => (store.has(k) ? store.get(k)! : null),
+    setItem: (k: string, v: string) => void store.set(k, String(v)),
+    removeItem: (k: string) => void store.delete(k),
+    clear: () => store.clear(),
+    key: (i: number) => Array.from(store.keys())[i] ?? null,
+    get length() { return store.size; },
+  };
+})();
+(globalThis as any).localStorage ??= memoryStorage;
+(globalThis as any).sessionStorage ??= memoryStorage;
+
 const { render } = await import(pathToFileURL(ENTRY).href) as { render: (url: string) => string };
 const template = readFileSync(resolve(DIST, "index.html"), "utf8");
 
