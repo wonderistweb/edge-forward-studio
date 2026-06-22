@@ -60,7 +60,7 @@ type StaticSeo = Omit<SeoProps, "canonicalPath">;
 
 export const STATIC_SEO: Record<string, StaticSeo> = {
   "/": {
-    title: "Managed IT Services Milwaukee & Wisconsin | Modern Edge Technology",
+    title: "IT Services Milwaukee & Wisconsin | Modern Edge Tech",
     description:
       "Lean, senior-led managed IT, cybersecurity, cloud, and network services for Milwaukee and Wisconsin organizations. Low markup. No fleet. Real expertise.",
     jsonLd: localBusinessSchema,

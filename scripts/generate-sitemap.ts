@@ -1,4 +1,4 @@
-// Runs after `vite build` via the postbuild npm hook; writes dist/sitemap.xml.
+// Runs before `vite dev` and `vite build` (predev/prebuild hooks); writes public/sitemap.xml.
 import { writeFileSync } from "fs";
 import { resolve } from "path";
 
@@ -110,5 +110,5 @@ function generateSitemap(entries: SitemapEntry[]) {
 
 const blog = await loadBlogEntries();
 const all = [...staticRoutes, ...blog];
-writeFileSync(resolve("dist/sitemap.xml"), generateSitemap(all));
+writeFileSync(resolve("public/sitemap.xml"), generateSitemap(all));
 console.log(`sitemap.xml written (${all.length} entries)`);
