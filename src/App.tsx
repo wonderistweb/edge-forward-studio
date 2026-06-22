@@ -1,3 +1,4 @@
+import { lazy, Suspense, type ReactNode } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -57,18 +58,26 @@ import { ScrollToTop } from "./components/ScrollToTop";
 import { ConsentBanner } from "./components/ConsentBanner";
 import { SeoRouter } from "./components/SeoRouter";
 import NotFound from "./pages/NotFound.tsx";
-import UnsubscribePage from "./pages/UnsubscribePage.tsx";
+
+const UnsubscribePage = lazy(() => import("./pages/UnsubscribePage.tsx"));
 
 const queryClient = new QueryClient();
 
-const App = () => (
+export const AppProviders = ({ children }: { children: ReactNode }) => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <SeoRouter />
+      {children}
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
+export const AppRoutes = () => (
+  <>
+    <ScrollToTop />
+    <SeoRouter />
+    <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<BlogPage />} />
@@ -124,10 +133,17 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <ConsentBanner />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+    </Suspense>
+    <ConsentBanner />
+  </>
+);
+
+const App = () => (
+  <AppProviders>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  </AppProviders>
 );
 
 export default App;
