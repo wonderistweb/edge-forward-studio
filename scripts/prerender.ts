@@ -82,10 +82,12 @@ const getCityHead = (path: string): HeadConfig | undefined => {
   };
 };
 
+const asHeadConfig = (value: unknown): HeadConfig => value as HeadConfig;
+
 const getHead = (path: string): HeadConfig => {
-  if (path.startsWith("/blog/")) return getBlogHead(path) ?? STATIC_SEO["/blog"];
-  if (path.startsWith("/areas/")) return getCityHead(path) ?? STATIC_SEO["/"];
-  return STATIC_SEO[path] ?? STATIC_SEO["/"];
+  if (path.startsWith("/blog/")) return getBlogHead(path) ?? asHeadConfig(STATIC_SEO["/blog"]);
+  if (path.startsWith("/areas/")) return getCityHead(path) ?? asHeadConfig(STATIC_SEO["/"]);
+  return asHeadConfig(STATIC_SEO[path] ?? STATIC_SEO["/"]);
 };
 
 const setTag = (html: string, pattern: RegExp, replacement: string) =>
