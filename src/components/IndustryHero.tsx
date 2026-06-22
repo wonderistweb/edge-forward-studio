@@ -37,6 +37,9 @@ const IndustryHero = ({
         <img
           src={image}
           alt=""
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-background/80" />

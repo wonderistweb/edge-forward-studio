@@ -8,6 +8,8 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: BRAND,
+  description:
+    "Managed IT services, cybersecurity, cloud solutions, VoIP, and network infrastructure for businesses in Milwaukee and Wisconsin.",
   url: ORIGIN,
   telephone: "+1-414-269-1900",
   address: {
@@ -16,9 +18,13 @@ const localBusinessSchema = {
     addressRegion: "WI",
     addressCountry: "US",
   },
-  areaServed: [
-    { "@type": "State", name: "Wisconsin" },
-    { "@type": "City", name: "Milwaukee" },
+  areaServed: ["Milwaukee", "Southern Wisconsin", "Wisconsin"],
+  serviceType: [
+    "Managed IT Services",
+    "Cybersecurity",
+    "Cloud Solutions",
+    "VoIP",
+    "Network Infrastructure",
   ],
 };
 
