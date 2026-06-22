@@ -25,7 +25,7 @@ const HeroSection = () => {
           src={heroBg}
           alt=""
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
           decoding="async"
           className="w-full h-full object-cover"
         />

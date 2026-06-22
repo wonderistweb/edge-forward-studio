@@ -38,7 +38,7 @@ const IndustryHero = ({
           src={image}
           alt=""
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
           decoding="async"
           className="w-full h-full object-cover"
         />
