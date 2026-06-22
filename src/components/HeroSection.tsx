@@ -24,6 +24,9 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt=""
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-full object-cover"
         />
         {/* Dark overlay for dark mode, lighter for light mode */}

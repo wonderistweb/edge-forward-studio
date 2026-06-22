@@ -103,6 +103,9 @@ const CityPage = ({ data }: { data: CityPageData }) => {
           <img
             src={data.heroImage}
             alt={`${data.city} Wisconsin cityscape`}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-background/80" />

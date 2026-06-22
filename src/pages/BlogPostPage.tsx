@@ -108,6 +108,8 @@ const BlogPostPage = () => {
               <img
                 src={post.coverImage}
                 alt={post.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>

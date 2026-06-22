@@ -82,6 +82,8 @@ const PartnershipsSection = () => {
                 <img
                   src={partner.logo}
                   alt={partner.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-[70%] h-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-250"
                 />
               </a>

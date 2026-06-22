@@ -73,6 +73,8 @@ const CaseStudiesPage = () => {
                 <img
                   src={s.image}
                   alt={s.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto grayscale contrast-110 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-primary/20 mix-blend-color pointer-events-none transition-opacity duration-700 group-hover:opacity-0" />

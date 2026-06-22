@@ -73,6 +73,8 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: typeof testimoni
         <img
           src={testimonial.image}
           alt={testimonial.name}
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />

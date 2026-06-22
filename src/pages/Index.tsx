@@ -68,6 +68,8 @@ const Index = () => {
                   <img
                     src={c.image}
                     alt={c.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover grayscale contrast-110 transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
                   />
                   <div className="absolute inset-0 bg-primary/25 mix-blend-color pointer-events-none transition-opacity duration-700 group-hover:opacity-0" />

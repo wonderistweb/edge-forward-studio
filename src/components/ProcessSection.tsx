@@ -34,6 +34,8 @@ const ProcessSection = () => {
             <img
               src={markConsultation}
               alt="Mark consulting with a client about their technology needs"
+              loading="lazy"
+              decoding="async"
               className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500 snap-curve"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
@@ -65,6 +67,8 @@ const ProcessSection = () => {
             <img
               src={infrastructureAudit}
               alt="Mark discussing infrastructure with a client"
+              loading="lazy"
+              decoding="async"
               className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500 snap-curve"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
