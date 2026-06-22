@@ -1,0 +1,60 @@
+# Modern Edge Technology
+
+> Senior-engineer-led managed IT, cybersecurity, cloud, network, and E-Rate services for businesses, schools, and libraries across Milwaukee and Wisconsin. Low markup, lean expert team, no fleet overhead.
+
+## Pages
+
+- [Home](/): Managed IT, cybersecurity, cloud, and network services for Wisconsin.
+- [About](/about): Founded by Mark Duerwachter — senior-engineer-led Wisconsin IT firm.
+- [Contact](/contact): Talk to a senior engineer for a free, no-pressure assessment.
+- [Quote](/quote): Request a custom quote for IT, cybersecurity, cloud, or network projects.
+- [E-Rate Program](/e-rate): Expert guidance on E-Rate funding for WI schools and libraries.
+- [Case Studies](/case-studies): Real-world Wisconsin IT, E-Rate, and network project results.
+- [Blog — The Edge Report](/blog): IT, cybersecurity, cloud, VoIP, and E-Rate insights.
+
+## Services
+
+- [Access Control & Cameras](/services/access-control): Enterprise access control and IP surveillance.
+- [Hardware & Software](/services/hardware-software): Procurement, deployment, and lifecycle management.
+- [Voice Services](/services/voice-services): Cloud VoIP, SIP trunking, and unified communications.
+- [IT Audits](/services/it-audits): Independent IT, security, and network audits.
+- [Cloud Migrations](/services/cloud-migrations): AWS, Azure, GCP, and Microsoft 365 migrations.
+- [Wireless Networks](/services/wireless-networks): WiFi 6/6E design and structured cabling.
+- [Business Continuity & DR](/services/business-continuity): Backup, disaster recovery, and continuity.
+- [E-Rate Vendor Services](/services/e-rate): E-Rate-eligible vendor and project services.
+
+## Industries
+
+- [Education (K-12)](/industries/education): IT and E-Rate for Wisconsin schools.
+- [Libraries](/industries/libraries): IT, Wi-Fi, and E-Rate Category 2 for public libraries.
+- [Healthcare](/industries/healthcare): HIPAA-aligned IT and clinical networks.
+- [Manufacturing](/industries/manufacturing): OT/IT segmentation and plant-floor networks.
+- [Retail](/industries/retail): POS, guest Wi-Fi, and PCI-aligned security.
+- [Hospitality](/industries/hospitality): Guest Wi-Fi, PMS/POS networks, and IPTV.
+- [Corporate](/industries/corporate): Hybrid-work IT for Wisconsin corporate offices.
+- [Government](/industries/government): Secure, CJIS-aligned IT for municipalities.
+- [Non-Profit](/industries/non-profit): Affordable managed IT and cybersecurity for nonprofits.
+- [Legal](/industries/legal): Confidentiality-focused IT for Wisconsin law firms.
+- [Financial Services](/industries/financial-services): Compliance-aware IT for WI financial firms.
+- [Real Estate](/industries/real-estate): Multi-office IT, VoIP, and secure documents.
+- [Custom Solutions](/industries/custom): Custom IT for non-standard environments.
+
+## Service Areas
+
+- [Milwaukee](/areas/milwaukee)
+- [Madison](/areas/madison)
+- [Waukesha](/areas/waukesha)
+- [Kenosha](/areas/kenosha)
+- [Racine](/areas/racine)
+- [Green Bay](/areas/green-bay)
+- [Appleton](/areas/appleton)
+- [Oshkosh](/areas/oshkosh)
+- [Wausau](/areas/wausau)
+- [Stevens Point](/areas/stevens-point)
+- [Eau Claire](/areas/eau-claire)
+- [Sheboygan](/areas/sheboygan)
+
+## Optional
+
+- [Library E-Rate Whitepaper](/marketing/library-whitepaper): $28M in unused WI library E-Rate funding.
+- [Free IT Ebook](/marketing/ebook): Guide for Wisconsin IT decision-makers.
